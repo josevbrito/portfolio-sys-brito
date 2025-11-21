@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* 1. Definindo a Paleta Cyberpunk/Matrix */
+:root {
+  --background: #050505; /* Fundo: preto quase absoluto */  
+  --foreground: #e2e8f0; /* Texto: Branco gelo*/
+  --primary: #00DC82; /* Destaque: O Verde Neon Tech */
+  --surface: #0a0a0a; /* Superfícies: Para cards e seções secundárias */
+  --border: #1f2937;
+}
+
+/* 2. Conectando as variáveis ao Tailwind v4 */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+
+  /* Mantendo as fontes do Next.js */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* 3. Configuração Base */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  /* Suaviza as fontes no fundo preto */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 4. Efeitos Especiais */
+@layer utilities {
+  /* Texto brilhante (Neon) */
+  .text-glow {
+    text-shadow: 0 0 20px rgba(0, 220, 130, 0.6);
+  }
+  
+  /* Borda brilhante */
+  .border-glow {
+    box-shadow: 0 0 10px rgba(0, 220, 130, 0.2);
+    border-color: var(--primary);
+  }
+  
+  /* Gradiente de fundo sutil estilo Matrix */
+  .bg-matrix-gradient {
+    background: radial-gradient(circle at 50% 0%, #001a10 0%, #050505 70%);
+  }
+}
