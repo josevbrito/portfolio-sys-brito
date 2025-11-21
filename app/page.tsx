@@ -1,65 +1,17 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Terminal, Code2, Cpu, ChevronRight, Github, Linkedin, Mail, Globe } from "lucide-react";
-import { content } from "./data";
+import { Code2, ChevronRight, Github, Linkedin, Mail } from "lucide-react";
+import { useLanguage } from "./context/LanguageContext";
+import { Navbar } from "./components/Navbar";
 
 export default function Home() {
-  // Estado para controlar o idioma ('pt' ou 'en')
-  const [lang, setLang] = useState<"pt" | "en">("pt");
-  
-  // Pega o conteúdo baseado no idioma atual
-  const t = content[lang];
-
-  const toggleLanguage = () => {
-    setLang(prev => prev === "pt" ? "en" : "pt");
-  };
+  const { t, lang } = useLanguage();
 
   return (
     <div className="min-h-screen bg-matrix-gradient text-foreground font-sans selection:bg-primary selection:text-black overflow-hidden">
       
-      {/* --- NAVBAR --- */}
-      <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-black/50 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          
-          {/* LOGO */}
-          <div className="flex items-center gap-2 font-mono text-primary text-glow font-bold text-lg cursor-pointer group">
-            <Terminal size={20} className="group-hover:rotate-12 transition-transform" />
-            <span>sys.brito</span>
-            <span className="animate-pulse">_</span>
-          </div>
-
-          {/* Links e Controles */}
-          <div className="flex items-center gap-6">
-            
-            {/* Menu Desktop */}
-            <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-400">
-              <a href="#about" className="hover:text-primary hover:text-glow transition-all">{t.nav.about}</a>
-              <a href="#projects" className="hover:text-primary hover:text-glow transition-all">{t.nav.projects}</a>
-              <a href="#contact" className="hover:text-primary hover:text-glow transition-all">{t.nav.contact}</a>
-            </div>
-
-            {/* Separador */}
-            <div className="h-4 w-[1px] bg-white/10 hidden md:block"></div>
-
-            {/* TOGGLE DE IDIOMA */}
-            <button 
-              onClick={toggleLanguage}
-              className="flex items-center gap-2 text-xs font-mono border border-white/10 bg-white/5 px-3 py-1.5 rounded hover:border-primary/50 hover:text-primary transition-all"
-            >
-              <Globe size={12} />
-              <span>{lang === "pt" ? "EN" : "PT-BR"}</span>
-            </button>
-
-            {/* Botão de Ação */}
-            <button className="hidden md:flex items-center gap-2 px-4 py-2 bg-surface border border-white/10 rounded hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all group">
-              <span className="text-xs font-mono tracking-wide">{t.nav.action}</span>
-              <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* --- HERO SECTION --- */}
       <main className="pt-36 pb-20 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
@@ -186,69 +138,89 @@ export default function Home() {
           </div>
         </motion.div>
       </main>
-      {/* --- SEÇÃO DE PROJETOS --- */}
+
+      {/* --- SEÇÃO DE PROJETOS (HOME) --- */}
       <section id="projects" className="py-20 px-6 bg-surface/30 border-t border-white/5">
         <div className="max-w-7xl mx-auto">
           
-          {/* Título da Seção */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-12"
+            className="mb-12 flex justify-between items-end"
           >
-            <h2 className="text-3xl font-bold text-white flex items-center gap-3">
-              <span className="text-primary">/</span> {t.projects.title}
-            </h2>
-            <p className="text-gray-400 mt-2 font-mono text-sm">
-              {t.projects.subtitle}
-            </p>
+            <div>
+              <h2 className="text-3xl font-bold text-white flex items-center gap-3">
+                <span className="text-primary">/</span> {t.projectsSection.title}
+              </h2>
+              <p className="text-gray-400 mt-2 font-mono text-sm">
+                {t.projectsSection.subtitle}
+              </p>
+            </div>
+            
+            {/* Link para ver todos (Desktop) */}
+            <a href="/projects" className="hidden md:flex items-center gap-2 text-primary hover:text-white transition-colors font-mono text-sm group">
+              {t.projectsSection.viewAll}
+              <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </a>
           </motion.div>
 
-          {/* Grid de Cards */}
+          {/* Grid de Cards (Limitado a 3) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {t.projects.items.map((project, index) => (
+            {t.projects.slice(0, 3).map((project: any, index: number) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group relative bg-[#0a0a0a] border border-white/10 rounded-xl p-6 hover:border-primary/50 transition-colors overflow-hidden"
+                className="group relative bg-[#0a0a0a] border border-white/10 rounded-xl p-6 hover:border-primary/50 transition-colors overflow-hidden flex flex-col"
               >
-                {/* Efeito de Hover no Fundo */}
-                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                {/* Cabeçalho do Card */}
+                <a href={`/projects/${project.slug}`} className="absolute inset-0 z-20"></a>
+                
+                {/* Header */}
                 <div className="relative z-10 flex justify-between items-start mb-4">
                   <div className="p-2 bg-white/5 rounded-lg text-primary group-hover:text-white group-hover:bg-primary transition-colors">
                     <project.icon size={24} />
                   </div>
-                  <div className="text-xs font-mono text-gray-500 border border-white/10 px-2 py-1 rounded">
-                    CONFIDENTIAL
-                  </div>
+                  {project.status === "Concluído" ? (
+                    <div className="text-[10px] font-mono text-green-400 border border-green-900/30 bg-green-900/10 px-2 py-1 rounded">
+                      DONE
+                    </div>
+                  ) : (
+                    <div className="text-[10px] font-mono text-yellow-400 border border-yellow-900/30 bg-yellow-900/10 px-2 py-1 rounded">
+                      WIP
+                    </div>
+                  )}
                 </div>
 
-                {/* Conteúdo */}
-                <div className="relative z-10">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                    {project.desc}
-                  </p>
+                <h3 className="relative z-10 text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+                <p className="relative z-10 text-gray-400 text-sm mb-6 leading-relaxed line-clamp-3 flex-1">
+                  {project.shortDesc}
+                </p>
 
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {project.tags.map((tag, i) => (
-                      <span key={i} className="text-[10px] font-mono px-2 py-1 rounded bg-white/5 text-gray-300 border border-white/5">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                <div className="relative z-10 flex flex-wrap gap-2 mt-auto">
+                  {project.tags.slice(0, 3).map((tag: string, i: number) => (
+                    <span key={i} className="text-[10px] font-mono px-2 py-1 rounded bg-white/5 text-gray-300 border border-white/5">
+                      {tag}
+                    </span>
+                  ))}
+                  {project.tags.length > 3 && (
+                    <span className="text-[10px] font-mono px-2 py-1 text-gray-500">+{project.tags.length - 3}</span>
+                  )}
                 </div>
               </motion.div>
             ))}
+          </div>
+
+          {/* Botão Mobile para ver todos */}
+          <div className="mt-8 md:hidden flex justify-center">
+             <a href="/projects" className="flex items-center gap-2 px-6 py-3 bg-surface border border-white/10 rounded hover:border-primary/50 text-white transition-all w-full justify-center">
+              {t.projectsSection.viewAll}
+              <ChevronRight size={16} />
+            </a>
           </div>
 
         </div>
