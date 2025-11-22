@@ -1,6 +1,6 @@
 import { Code2, Smartphone, Database, Brain, Layout, BarChart, LucideIcon } from "lucide-react";
 
-// 1. Definindo as interfaces
+// 1. Interfaces
 export interface LinkItem {
   type: "github" | "live" | "apk" | "lock";
   url: string;
@@ -18,7 +18,7 @@ export interface Project {
   shortDesc: string;
   fullDesc: string;
   tags: string[];
-  categories: string[]; 
+  categories: string[];
   status: "Concluído" | "Em andamento" | "Completed" | "In Progress";
   icon: LucideIcon;
   stats?: StatItem[];
@@ -50,6 +50,7 @@ interface Content {
     viewAll: string;
     searchPlaceholder: string;
     filterAll: string;
+    filters: string[];
   };
   projects: Project[];
 }
@@ -81,6 +82,7 @@ export const content: { pt: Content; en: Content } = {
       viewAll: "Ver todos os projetos",
       searchPlaceholder: "Buscar por tecnologia ou nome...",
       filterAll: "Todos",
+      filters: ["Todos", "Full Stack", "Data Science", "Mobile"], 
     },
     projects: [
       {
@@ -158,7 +160,7 @@ export const content: { pt: Content; en: Content } = {
         shortDesc: "Plataforma de transparência com mais de 50 dashboards interativos em Power BI.",
         fullDesc: "Portal de Transparência de Saúde do Maranhão. Ferramenta vital para gestores e população, permitindo monitoramento de indicadores de saúde e processos em tempo real para suporte à tomada de decisão.",
         tags: ["Power BI", "Laravel", "PostgreSQL"],
-        categories: ["Data Science"],
+        categories: ["Full Stack"],
         status: "Concluído",
         icon: BarChart,
         stats: [
@@ -220,6 +222,7 @@ export const content: { pt: Content; en: Content } = {
       viewAll: "View all projects",
       searchPlaceholder: "Search by tech or name...",
       filterAll: "All",
+      filters: ["All", "Full Stack", "Data Science", "Mobile"],
     },
     projects: [
       {
