@@ -15,7 +15,7 @@ export default function ProjectsPage() {
   const categories = ["Todos", "Full Stack", "Data Science", "Mobile"];
   
   const filteredProjects = t.projects.filter((p) => {
-    const matchesCategory = filter === "Todos" || p.category === filter;
+    const matchesCategory = filter === "Todos" || p.categories.includes(filter);
     const matchesSearch = p.title.toLowerCase().includes(search.toLowerCase()) || 
                           p.tags.some(tag => tag.toLowerCase().includes(search.toLowerCase()));
     return matchesCategory && matchesSearch;
@@ -82,7 +82,7 @@ export default function ProjectsPage() {
                     <project.icon size={24} />
                     </div>
                     <span className="text-[10px] font-mono text-gray-500 border border-white/10 px-2 py-1 rounded">
-                    {project.category}
+                    {project.categories[0]}
                     </span>
                 </div>
 

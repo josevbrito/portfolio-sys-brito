@@ -28,7 +28,7 @@ export default function ProjectDetails() {
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
             <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-mono border border-primary/20">
-              {project.category}
+              {project.categories[0]}
             </span>
             {project.status === "Em andamento" && (
                <span className="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-500 text-xs font-mono border border-yellow-500/20">
