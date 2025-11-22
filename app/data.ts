@@ -19,7 +19,7 @@ export interface Project {
   fullDesc: string;
   tags: string[];
   category: string;
-  status: "Concluído" | "Em andamento";
+  status: "Concluído" | "Em andamento" | "Completed" | "In Progress";
   icon: LucideIcon;
   stats?: StatItem[];
   links?: LinkItem[];
@@ -54,7 +54,7 @@ interface Content {
   projects: Project[];
 }
 
-// 2. Dados
+// 2. Dados (PT e EN)
 export const content: { pt: Content; en: Content } = {
   pt: {
     nav: {
@@ -88,7 +88,7 @@ export const content: { pt: Content; en: Content } = {
         title: "Sistema de Notificação Hospitalar (RENAVEH)",
         shortDesc: "Sistema robusto em Laravel/MySQL com 2FA e RBAC. Processa 50k registros e atende 98 hospitais.",
         fullDesc: "O RENAVEH-MA (Sistema de Informação da Rede Nacional de Vigilância Epidemiológica Hospitalar) foi implantado como subsistema estratégico. Ele não se limita a notificações compulsórias, mas objetiva a detecção e resposta imediata a Emergências de Saúde Pública (ESP). O sistema conta com controle de acesso rigoroso (RBAC) e autenticação de dois fatores (2FA).",
-        tags: ["Laravel", "MySQL", "JavaScript", "Segurança"],
+        tags: ["Laravel", "MySQL", "JavaScript"],
         category: "Full Stack",
         status: "Concluído",
         icon: Database,
@@ -144,7 +144,7 @@ export const content: { pt: Content; en: Content } = {
         title: "Monitora Saúde (BI)",
         shortDesc: "Plataforma de transparência com mais de 50 dashboards interativos em Power BI.",
         fullDesc: "Portal de Transparência de Saúde do Maranhão. Ferramenta vital para gestores e população, permitindo monitoramento de indicadores de saúde e processos em tempo real para suporte à tomada de decisão.",
-        tags: ["Power BI", "Laravel", "PostgreSQL", "JavaScript"],
+        tags: ["Power BI", "Laravel", "PostgreSQL"],
         category: "Data Science",
         status: "Concluído",
         icon: BarChart,
@@ -221,8 +221,117 @@ export const content: { pt: Content; en: Content } = {
       searchPlaceholder: "Search by tech or name...",
       filterAll: "All",
     },
-    projects: []
+    projects: [
+      {
+        slug: "renaveh-ma",
+        title: "Hospital Notification System (RENAVEH)",
+        shortDesc: "Robust Laravel/MySQL system with 2FA and RBAC. Processes 50k records and serves 98 hospitals.",
+        fullDesc: "RENAVEH-MA (National Hospital Epidemiological Surveillance System Information - Maranhão) was implemented as a strategic subsystem. It is not limited to compulsory notifications but aims at the detection and immediate response to Public Health Emergencies (PHE). The system features strict access control (RBAC) and two-factor authentication (2FA).",
+        tags: ["Laravel", "MySQL", "JavaScript"],
+        category: "Full Stack",
+        status: "Completed",
+        icon: Database,
+        stats: [
+          { label: "Records", value: "+50k" },
+          { label: "Hospitals", value: "98" },
+          { label: "Impact", value: "Statewide" }
+        ],
+        links: [
+          { type: "live", url: "https://renaveh.saude.ma.gov.br/" },
+          { type: "lock", url: "#", label: "Confidential Code" }
+        ]
+      },
+      {
+        slug: "maranhao-livre-da-fome",
+        title: "Maranhão Hunger-Free Program",
+        shortDesc: "Monitoring platform for 400k beneficiaries across 217 cities.",
+        fullDesc: "Official platform for tracking consultations and benefits of the program. The system manages a massive database covering all cities in the state, ensuring data integrity and restricted access to authorized technicians.",
+        tags: ["Laravel", "MySQL", "JavaScript", "GovTech"],
+        category: "Full Stack",
+        status: "Completed",
+        icon: Layout,
+        stats: [
+          { label: "Beneficiaries", value: "400k" },
+          { label: "Cities", value: "217" },
+          { label: "Scale", value: "Massive" }
+        ],
+        links: [
+          { type: "live", url: "https://maranhaolivredafome.saude.ma.gov.br/" },
+          { type: "lock", url: "#", label: "Confidential Code" }
+        ]
+      },
+      {
+        slug: "analise-rfm-ml",
+        title: "AI-Powered RFM Customer Segmentation",
+        shortDesc: "Complete Machine Learning pipeline to classify customers into 5 strategic clusters.",
+        fullDesc: "System developed in Python using RFM analysis (Recency, Frequency, Monetary) with Machine Learning. Classifies customers into groups such as 'Champions', 'At Risk', and 'VIPs' for targeted marketing strategies. Includes a Flask web interface.",
+        tags: ["Python", "Machine Learning", "Scikit-learn", "Flask"],
+        category: "Data Science",
+        status: "Completed",
+        icon: Brain,
+        stats: [
+          { label: "Precision", value: "High" },
+          { label: "Clusters", value: "5" },
+          { label: "Pipeline", value: "Automated" }
+        ],
+        links: [
+          { type: "github", url: "https://github.com/josevbrito/online-retail-rfm-analysis" }
+        ]
+      },
+      {
+        slug: "monitora-saude",
+        title: "Health Monitor (BI)",
+        shortDesc: "Transparency platform with over 50 interactive Power BI dashboards.",
+        fullDesc: "Maranhão Health Transparency Portal. A vital tool for managers and the population, allowing real-time monitoring of health indicators and processes to support decision-making.",
+        tags: ["Power BI", "Laravel", "PostgreSQL"],
+        category: "Data Science",
+        status: "Completed",
+        icon: BarChart,
+        stats: [
+          { label: "Dashboards", value: "+50" },
+          { label: "Data Source", value: "Hybrid" }
+        ],
+        links: []
+      },
+      {
+        slug: "hans-plus",
+        title: "Hans+",
+        shortDesc: "Award-winning mobile app (Grade 10) to assist in leprosy treatment.",
+        fullDesc: "Patient-focused application allowing symptom registration and daily medication control. Developed with a focus on UX and simplicity of use.",
+        tags: ["Flutter", "Firebase", "NoSQL", "Mobile"],
+        category: "Mobile",
+        status: "Completed",
+        icon: Smartphone,
+        links: [
+          { type: "apk", url: "#", label: "APK Available" }
+        ]
+      },
+      {
+        slug: "plandox",
+        title: "Plandox",
+        shortDesc: "Modernization from legacy to microservices with AI for quality control.",
+        fullDesc: "Migration from monolithic architecture to microservices. Uses ML models for biodiesel quality prediction via Design of Experiments (DoE).",
+        tags: ["React Native", "FastAPI", "Microservices", "Python"],
+        category: "Full Stack",
+        status: "In Progress",
+        icon: Code2,
+        links: [
+          { type: "lock", url: "#", label: "Private Code" }
+        ]
+      },
+      {
+        slug: "california-housing",
+        title: "Real Estate Prediction (California)",
+        shortDesc: "ML pipeline for real estate price prediction with hyperparameter optimization.",
+        fullDesc: "Development of a complete prediction system. Includes algorithm comparison, pre-processing, model validation, and performance metrics.",
+        tags: ["Python", "ML Pipeline", "Pandas"],
+        category: "Data Science",
+        status: "Completed",
+        icon: Code2,
+        links: [
+          { type: "github", url: "https://github.com/josevbrito/california-housing-ml-pipeline" }
+        ]
+      }
+    ]
   }
 };
-
-content.en.projects = content.pt.projects;
