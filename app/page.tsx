@@ -178,20 +178,24 @@ export default function Home() {
               >
                 <a href={`/projects/${project.slug}`} className="absolute inset-0 z-20"></a>
                 
-                {/* Header */}
-                <div className="relative z-10 flex justify-between items-start mb-4">
-                  <div className="p-2 bg-white/5 rounded-lg text-primary group-hover:text-white group-hover:bg-primary transition-colors">
+                {/* Header do Card*/}
+                <div className="relative z-10 flex justify-between items-start mb-4 gap-4">
+                  {/* Ícone */}
+                  <div className="p-2 bg-white/5 rounded-lg text-primary group-hover:text-white group-hover:bg-primary transition-colors shrink-0">
                     <project.icon size={24} />
                   </div>
-                  {project.status === "Concluído" ? (
-                    <div className="text-[10px] font-mono text-green-400 border border-green-900/30 bg-green-900/10 px-2 py-1 rounded">
-                      DONE
-                    </div>
-                  ) : (
-                    <div className="text-[10px] font-mono text-yellow-400 border border-yellow-900/30 bg-yellow-900/10 px-2 py-1 rounded">
-                      WIP
-                    </div>
-                  )}
+
+                  {/* Categorias */}
+                  <div className="flex flex-wrap justify-end gap-2 max-w-[70%]">
+                    {project.categories.map((cat: string) => (
+                      <span 
+                        key={cat} 
+                        className="text-[10px] font-mono text-gray-400 border border-white/10 bg-black/40 px-2 py-1 rounded hover:border-primary/30 hover:text-primary transition-colors cursor-default"
+                      >
+                        {cat}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 <h3 className="relative z-10 text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">

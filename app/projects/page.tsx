@@ -77,31 +77,42 @@ export default function ProjectsPage() {
               animate={{ opacity: 1, scale: 1 }}
               className="group relative bg-[#0a0a0a] border border-white/10 rounded-xl p-6 hover:border-primary/50 transition-colors flex flex-col"
             >
-              <a href={`/projects/${project.slug}`} className="absolute inset-0 z-20"></a>
+                <a href={`/projects/${project.slug}`} className="absolute inset-0 z-20"></a>
               
-              <div className="flex justify-between items-start mb-4 relative z-10">
-                <div className="p-2 bg-white/5 rounded-lg text-primary">
-                  <project.icon size={24} />
+                {/* Header do Card */}
+                <div className="relative z-10 flex justify-between items-start mb-4 gap-4">
+                    {/* Ícone */}
+                    <div className="p-2 bg-white/5 rounded-lg text-primary group-hover:text-white group-hover:bg-primary transition-colors shrink-0">
+                        <project.icon size={24} />
+                    </div>
+
+                    {/* Categorias */}
+                    <div className="flex flex-wrap justify-end gap-2 max-w-[70%]">
+                        {project.categories.map((cat) => (
+                        <span 
+                            key={cat} 
+                            className="text-[10px] font-mono text-gray-400 border border-white/10 bg-black/40 px-2 py-1 rounded hover:border-primary/30 hover:text-primary transition-colors cursor-default"
+                        >
+                            {cat}
+                        </span>
+                        ))}
+                    </div>
                 </div>
-                <span className="text-[10px] font-mono text-gray-500 border border-white/10 px-2 py-1 rounded">
-                  {project.categories[0]}
-                </span>
-              </div>
 
-              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors relative z-10">
-                {project.title}
-              </h3>
-              <p className="text-gray-400 text-sm mb-6 line-clamp-3 flex-1 relative z-10">
-                {project.shortDesc}
-              </p>
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors relative z-10">
+                    {project.title}
+                </h3>
+                <p className="text-gray-400 text-sm mb-6 line-clamp-3 flex-1 relative z-10">
+                    {project.shortDesc}
+                </p>
 
-              <div className="flex flex-wrap gap-2 relative z-10">
-                {project.tags.slice(0, 3).map((tag, i) => (
-                  <span key={i} className="text-[10px] font-mono px-2 py-1 rounded bg-white/5 text-gray-300 border border-white/5">
-                    {tag}
-                  </span>
-                ))}
-              </div>
+                <div className="flex flex-wrap gap-2 relative z-10">
+                    {project.tags.slice(0, 3).map((tag, i) => (
+                    <span key={i} className="text-[10px] font-mono px-2 py-1 rounded bg-white/5 text-gray-300 border border-white/5">
+                        {tag}
+                    </span>
+                    ))}
+                </div>
             </motion.div>
           ))}
         </div>
