@@ -53,6 +53,31 @@ interface Content {
     filters: string[];
   };
   projects: Project[];
+  contact: {
+    title: string;
+    subtitle: string;
+    emailLabel: string;
+    email: string;
+    copyEmail: string;
+    copied: string;
+    socialLabel: string;
+    form: {
+      nameLabel: string;
+      emailLabel: string;
+      messageLabel: string;
+      namePlaceholder: string;
+      emailPlaceholder: string;
+      messagePlaceholder: string;
+      sendButton: string;
+      sending: string;
+      successMessage: string;
+      errorMessage: string;
+    };
+  };
+  footer: {
+    rights: string;
+    built: string;
+  };
 }
 
 // 2. Dados (PT e EN)
@@ -195,7 +220,32 @@ export const content: { pt: Content; en: Content } = {
           { type: "github", url: "https://github.com/josevbrito/california-housing-ml-pipeline" }
         ]
       }
-    ]
+    ],
+  contact: {
+      title: "Entre em Contato",
+      subtitle: "Quer discutir uma ideia, colaborar em um projeto ou só trocar conhecimentos sobre tecnologia? Fique à vontade para enviar sua mensagem.",
+      emailLabel: "Envie uma mensagem direta",
+      email: "contato@josevbrito.com",
+      copyEmail: "Copiar E-mail",
+      copied: "Copiado!",
+      socialLabel: "Outros canais de comunicação",
+      form: {
+        nameLabel: "Nome",
+        emailLabel: "E-mail",
+        messageLabel: "Mensagem",
+        namePlaceholder: "Seu nome",
+        emailPlaceholder: "seu@email.com",
+        messagePlaceholder: "Sobre o que você quer conversar?",
+        sendButton: "Enviar Mensagem",
+        sending: "Enviando...",
+        successMessage: "Mensagem enviada com sucesso!",
+        errorMessage: "Erro ao enviar. Tente novamente.",
+      }
+    },
+    footer: {
+      rights: "Todos os direitos reservados.",
+      built: "Arquitetado com Next.js & Tailwind"
+    }
   },
   en: {
     nav: {
@@ -335,6 +385,31 @@ export const content: { pt: Content; en: Content } = {
           { type: "github", url: "https://github.com/josevbrito/california-housing-ml-pipeline" }
         ]
       }
-    ]
+    ],
+    contact: {
+      title: "Get in Touch",
+      subtitle: "Want to discuss an idea, collaborate on a project, or just talk tech? Feel free to send your message.",
+      emailLabel: "Send a direct message",
+      email: "contact@josevbrito.com",
+      copyEmail: "Copy Email",
+      copied: "Copied!",
+      socialLabel: "Other communication channels",
+      form: {
+        nameLabel: "Name",
+        emailLabel: "E-mail",
+        messageLabel: "Message",
+        namePlaceholder: "Your name",
+        emailPlaceholder: "you@email.com",
+        messagePlaceholder: "What do you want to discuss?",
+        sendButton: "Send Message",
+        sending: "Sending...",
+        successMessage: "Message sent successfully!",
+        errorMessage: "Error sending. Please try again.",
+      }
+    },
+    footer: {
+      rights: "All rights reserved.",
+      built: "Architected with Next.js & Tailwind"
+    }
   }
 };
