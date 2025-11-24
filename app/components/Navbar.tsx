@@ -37,7 +37,7 @@ export function Navbar() {
           {isHome && (
             <>
               <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-400">
-                <a href="#about" className="hover:text-primary hover:text-glow transition-all">{t.nav.about}</a>
+                <a href="#experience" className="hover:text-primary hover:text-glow transition-all">{t.nav.experience}</a>
                 <a href="#projects" className="hover:text-primary hover:text-glow transition-all">{t.nav.projects}</a>
                 <a href="#contact" className="hover:text-primary hover:text-glow transition-all">{t.nav.contact}</a>
               </div>

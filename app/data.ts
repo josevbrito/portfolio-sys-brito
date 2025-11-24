@@ -1,6 +1,6 @@
 import { Code2, Smartphone, Database, Brain, Layout, BarChart, LucideIcon } from "lucide-react";
 
-// 1. Interfaces
+// --- INTERFACES ---
 export interface LinkItem {
   type: "github" | "live" | "apk" | "lock";
   url: string;
@@ -21,14 +21,24 @@ export interface Project {
   categories: string[];
   status: "Concluído" | "Em andamento" | "Completed" | "In Progress";
   icon: LucideIcon;
+  image?: string;
   stats?: StatItem[];
   links?: LinkItem[];
+}
+
+export interface TimelineItem {
+  date: string;
+  title: string;
+  org: string;
+  desc: string;
+  type: "work" | "education";
 }
 
 interface Content {
   nav: {
     about: string;
     projects: string;
+    experience: string;
     contact: string;
     action: string;
     back: string;
@@ -52,12 +62,18 @@ interface Content {
     filterAll: string;
     filters: string[];
   };
+  experienceSection: {
+    title: string;
+    subtitle: string;
+    viewAll: string;
+  };
   projects: Project[];
+  timeline: TimelineItem[];
   contact: {
     title: string;
     subtitle: string;
-    emailLabel: string;
     email: string;
+    emailLabel: string;
     copyEmail: string;
     copied: string;
     socialLabel: string;
@@ -80,13 +96,14 @@ interface Content {
   };
 }
 
-// 2. Dados (PT e EN)
+// --- DADOS (PT e EN) ---
 export const content: { pt: Content; en: Content } = {
   pt: {
     nav: {
-      about: "/#about",
-      projects: "/projects",
-      contact: "/#contact",
+      about: "Sobre",
+      projects: "Projetos",
+      experience: "Jornada",
+      contact: "Contato",
       action: "INICIAR_IA",
       back: "Voltar",
     },
@@ -107,8 +124,78 @@ export const content: { pt: Content; en: Content } = {
       viewAll: "Ver todos os projetos",
       searchPlaceholder: "Buscar por tecnologia ou nome...",
       filterAll: "Todos",
-      filters: ["Todos", "Full Stack", "Data Science", "Mobile"], 
+      filters: ["Todos", "Full Stack", "Data Science", "Mobile"],
     },
+    experienceSection: {
+      title: "Jornada Profissional",
+      subtitle: "Destaques da minha trajetória acadêmica e corporativa.",
+      viewAll: "Ver jornada completa"
+    },
+    timeline: [
+      {
+        date: "08/2025 - Atual",
+        title: "Engenheiro de Software",
+        org: "Secretaria de Estado da Saúde do Maranhão",
+        desc: "Desenvolvimento de sistemas públicos utilizando Laravel, React e PostgreSQL/MySQL. Auxílio técnico a estagiários.",
+        type: "work"
+      },
+      {
+        date: "04/2025 - Atual",
+        title: "Mestrado em Ciência da Computação",
+        org: "Universidade Federal do Maranhão (UFMA)",
+        desc: "Pesquisa focada em Aprendizado de Máquina e problemas de otimização combinatória e sistemas inteligentes.",
+        type: "education"
+      },
+      {
+        date: "06/2025 - 08/2025",
+        title: "Estagiário de Desenvolvimento e IA",
+        org: "Lab. de Análise de Dados e Inteligência Artificial (UFMA)",
+        desc: "Modernização do Plandox (Monolito p/ Microsserviços) usando Python/FastAPI e implementação de modelos de ML para biodiesel.",
+        type: "work"
+      },
+      {
+        date: "06/2025 - Atual",
+        title: "Pós-Graduação em DevOps",
+        org: "Instituto Federal de Mato Grosso (IFMT)",
+        desc: "Ênfase em CI/CD, automação, infraestrutura como código, Docker e Kubernetes.",
+        type: "education"
+      },
+      {
+        date: "09/2023 - 06/2025",
+        title: "Estagiário Full Stack",
+        org: "Secretaria de Estado da Saúde do Maranhão",
+        desc: "Desenvolvimento e manutenção de softwares de saúde pública usando Laravel, JavaScript, PostgreSQL/MySQL e Python para dados.",
+        type: "work"
+      },
+      {
+        date: "01/2021 - Atual",
+        title: "Bacharelado em Eng. da Computação",
+        org: "Universidade Federal do Maranhão (UFMA)",
+        desc: "Formação sólida em Arquitetura de Computadores, Redes, Banco de Dados e Automação.",
+        type: "education"
+      },
+      {
+        date: "03/2024 - 07/2024",
+        title: "Monitor de Projeto e Desenv. de Software",
+        org: "Universidade Federal do Maranhão (UFMA)",
+        desc: "Mentoria técnica para 27 alunos em engenharia de software, arquitetura de sistemas e metodologias ágeis.",
+        type: "work"
+      },
+      {
+        date: "01/2021 - 09/2024",
+        title: "Bacharelado em Ciência e Tecnologia",
+        org: "Universidade Federal do Maranhão (UFMA)",
+        desc: "Fundamentação multidisciplinar integrando conceitos de matemática, física, computação e estatística. TCC nota 10 (App Hans+).",
+        type: "education"
+      },
+      {
+        date: "05/2023 - 09/2023",
+        title: "Analista de Dados (Aprendiz)",
+        org: "Humana Saúde MA",
+        desc: "Utilização de dashboards Power BI existentes para extração de relatórios de vendas e análise de KPIs.",
+        type: "work"
+      }
+    ],
     projects: [
       {
         slug: "renaveh-ma",
@@ -224,8 +311,8 @@ export const content: { pt: Content; en: Content } = {
   contact: {
       title: "Entre em Contato",
       subtitle: "Quer discutir uma ideia, colaborar em um projeto ou só trocar conhecimentos sobre tecnologia? Fique à vontade para enviar sua mensagem.",
-      emailLabel: "Envie uma mensagem direta",
       email: "contato@josevbrito.com",
+      emailLabel: "Envie uma mensagem direta",
       copyEmail: "Copiar E-mail",
       copied: "Copiado!",
       socialLabel: "Outros canais de comunicação",
@@ -249,9 +336,10 @@ export const content: { pt: Content; en: Content } = {
   },
   en: {
     nav: {
-      about: "/#about",
-      projects: "/projects",
-      contact: "/#contact",
+      about: "About",
+      projects: "Projects",
+      experience: "Journey",
+      contact: "Contact",
       action: "INITIATE_AI",
       back: "Back",
     },
@@ -274,6 +362,76 @@ export const content: { pt: Content; en: Content } = {
       filterAll: "All",
       filters: ["All", "Full Stack", "Data Science", "Mobile"],
     },
+    experienceSection: {
+      title: "Professional Journey",
+      subtitle: "Highlights of my academic and corporate path.",
+      viewAll: "View full journey"
+    },
+    timeline: [
+      {
+        date: "08/2025 - Current",
+        title: "Software Engineer",
+        org: "State Health Secretariat (SES-MA)",
+        desc: "Development of public systems using Laravel, React, and PostgreSQL/MySQL. Mentoring interns.",
+        type: "work"
+      },
+      {
+        date: "04/2025 - Current",
+        title: "M.Sc. in Computer Science",
+        org: "Federal University of Maranhão (UFMA)",
+        desc: "Research focused on Machine Learning and complex combinatorial optimization problems and intelligent systems.",
+        type: "education"
+      },
+      {
+        date: "06/2025 - 08/2025",
+        title: "AI & Software Dev. Intern",
+        org: "Data Analysis and Artificial Intelligence Lab (UFMA)",
+        desc: "Modernizing Plandox (Monolith to Microservices) with Python/FastAPI and implementing ML models for biodiesel.",
+        type: "work"
+      },
+      {
+        date: "06/2025 - Current",
+        title: "Postgrad in DevOps",
+        org: "Federal Institute of Mato Grosso (IFMT)",
+        desc: "Focus on CI/CD, automation, infrastructure as code, Docker, and Kubernetes.",
+        type: "education"
+      },
+      {
+        date: "09/2023 - 06/2025",
+        title: "Full Stack Intern",
+        org: "State Health Secretariat (SES-MA)",
+        desc: "Development and maintenance of public health software using Laravel, JavaScript, PostgreSQL/MySQL, and Python for data.",
+        type: "work"
+      },
+      {
+        date: "01/2021 - Current",
+        title: "B.Sc. Computer Engineering",
+        org: "Federal University of Maranhão (UFMA)",
+        desc: "Solid background in Computer Architecture, Networks, Databases, and Automation.",
+        type: "education"
+      },
+      {
+        date: "03/2024 - 07/2024",
+        title: "Software Dev. Teaching Assistant",
+        org: "Federal University of Maranhão (UFMA)",
+        desc: "Technical mentoring for 27 students in software engineering, system architecture, and agile methodologies.",
+        type: "work"
+      },
+      {
+        date: "01/2021 - 09/2024",
+        title: "B.Sc. Science & Technology",
+        org: "Federal University of Maranhão (UFMA)",
+        desc: "Multidisciplinary foundation integrating Math, Physics, Computing, and Statistics. Grade 10 Thesis (Hans+ App).",
+        type: "education"
+      },
+      {
+        date: "05/2023 - 09/2023",
+        title: "Data Analyst (Apprentice)",
+        org: "Humana Saúde MA",
+        desc: "Using existing Power BI dashboards to extract sales reports and analyze KPIs.",
+        type: "work"
+      }
+    ],
     projects: [
       {
         slug: "renaveh-ma",
@@ -389,8 +547,8 @@ export const content: { pt: Content; en: Content } = {
     contact: {
       title: "Get in Touch",
       subtitle: "Want to discuss an idea, collaborate on a project, or just talk tech? Feel free to send your message.",
-      emailLabel: "Send a direct message",
       email: "contact@josevbrito.com",
+      emailLabel: "Send a direct message",
       copyEmail: "Copy Email",
       copied: "Copied!",
       socialLabel: "Other communication channels",
@@ -413,3 +571,7 @@ export const content: { pt: Content; en: Content } = {
     }
   }
 };
+
+if (content.en.projects.length === 0) {
+    content.en.projects = content.pt.projects;
+}
