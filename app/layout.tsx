@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { LanguageProvider } from "./context/LanguageContext";
 import { Geist, Geist_Mono } from "next/font/google";
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Footer } from "./components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -25,7 +26,8 @@ export default function RootLayout({
         <LanguageProvider>
           {children}
           <Footer />
-          <SpeedInsights />
+          <SpeedInsights /> {/* Análise de Performance Vercel */}
+          <Analytics />  {/* Vercel Analytics */}
         </LanguageProvider>
       </body>
     </html>
