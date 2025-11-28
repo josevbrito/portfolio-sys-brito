@@ -21,7 +21,7 @@ export interface Project {
   categories: string[];
   status: "Concluído" | "Em andamento" | "Completed" | "In Progress";
   icon: LucideIcon;
-  image?: string;
+  images?: string[];
   stats?: StatItem[];
   links?: LinkItem[];
 }
@@ -124,7 +124,7 @@ export const content: { pt: Content; en: Content } = {
       viewAll: "Ver todos os projetos",
       searchPlaceholder: "Buscar por tecnologia ou nome...",
       filterAll: "Todos",
-      filters: ["Todos", "Full Stack", "Data Science", "Mobile"],
+      filters: ["Todos", "Full Stack", "Data Science / AI", "Mobile"],
     },
     experienceSection: {
       title: "Jornada Profissional",
@@ -198,22 +198,16 @@ export const content: { pt: Content; en: Content } = {
     ],
     projects: [
       {
-        slug: "renaveh-ma",
-        title: "Sistema de Notificação Hospitalar (RENAVEH)",
-        shortDesc: "Sistema robusto em Laravel/MySQL com 2FA e RBAC. Processa 50k registros e atende 98 hospitais.",
-        fullDesc: "O RENAVEH-MA (Sistema de Informação da Rede Nacional de Vigilância Epidemiológica Hospitalar) foi implantado como subsistema estratégico. Ele não se limita a notificações compulsórias, mas objetiva a detecção e resposta imediata a Emergências de Saúde Pública (ESP). O sistema conta com controle de acesso rigoroso (RBAC) e autenticação de dois fatores (2FA).",
-        tags: ["Laravel", "MySQL", "JavaScript"],
-        categories: ["Full Stack"],
+        slug: "food-review-agent",
+        title: "FoodReview Insights Agent",
+        shortDesc: "Agente Autônomo de IA que analisa reviews de delivery usando RAG e LangChain.",
+        fullDesc: "Sistema inteligente que permite a donos de restaurantes 'conversarem' com suas avaliações. Utiliza arquitetura RAG (Retrieval-Augmented Generation) com LangChain e OpenAI para extrair insights estratégicos, calcular métricas de satisfação e identificar padrões de sentimento em tempo real. Backend em Python (FastAPI) e interface moderna em Next.js.",
+        tags: ["Python", "LangChain", "RAG", "LLM", "FastAPI"],
+        categories: ["Data Science / AI", "Full Stack"],
         status: "Concluído",
-        icon: Database,
-        stats: [
-          { label: "Registros", value: "+50k" },
-          { label: "Hospitais", value: "98" },
-          { label: "Impacto", value: "Estadual" }
-        ],
+        icon: Brain,
         links: [
-          { type: "live", url: "https://renaveh.saude.ma.gov.br/" },
-          { type: "lock", url: "#", label: "Código Confidencial" }
+          { type: "github", url: "https://github.com/josevbrito/food-review-agent" }
         ]
       },
       {
@@ -241,11 +235,30 @@ export const content: { pt: Content; en: Content } = {
         shortDesc: "Modernização de legado para microsserviços com IA para controle de qualidade.",
         fullDesc: "Migração de arquitetura monolítica para microsserviços. Utiliza modelos de ML para predição de qualidade de biodiesel via Design of Experiments (DoE).",
         tags: ["React Native", "FastAPI", "Microservices", "Python"],
-        categories: ["Mobile", "Full Stack", "Data Science"],
+        categories: ["Mobile", "Full Stack", "Data Science / AI"],
         status: "Em andamento",
         icon: Code2,
         links: [
           { type: "lock", url: "#", label: "Código Privado" }
+        ]
+      },
+      {
+        slug: "renaveh-ma",
+        title: "Sistema de Notificação Hospitalar (RENAVEH)",
+        shortDesc: "Sistema robusto em Laravel/MySQL com 2FA e RBAC. Processa 50k registros e atende 98 hospitais.",
+        fullDesc: "O RENAVEH-MA (Sistema de Informação da Rede Nacional de Vigilância Epidemiológica Hospitalar) foi implantado como subsistema estratégico. Ele não se limita a notificações compulsórias, mas objetiva a detecção e resposta imediata a Emergências de Saúde Pública (ESP). O sistema conta com controle de acesso rigoroso (RBAC) e autenticação de dois fatores (2FA).",
+        tags: ["Laravel", "MySQL", "JavaScript"],
+        categories: ["Full Stack"],
+        status: "Concluído",
+        icon: Database,
+        stats: [
+          { label: "Registros", value: "+50k" },
+          { label: "Hospitais", value: "98" },
+          { label: "Impacto", value: "Estadual" }
+        ],
+        links: [
+          { type: "live", url: "https://renaveh.saude.ma.gov.br/" },
+          { type: "lock", url: "#", label: "Código Confidencial" }
         ]
       },
       {
@@ -254,7 +267,7 @@ export const content: { pt: Content; en: Content } = {
         shortDesc: "Pipeline completo de Machine Learning para classificar clientes em 5 clusters estratégicos.",
         fullDesc: "Sistema desenvolvido em Python utilizando análise RFM (Recency, Frequency, Monetary) com Machine Learning. Classifica clientes em grupos como 'Super Campeões', 'Em Risco' e 'VIPs' para estratégias de marketing direcionadas. Inclui interface web em Flask.",
         tags: ["Python", "Machine Learning", "Scikit-learn", "Flask"],
-        categories: ["Data Science"],
+        categories: ["Data Science / AI"],
         status: "Concluído",
         icon: Brain,
         stats: [
@@ -268,7 +281,7 @@ export const content: { pt: Content; en: Content } = {
       },
       {
         slug: "monitora-saude",
-        title: "Monitora Saúde (BI)",
+        title: "Monitora Saúde",
         shortDesc: "Plataforma de transparência com mais de 50 dashboards interativos em Power BI.",
         fullDesc: "Portal de Transparência de Saúde do Maranhão. Ferramenta vital para gestores e população, permitindo monitoramento de indicadores de saúde e processos em tempo real para suporte à tomada de decisão.",
         tags: ["Power BI", "Laravel", "PostgreSQL"],
@@ -300,7 +313,7 @@ export const content: { pt: Content; en: Content } = {
         shortDesc: "Pipeline de ML para predição de preços imobiliários com otimização de hiperparâmetros.",
         fullDesc: "Desenvolvimento de sistema completo de predição. Inclui comparação de algoritmos, pré-processamento, validação de modelos e métricas de performance.",
         tags: ["Python", "ML Pipeline", "Pandas"],
-        categories: ["Data Science"],
+        categories: ["Data Science / AI"],
         status: "Concluído",
         icon: Code2,
         links: [
@@ -360,7 +373,7 @@ export const content: { pt: Content; en: Content } = {
       viewAll: "View all projects",
       searchPlaceholder: "Search by tech or name...",
       filterAll: "All",
-      filters: ["All", "Full Stack", "Data Science", "Mobile"],
+      filters: ["All", "Full Stack", "Data Science / AI", "Mobile"],
     },
     experienceSection: {
       title: "Professional Journey",
@@ -434,22 +447,16 @@ export const content: { pt: Content; en: Content } = {
     ],
     projects: [
       {
-        slug: "renaveh-ma",
-        title: "Hospital Notification System (RENAVEH)",
-        shortDesc: "Robust Laravel/MySQL system with 2FA and RBAC. Processes 50k records and serves 98 hospitals.",
-        fullDesc: "RENAVEH-MA (National Hospital Epidemiological Surveillance System Information - Maranhão) was implemented as a strategic subsystem. It is not limited to compulsory notifications but aims at the detection and immediate response to Public Health Emergencies (PHE). The system features strict access control (RBAC) and two-factor authentication (2FA).",
-        tags: ["Laravel", "MySQL", "JavaScript"],
-        categories: ["Full Stack"],
+        slug: "food-review-agent",
+        title: "FoodReview Insights Agent",
+        shortDesc: "Autonomous AI Agent analyzing delivery reviews using RAG and LangChain.",
+        fullDesc: "Intelligent system allowing restaurant owners to 'chat' with their reviews. Uses RAG (Retrieval-Augmented Generation) architecture with LangChain and OpenAI to extract strategic insights, calculate satisfaction metrics, and identify sentiment patterns in real-time. Python (FastAPI) Backend and modern Next.js Frontend.",
+        tags: ["Python", "LangChain", "RAG", "LLM", "FastAPI"],
+        categories: ["Data Science / AI", "Full Stack"],
         status: "Completed",
-        icon: Database,
-        stats: [
-          { label: "Records", value: "+50k" },
-          { label: "Hospitals", value: "98" },
-          { label: "Impact", value: "Statewide" }
-        ],
+        icon: Brain,
         links: [
-          { type: "live", url: "https://renaveh.saude.ma.gov.br/" },
-          { type: "lock", url: "#", label: "Confidential Code" }
+          { type: "github", url: "https://github.com/josevbrito/food-review-agent" }
         ]
       },
       {
@@ -477,11 +484,30 @@ export const content: { pt: Content; en: Content } = {
         shortDesc: "Modernization from legacy to microservices with AI for quality control.",
         fullDesc: "Migration from monolithic architecture to microservices. Uses ML models for biodiesel quality prediction via Design of Experiments (DoE).",
         tags: ["React Native", "FastAPI", "Microservices", "Python"],
-        categories: ["Mobile", "Full Stack", "Data Science"],
+        categories: ["Mobile", "Full Stack", "Data Science / AI"],
         status: "In Progress",
         icon: Code2,
         links: [
           { type: "lock", url: "#", label: "Private Code" }
+        ]
+      },
+      {
+        slug: "renaveh-ma",
+        title: "Hospital Notification System (RENAVEH)",
+        shortDesc: "Robust Laravel/MySQL system with 2FA and RBAC. Processes 50k records and serves 98 hospitals.",
+        fullDesc: "RENAVEH-MA (National Hospital Epidemiological Surveillance System Information - Maranhão) was implemented as a strategic subsystem. It is not limited to compulsory notifications but aims at the detection and immediate response to Public Health Emergencies (PHE). The system features strict access control (RBAC) and two-factor authentication (2FA).",
+        tags: ["Laravel", "MySQL", "JavaScript"],
+        categories: ["Full Stack"],
+        status: "Completed",
+        icon: Database,
+        stats: [
+          { label: "Records", value: "+50k" },
+          { label: "Hospitals", value: "98" },
+          { label: "Impact", value: "Statewide" }
+        ],
+        links: [
+          { type: "live", url: "https://renaveh.saude.ma.gov.br/" },
+          { type: "lock", url: "#", label: "Confidential Code" }
         ]
       },
       {
@@ -490,7 +516,7 @@ export const content: { pt: Content; en: Content } = {
         shortDesc: "Complete Machine Learning pipeline to classify customers into 5 strategic clusters.",
         fullDesc: "System developed in Python using RFM analysis (Recency, Frequency, Monetary) with Machine Learning. Classifies customers into groups such as 'Champions', 'At Risk', and 'VIPs' for targeted marketing strategies. Includes a Flask web interface.",
         tags: ["Python", "Machine Learning", "Scikit-learn", "Flask"],
-        categories: ["Data Science"],
+        categories: ["Data Science / AI"],
         status: "Completed",
         icon: Brain,
         stats: [
@@ -504,7 +530,7 @@ export const content: { pt: Content; en: Content } = {
       },
       {
         slug: "monitora-saude",
-        title: "Health Monitor (BI)",
+        title: "Health Monitor",
         shortDesc: "Transparency platform with over 50 interactive Power BI dashboards.",
         fullDesc: "Maranhão Health Transparency Portal. A vital tool for managers and the population, allowing real-time monitoring of health indicators and processes to support decision-making.",
         tags: ["Power BI", "Laravel", "PostgreSQL"],
@@ -536,7 +562,7 @@ export const content: { pt: Content; en: Content } = {
         shortDesc: "ML pipeline for real estate price prediction with hyperparameter optimization.",
         fullDesc: "Development of a complete prediction system. Includes algorithm comparison, pre-processing, model validation, and performance metrics.",
         tags: ["Python", "ML Pipeline", "Pandas"],
-        categories: ["Data Science"],
+        categories: ["Data Science / AI"],
         status: "Completed",
         icon: Code2,
         links: [
