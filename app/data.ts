@@ -110,7 +110,7 @@ export const content: { pt: Content; en: Content } = {
     hero: {
       status: "SISTEMA ONLINE",
       greeting: "Olá, eu sou",
-      name: "José Brito.",
+      name: "José Brito",
       role: "Engenheiro de Software & Cientista de Dados",
       description: "Especialista em transformar dados complexos em aplicações robustas. Foco em arquiteturas escaláveis, Full Stack (Laravel/Next.js) e Inteligência Artificial aplicada.",
       current_focus: "Foco atual",
@@ -359,7 +359,7 @@ export const content: { pt: Content; en: Content } = {
     hero: {
       status: "SYSTEM ONLINE",
       greeting: "Hello, I am",
-      name: "José Brito.",
+      name: "José Brito",
       role: "Software Engineer & Data Scientist",
       description: "Specialist in transforming complex data into robust applications. Focused on scalable architectures, Full Stack (Laravel/Next.js), and applied Artificial Intelligence.",
       current_focus: "Current Focus",

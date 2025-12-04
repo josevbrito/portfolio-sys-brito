@@ -50,3 +50,33 @@ body {
     background: radial-gradient(circle at 50% 0%, #001a10 0%, #050505 70%);
   }
 }
+
+/* 5. Acessibilidade e Performance */
+/* Desativa as animações pesadas se o usuário preferir ou estiver em dispositivo lento */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Otimização Mobile: Reduz a complexidade de sombras e blur */
+@media (max-width: 768px) {
+  .text-glow {
+    text-shadow: none; /* Remove sombra de texto pesada no mobile */
+    color: var(--primary);
+  }
+  
+  .border-glow {
+    box-shadow: none; /* Remove sombra de caixa pesada */
+    border-color: var(--primary);
+  }
+  
+  /* Remove o efeito de vidro pesado no mobile, usa cor sólida transparente */
+  .backdrop-blur-md {
+    backdrop-filter: none;
+    background-color: rgba(5, 5, 5, 0.95);
+  }
+}

@@ -1,4 +1,4 @@
-"use client";
+  "use client";
 
 import { motion } from "framer-motion";
 import { Code2, Github, Linkedin, Mail } from "lucide-react";
@@ -10,20 +10,19 @@ export function Hero() {
   return (
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 pt-36 pb-20 px-6">
       {/* Lado Esquerdo: Texto */}
-      <motion.div 
-        key={lang}
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        className="flex-1 space-y-8"
-      >
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/20 text-primary text-xs font-mono tracking-wider">
+      <div className="flex-1 space-y-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/20 text-primary text-xs font-mono tracking-wider"
+        >
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
           </span>
-          {t.hero.status}
-        </div>
+           {t.hero.status}
+        </motion.div>
 
         <div className="space-y-2">
           <h2 className="text-xl text-gray-400 font-mono">{t.hero.greeting}</h2>
@@ -35,10 +34,14 @@ export function Hero() {
           </h3>
         </div>
         
-        <p className="text-lg text-gray-400 max-w-lg leading-relaxed">
+        <motion.p 
+           initial={{ opacity: 0 }}
+           animate={{ opacity: 1 }}
+           transition={{ delay: 0.2 }}
+           className="text-lg text-gray-400 max-w-lg leading-relaxed"
+        >
           {t.hero.description}
-        </p>
-
+        </motion.p>
         <div className="flex items-center gap-4 pt-2 text-gray-500">
           <Code2 size={24} className="text-primary/80" />
           <div className="h-1 w-1 bg-gray-700 rounded-full"></div>
@@ -58,7 +61,7 @@ export function Hero() {
             <Mail size={20} />
           </a>
         </div>
-      </motion.div>
+      </div>
 
       {/* Lado Direito: Terminal Interativo */}
       <motion.div 

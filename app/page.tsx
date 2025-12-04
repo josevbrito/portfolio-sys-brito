@@ -1,8 +1,19 @@
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/sections/Hero";
-import { ExperienceSection } from "./components/sections/ExperienceSection";
-import { ProjectsSection } from "./components/sections/ProjectsSection";
-import { ContactSection } from "./components/sections/ContactSection";
+import dynamic from "next/dynamic";
+
+// Lazy loaded sections with loading placeholders
+const ExperienceSection = dynamic(() => import("./components/sections/ExperienceSection").then(mod => mod.ExperienceSection), {
+  loading: () => <div className="h-96 bg-black/50 animate-pulse" />
+});
+
+const ProjectsSection = dynamic(() => import("./components/sections/ProjectsSection").then(mod => mod.ProjectsSection), {
+  loading: () => <div className="h-96 bg-black/50 animate-pulse" />
+});
+
+const ContactSection = dynamic(() => import("./components/sections/ContactSection").then(mod => mod.ContactSection), {
+  loading: () => <div className="h-96 bg-black/50 animate-pulse" />
+});
 
 export default function Home() {
   return (
