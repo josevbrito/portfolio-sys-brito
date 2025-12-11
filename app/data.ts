@@ -148,7 +148,7 @@ export const content: { pt: Content; en: Content } = {
       },
       {
         date: "06/2025 - 08/2025",
-        title: "Estagiário de Desenvolvimento e IA",
+        title: "Engenheiro de Software e IA",
         org: "Lab. de Análise de Dados e Inteligência Artificial (UFMA)",
         desc: "Modernização do Plandox (Monolito p/ Microsserviços) usando Python/FastAPI e implementação de modelos de ML para biodiesel.",
         type: "work"
@@ -162,17 +162,10 @@ export const content: { pt: Content; en: Content } = {
       },
       {
         date: "09/2023 - 06/2025",
-        title: "Estagiário Full Stack",
+        title: "Engenheiro de Software Junior",
         org: "Secretaria de Estado da Saúde do Maranhão",
         desc: "Desenvolvimento e manutenção de softwares de saúde pública usando Laravel, JavaScript, PostgreSQL/MySQL e Python para dados.",
         type: "work"
-      },
-      {
-        date: "01/2021 - Atual",
-        title: "Bacharelado em Eng. da Computação",
-        org: "Universidade Federal do Maranhão (UFMA)",
-        desc: "Formação sólida em Arquitetura de Computadores, Redes, Banco de Dados e Automação.",
-        type: "education"
       },
       {
         date: "03/2024 - 07/2024",
@@ -190,7 +183,7 @@ export const content: { pt: Content; en: Content } = {
       },
       {
         date: "05/2023 - 09/2023",
-        title: "Analista de Dados (Aprendiz)",
+        title: "Analista de Dados",
         org: "Humana Saúde MA",
         desc: "Utilização de dashboards Power BI existentes para extração de relatórios de vendas e análise de KPIs.",
         type: "work"
@@ -397,7 +390,7 @@ export const content: { pt: Content; en: Content } = {
       },
       {
         date: "06/2025 - 08/2025",
-        title: "AI & Software Dev. Intern",
+        title: "AI & Software Engineer",
         org: "Data Analysis and Artificial Intelligence Lab (UFMA)",
         desc: "Modernizing Plandox (Monolith to Microservices) with Python/FastAPI and implementing ML models for biodiesel.",
         type: "work"
@@ -411,17 +404,10 @@ export const content: { pt: Content; en: Content } = {
       },
       {
         date: "09/2023 - 06/2025",
-        title: "Full Stack Intern",
+        title: "Junior Software Engineer",
         org: "State Health Secretariat (SES-MA)",
         desc: "Development and maintenance of public health software using Laravel, JavaScript, PostgreSQL/MySQL, and Python for data.",
         type: "work"
-      },
-      {
-        date: "01/2021 - Current",
-        title: "B.Sc. Computer Engineering",
-        org: "Federal University of Maranhão (UFMA)",
-        desc: "Solid background in Computer Architecture, Networks, Databases, and Automation.",
-        type: "education"
       },
       {
         date: "03/2024 - 07/2024",
@@ -439,7 +425,7 @@ export const content: { pt: Content; en: Content } = {
       },
       {
         date: "05/2023 - 09/2023",
-        title: "Data Analyst (Apprentice)",
+        title: "Data Analyst",
         org: "Humana Saúde MA",
         desc: "Using existing Power BI dashboards to extract sales reports and analyze KPIs.",
         type: "work"
