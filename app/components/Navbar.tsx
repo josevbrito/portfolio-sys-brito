@@ -49,21 +49,17 @@ export function Navbar() {
           {/* TOGGLE DE IDIOMA */}
           <button 
             onClick={toggleLanguage}
-            className="flex items-center gap-2 text-xs font-mono border border-white/10 bg-white/5 px-3 py-1.5 rounded hover:border-primary/50 hover:text-primary transition-all group"
+            className="flex items-center gap-2 text-xs font-mono border border-white/10 bg-white/5 px-3 py-1.5 rounded hover:border-primary/50 hover:text-primary transition-all"
             aria-label="Alterar idioma"
           >
             {lang === "pt" ? (
               <>
-                <span className="text-sm leading-none grayscale group-hover:grayscale-0 transition-all">
-                  {languageOptions.en.flag}
-                </span>
+                <span className="text-sm leading-none">{languageOptions.en.flag}</span>
                 <span>{languageOptions.en.label}</span>
               </>
             ) : (
               <>
-                <span className="text-sm leading-none grayscale group-hover:grayscale-0 transition-all">
-                  {languageOptions.pt.flag}
-                </span>
+                <span className="text-sm leading-none">{languageOptions.pt.flag}</span>
                 <span>{languageOptions.pt.label}</span>
               </>
             )}

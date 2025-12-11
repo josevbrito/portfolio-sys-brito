@@ -8,7 +8,7 @@ import { Navbar } from "../components/Navbar";
 
 export default function ExperiencePage() {
   const { t, lang } = useLanguage();
-  const [filter, setFilter] = useState<"all" | "work" | "education">("all");
+  const [filter, setFilter] = useState<"all" | "work" | "education">("work");
 
   const filteredTimeline = t.timeline.filter(item => 
     filter === "all" ? true : item.type === filter
@@ -35,9 +35,9 @@ export default function ExperiencePage() {
           {/* Filtros */}
           <div className="flex p-1 bg-white/5 rounded-lg border border-white/10">
             {[
-              { id: "all", label: lang === "pt" ? "Todos" : "All" },
               { id: "work", label: lang === "pt" ? "Profissional" : "Work" },
-              { id: "education", label: lang === "pt" ? "Acadêmico" : "Education" }
+              { id: "education", label: lang === "pt" ? "Acadêmico" : "Education" },
+              { id: "all", label: lang === "pt" ? "Todos" : "All" },
             ].map((btn) => (
               <button
                 key={btn.id}
