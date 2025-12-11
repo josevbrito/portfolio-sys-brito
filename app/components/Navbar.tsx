@@ -4,6 +4,7 @@ import { Terminal, Globe, ChevronRight, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "../context/LanguageContext";
 import { usePathname } from "next/navigation";
+import { languageOptions } from "../data";
 
 export function Navbar() {
   const { t, lang, toggleLanguage } = useLanguage();
@@ -48,17 +49,31 @@ export function Navbar() {
           {/* TOGGLE DE IDIOMA */}
           <button 
             onClick={toggleLanguage}
-            className="flex items-center gap-2 text-xs font-mono border border-white/10 bg-white/5 px-3 py-1.5 rounded hover:border-primary/50 hover:text-primary transition-all"
+            className="flex items-center gap-2 text-xs font-mono border border-white/10 bg-white/5 px-3 py-1.5 rounded hover:border-primary/50 hover:text-primary transition-all group"
+            aria-label="Alterar idioma"
           >
-            <Globe size={12} />
-            <span>{lang === "pt" ? "EN" : "PT-BR"}</span>
+            {lang === "pt" ? (
+              <>
+                <span className="text-sm leading-none grayscale group-hover:grayscale-0 transition-all">
+                  {languageOptions.en.flag}
+                </span>
+                <span>{languageOptions.en.label}</span>
+              </>
+            ) : (
+              <>
+                <span className="text-sm leading-none grayscale group-hover:grayscale-0 transition-all">
+                  {languageOptions.pt.flag}
+                </span>
+                <span>{languageOptions.pt.label}</span>
+              </>
+            )}
           </button>
 
           {/* Botão de Ação */}
-          <button className="hidden md:flex items-center gap-2 px-4 py-2 bg-surface border border-white/10 rounded hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all group">
+          {/* <button className="hidden md:flex items-center gap-2 px-4 py-2 bg-surface border border-white/10 rounded hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all group">
             <span className="text-xs font-mono tracking-wide">{t.nav.action}</span>
             <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
-          </button>
+          </button> */}
         </div>
       </div>
     </nav>

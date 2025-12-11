@@ -12,6 +12,12 @@ export interface StatItem {
   value: string;
 }
 
+export interface LanguageOption {
+  id: "pt" | "en";
+  label: string;
+  flag: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -587,3 +593,17 @@ export const content: { pt: Content; en: Content } = {
 if (content.en.projects.length === 0) {
     content.en.projects = content.pt.projects;
 }
+
+// --- CONFIGURAÇÕES GLOBAIS ---
+export const languageOptions: Record<"pt" | "en", LanguageOption> = {
+  pt: {
+    id: "pt",
+    label: "PT-BR",
+    flag: "🇧🇷",
+  },
+  en: {
+    id: "en",
+    label: "EN",
+    flag: "🇺🇸",
+  }
+};
