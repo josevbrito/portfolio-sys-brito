@@ -1,23 +1,24 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
-import { content } from "../data";
+import { NextIntlClientProvider } from "next-intl";
+import ptMessages from "../../messages/pt.json";
+import enMessages from "../../messages/en.json";
 
 type Language = "pt" | "en";
-type ContentType = typeof content.pt;
 
 interface LanguageContextType {
   lang: Language;
   toggleLanguage: () => void;
-  t: ContentType;
 }
+
+const messages = { pt: ptMessages, en: enMessages };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Language>("pt");
 
-  // Tenta recuperar a escolha do usuário do LocalStorage ao iniciar
   useEffect(() => {
     const savedLang = localStorage.getItem("portfolio-lang") as Language;
     if (savedLang) {
@@ -28,12 +29,14 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const toggleLanguage = () => {
     const newLang = lang === "pt" ? "en" : "pt";
     setLang(newLang);
-    localStorage.setItem("portfolio-lang", newLang); // Salva a escolha
+    localStorage.setItem("portfolio-lang", newLang);
   };
 
   return (
-    <LanguageContext.Provider value={{ lang, toggleLanguage, t: content[lang] }}>
-      {children}
+    <LanguageContext.Provider value={{ lang, toggleLanguage }}>
+      <NextIntlClientProvider locale={lang} messages={messages[lang]}>
+        {children}
+      </NextIntlClientProvider>
     </LanguageContext.Provider>
   );
 }

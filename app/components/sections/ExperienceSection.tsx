@@ -2,10 +2,15 @@
 
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useLanguage } from "../../context/LanguageContext";
+import { getTimeline } from "../../data/timeline";
+import type { TimelineItem } from "../../types";
 
 export function ExperienceSection() {
-  const { t } = useLanguage();
+  const t = useTranslations("experienceSection");
+  const { lang } = useLanguage();
+  const timeline = getTimeline(lang);
 
   return (
     <section id="experience" className="py-24 px-6 relative overflow-hidden border-t border-white/5">
@@ -14,7 +19,7 @@ export function ExperienceSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -22,22 +27,22 @@ export function ExperienceSection() {
         >
           <div>
             <h2 className="text-3xl font-bold text-white flex items-center gap-3">
-              <span className="text-primary">/</span> {t.experienceSection.title}
+              <span className="text-primary">/</span> {t("title")}
             </h2>
             <p className="text-gray-400 mt-2 font-mono text-sm">
-              {t.experienceSection.subtitle}
+              {t("subtitle")}
             </p>
           </div>
-          
+
           <a href="/experience" className="hidden md:flex items-center gap-2 text-primary hover:text-white transition-colors font-mono text-sm group">
-            {t.experienceSection.viewAll}
+            {t("viewAll")}
             <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </a>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {t.timeline.slice(0, 3).map((item: any, index: number) => (
-            <motion.div 
+          {timeline.slice(0, 3).map((item: TimelineItem, index: number) => (
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -46,7 +51,7 @@ export function ExperienceSection() {
               className="group relative bg-[#0a0a0a] border border-white/10 p-6 rounded-xl hover:border-primary/50 hover:bg-white/5 transition-all flex flex-col justify-between h-full"
             >
               <div className="absolute top-0 right-0 p-2 opacity-20 group-hover:opacity-100 transition-opacity">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
               </div>
 
               <div>
@@ -54,7 +59,7 @@ export function ExperienceSection() {
                   <span className="w-2 h-2 bg-primary/50 rounded-sm"></span>
                   {item.date}
                 </div>
-                
+
                 <h3 className="text-lg font-bold text-white mb-1 group-hover:text-primary transition-colors">
                   {item.title}
                 </h3>
@@ -69,11 +74,11 @@ export function ExperienceSection() {
         </div>
 
         <div className="mt-8 md:hidden flex justify-center">
-          <a 
-            href="/experience" 
+          <a
+            href="/experience"
             className="flex items-center gap-2 px-6 py-3 bg-surface border border-white/10 rounded hover:border-primary/50 text-white transition-all w-full justify-center"
           >
-            {t.experienceSection.viewAll}
+            {t("viewAll")}
             <ChevronRight size={16} />
           </a>
         </div>

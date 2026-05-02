@@ -1,16 +1,16 @@
 "use client";
 
 import { Terminal, Github, Linkedin, Mail } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
+import { useTranslations } from "next-intl";
 
 export function Footer() {
-  const { t } = useLanguage();
+  const t = useTranslations("footer");
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="border-t border-white/10 bg-[#050505] pt-12 pb-8 px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-        
+
         {/* Lado Esquerdo: Marca e Copyright */}
         <div className="flex flex-col items-center md:items-start gap-2">
           <div className="flex items-center gap-2 font-mono text-gray-400 text-sm">
@@ -18,7 +18,7 @@ export function Footer() {
             <span>sys.brito</span>
           </div>
           <p className="text-xs text-gray-600 font-mono">
-            © {currentYear} José Brito. {t.footer.rights}
+            © {currentYear} José Brito. {t("rights")}
           </p>
         </div>
 
@@ -36,7 +36,7 @@ export function Footer() {
             </a>
           </div>
           <p className="text-[10px] text-gray-700 font-mono">
-            {t.footer.built}
+            {t("built")}
           </p>
         </div>
 

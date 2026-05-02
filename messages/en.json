@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Journey",
+    "contact": "Contact",
+    "action": "INITIATE_AI",
+    "back": "Back"
+  },
+  "hero": {
+    "status": "SYSTEM ONLINE",
+    "greeting": "Hello, I am",
+    "name": "José Brito",
+    "role": "Software Engineer & Data Scientist",
+    "description": "Specialist in transforming complex data into robust applications. Focused on scalable architectures, Full Stack (Laravel/Next.js), and applied Artificial Intelligence.",
+    "current_focus": "Current Focus",
+    "focus_list": ["High Scale Systems", "AI Agents", "Data Science"],
+    "terminal_desc": "Full Stack Developer passionate about innovation in public and private sectors.",
+    "skills": ["Next.js", "Laravel", "Python (AI)", "PostgreSQL"]
+  },
+  "projectsSection": {
+    "title": "Featured Projects",
+    "subtitle": "A selection of high-impact applications and AI models.",
+    "viewAll": "View all projects",
+    "searchPlaceholder": "Search by tech or name...",
+    "filterAll": "All",
+    "filters": ["All", "Full Stack", "Data Science / AI", "Mobile"]
+  },
+  "experienceSection": {
+    "title": "Professional Journey",
+    "subtitle": "Highlights of my academic and corporate path.",
+    "viewAll": "View full journey"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Want to discuss an idea, collaborate on a project, or just talk tech? Feel free to send your message.",
+    "email": "contact@josevbrito.com",
+    "emailLabel": "Send a direct message",
+    "copyEmail": "Copy Email",
+    "copied": "Copied!",
+    "socialLabel": "Other communication channels",
+    "form": {
+      "nameLabel": "Name",
+      "emailLabel": "E-mail",
+      "messageLabel": "Message",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "you@email.com",
+      "messagePlaceholder": "What do you want to discuss?",
+      "sendButton": "Send Message",
+      "sending": "Sending...",
+      "successMessage": "Message sent successfully!",
+      "errorMessage": "Error sending. Please try again."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "built": "Architected with Next.js & Tailwind"
+  },
+  "common": {
+    "projectNotFound": "Project not found.",
+    "inDevelopment": "In Development",
+    "gallery": "Project image gallery",
+    "comingSoon": "Coming soon",
+    "techStack": "Tech Stack",
+    "impactStats": "Impact & Stats",
+    "noPublicLinks": "No public links available",
+    "repository": "Repository",
+    "accessProject": "Access Project",
+    "filterWork": "Work",
+    "filterEducation": "Education",
+    "filterAll": "All"
+  }
+}

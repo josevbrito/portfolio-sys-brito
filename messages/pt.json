@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "projects": "Projetos",
+    "experience": "Jornada",
+    "contact": "Contato",
+    "action": "INICIAR_IA",
+    "back": "Voltar"
+  },
+  "hero": {
+    "status": "SISTEMA ONLINE",
+    "greeting": "Olá, eu sou",
+    "name": "José Brito",
+    "role": "Engenheiro de Software & Cientista de Dados",
+    "description": "Especialista em transformar dados complexos em aplicações robustas. Foco em arquiteturas escaláveis, Full Stack (Laravel/Next.js) e Inteligência Artificial aplicada.",
+    "current_focus": "Foco atual",
+    "focus_list": ["Sistemas de Alta Escala", "Agentes de IA", "Ciência de Dados"],
+    "terminal_desc": "Desenvolvedor Full Stack apaixonado por inovação no setor público e privado.",
+    "skills": ["Next.js", "Laravel", "Python (AI)", "PostgreSQL"]
+  },
+  "projectsSection": {
+    "title": "Projetos em Destaque",
+    "subtitle": "Uma seleção de aplicações de alto impacto e modelos de IA.",
+    "viewAll": "Ver todos os projetos",
+    "searchPlaceholder": "Buscar por tecnologia ou nome...",
+    "filterAll": "Todos",
+    "filters": ["Todos", "Full Stack", "Data Science / AI", "Mobile"]
+  },
+  "experienceSection": {
+    "title": "Jornada Profissional",
+    "subtitle": "Destaques da minha trajetória acadêmica e corporativa.",
+    "viewAll": "Ver jornada completa"
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "subtitle": "Quer discutir uma ideia, colaborar em um projeto ou só trocar conhecimentos sobre tecnologia? Fique à vontade para enviar sua mensagem.",
+    "email": "contato@josevbrito.com",
+    "emailLabel": "Envie uma mensagem direta",
+    "copyEmail": "Copiar E-mail",
+    "copied": "Copiado!",
+    "socialLabel": "Outros canais de comunicação",
+    "form": {
+      "nameLabel": "Nome",
+      "emailLabel": "E-mail",
+      "messageLabel": "Mensagem",
+      "namePlaceholder": "Seu nome",
+      "emailPlaceholder": "seu@email.com",
+      "messagePlaceholder": "Sobre o que você quer conversar?",
+      "sendButton": "Enviar Mensagem",
+      "sending": "Enviando...",
+      "successMessage": "Mensagem enviada com sucesso!",
+      "errorMessage": "Erro ao enviar. Tente novamente."
+    }
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados.",
+    "built": "Arquitetado com Next.js & Tailwind"
+  },
+  "common": {
+    "projectNotFound": "Projeto não encontrado.",
+    "inDevelopment": "Em Desenvolvimento",
+    "gallery": "Galeria de imagens do projeto",
+    "comingSoon": "Em breve",
+    "techStack": "Stack Tecnológico",
+    "impactStats": "Impacto & Dados",
+    "noPublicLinks": "Sem links públicos disponíveis",
+    "repository": "Repositório",
+    "accessProject": "Acessar Projeto",
+    "filterWork": "Profissional",
+    "filterEducation": "Acadêmico",
+    "filterAll": "Todos"
+  }
+}

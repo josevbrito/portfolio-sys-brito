@@ -2,16 +2,20 @@
 
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useLanguage } from "../../context/LanguageContext";
-import { Project } from "../../data";
+import { getProjects } from "../../data/projects";
+import type { Project } from "../../types";
 
 export function ProjectsSection() {
-  const { t } = useLanguage();
+  const t = useTranslations("projectsSection");
+  const { lang } = useLanguage();
+  const projects = getProjects(lang);
 
   return (
     <section id="projects" className="py-20 px-6 bg-surface/30 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -19,20 +23,20 @@ export function ProjectsSection() {
         >
           <div>
             <h2 className="text-3xl font-bold text-white flex items-center gap-3">
-              <span className="text-primary">/</span> {t.projectsSection.title}
+              <span className="text-primary">/</span> {t("title")}
             </h2>
             <p className="text-gray-400 mt-2 font-mono text-sm">
-              {t.projectsSection.subtitle}
+              {t("subtitle")}
             </p>
           </div>
           <a href="/projects" className="hidden md:flex items-center gap-2 text-primary hover:text-white transition-colors font-mono text-sm group">
-            {t.projectsSection.viewAll}
+            {t("viewAll")}
             <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </a>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {t.projects.slice(0, 3).map((project: Project, index: number) => (
+          {projects.slice(0, 3).map((project: Project, index: number) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -75,8 +79,8 @@ export function ProjectsSection() {
         </div>
 
         <div className="mt-8 md:hidden flex justify-center">
-            <a href="/projects" className="flex items-center gap-2 px-6 py-3 bg-surface border border-white/10 rounded hover:border-primary/50 text-white transition-all w-full justify-center">
-            {t.projectsSection.viewAll}
+          <a href="/projects" className="flex items-center gap-2 px-6 py-3 bg-surface border border-white/10 rounded hover:border-primary/50 text-white transition-all w-full justify-center">
+            {t("viewAll")}
             <ChevronRight size={16} />
           </a>
         </div>
