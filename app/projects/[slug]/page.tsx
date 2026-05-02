@@ -4,8 +4,9 @@ import { useTranslations } from "next-intl";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { Navbar } from "@/app/components/Navbar";
 import { Code2, ExternalLink, Github, Lock } from "lucide-react";
-import { notFound, useParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import { getProjects } from "@/app/data/projects";
+import { ProjectGallery } from "@/app/components/ProjectGallery";
 
 export default function ProjectDetails() {
   const params = useParams();
@@ -60,15 +61,19 @@ export default function ProjectDetails() {
           {/* Coluna Principal (Esquerda) */}
           <div className="lg:col-span-2 space-y-12">
 
-            {/* Placeholder de Galeria de Fotos */}
-            <div className="aspect-video bg-surface border border-white/10 rounded-xl flex items-center justify-center relative overflow-hidden group">
-              <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20"></div>
-              <div className="text-center p-6">
-                <project.icon size={48} className="mx-auto text-gray-600 mb-4 group-hover:text-primary transition-colors" />
-                <p className="text-gray-500 font-mono text-sm">{t("gallery")}</p>
-                <p className="text-gray-600 text-xs mt-1">({t("comingSoon")})</p>
+            {/* Galeria de Fotos */}
+            {project.images && project.images.length > 0 ? (
+              <ProjectGallery images={project.images} projectTitle={project.title} />
+            ) : (
+              <div className="aspect-video bg-surface border border-white/10 rounded-xl flex items-center justify-center relative overflow-hidden group">
+                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20"></div>
+                <div className="text-center p-6">
+                  <project.icon size={48} className="mx-auto text-gray-600 mb-4 group-hover:text-primary transition-colors" />
+                  <p className="text-gray-500 font-mono text-sm">{t("gallery")}</p>
+                  <p className="text-gray-600 text-xs mt-1">({t("comingSoon")})</p>
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Tecnologias */}
             <div>

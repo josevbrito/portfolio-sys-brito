@@ -11,6 +11,11 @@ export interface StatItem {
   value: string;
 }
 
+export interface GalleryImage {
+  src: string;
+  caption: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -20,7 +25,7 @@ export interface Project {
   categories: string[];
   status: "Concluído" | "Em andamento" | "Completed" | "In Progress";
   icon: LucideIcon;
-  images?: string[];
+  images?: GalleryImage[];
   stats?: StatItem[];
   links?: LinkItem[];
 }
