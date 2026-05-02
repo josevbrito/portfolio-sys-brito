@@ -1,7 +1,43 @@
 import { Code2, Smartphone, Database, Brain, Layout, BarChart } from "lucide-react";
 import type { Project } from "../types";
+import type { GalleryImage } from "../types";
+
+const portfolioImagesPt: GalleryImage[] = [
+  { src: "/sys-brito/josevbrito.com.%23hero.png",                          caption: "Página inicial — Hero" },
+  { src: "/sys-brito/josevbrito.com.%23projects.png",                      caption: "Seção de Projetos" },
+  { src: "/sys-brito/josevbrito.com.projects.png",                         caption: "Lista de Projetos" },
+  { src: "/sys-brito/josevbrito.com.%23experience.png",                    caption: "Seção de Experiência" },
+  { src: "/sys-brito/josevbrito.com.experience.png",                       caption: "Detalhe da Experiência" },
+  { src: "/sys-brito/josevbrito.com.%23contact.png",                       caption: "Seção de Contato" },
+  { src: "/sys-brito/josevbrito.com.projects.sys-brito.png",  caption: "Página do Projeto" },
+];
+
+const portfolioImagesEn: GalleryImage[] = [
+  { src: "/sys-brito/josevbrito.com.%23hero.png",                          caption: "Home — Hero Section" },
+  { src: "/sys-brito/josevbrito.com.%23projects.png",                      caption: "Projects Section" },
+  { src: "/sys-brito/josevbrito.com.projects.png",                         caption: "Projects List" },
+  { src: "/sys-brito/josevbrito.com.%23experience.png",                    caption: "Experience Section" },
+  { src: "/sys-brito/josevbrito.com.experience.png",                       caption: "Experience Detail" },
+  { src: "/sys-brito/josevbrito.com.%23contact.png",                       caption: "Contact Section" },
+  { src: "/sys-brito/josevbrito.com.projects.sys-brito.png",  caption: "Project Page" },
+];
 
 const projectsPt: Project[] = [
+  {
+    slug: "portfolio-sys-brito",
+    title: "Portfólio Pessoal",
+    shortDesc: "Portfólio moderno com tema dark, animações e suporte a múltiplos idiomas (PT/EN).",
+    fullDesc: "Portfolio pessoal desenvolvido com Next.js 15 e TypeScript, apresentando projetos, experiências profissionais e habilidades técnicas. Conta com tema dark inspirado em terminais, animações fluidas, internacionalização (PT/EN) via next-intl e design responsivo com Tailwind CSS.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "React", "next-intl"],
+    categories: ["Full Stack"],
+    status: "Concluído",
+    icon: Layout,
+    images: portfolioImagesPt,
+    links: [
+      { type: "live", url: "https://josevbrito.com" },
+      { type: "github", url: "https://github.com/josevbrito/portfolio-sys-brito" }
+    ]
+  },
   {
     slug: "food-review-agent",
     title: "FoodReview Insights Agent",
@@ -128,6 +164,21 @@ const projectsPt: Project[] = [
 ];
 
 const projectsEn: Project[] = [
+  {
+    slug: "portfolio-sys-brito",
+    title: "Personal Portfolio",
+    shortDesc: "Modern portfolio with dark theme, animations and multi-language support (PT/EN).",
+    fullDesc: "Personal portfolio built with Next.js 15 and TypeScript, showcasing projects, professional experience and technical skills. Features a dark terminal-inspired theme, fluid animations, internationalization (PT/EN) via next-intl and responsive design with Tailwind CSS.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "React", "next-intl"],
+    categories: ["Full Stack"],
+    status: "Completed",
+    icon: Layout,
+    images: portfolioImagesEn,
+    links: [
+      { type: "live", url: "https://josevbrito.com" },
+      { type: "github", url: "https://github.com/josevbrito/portfolio-sys-brito" }
+    ]
+  },
   {
     slug: "food-review-agent",
     title: "FoodReview Insights Agent",
