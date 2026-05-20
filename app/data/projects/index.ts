@@ -72,30 +72,6 @@ const PROJECTS: ProjectDef[] = [
     },
   },
   {
-    slug: "food-review-agent",
-    tags: ["Python", "LangChain", "RAG", "LLM", "FastAPI"],
-    categories: ["Data Science / AI", "Full Stack"],
-    icon: Brain,
-    images: foodAgentImages,
-    links: [
-      { type: "github", url: "https://github.com/josevbrito/food-review-agent" },
-    ],
-    i18n: {
-      pt: {
-        title: "FoodReview Insights Agent",
-        shortDesc: "Agente Autônomo de IA que analisa reviews de delivery usando RAG e LangChain.",
-        fullDesc: "Sistema inteligente que permite a donos de restaurantes 'conversarem' com suas avaliações. Utiliza arquitetura RAG (Retrieval-Augmented Generation) com LangChain e OpenAI para extrair insights estratégicos, calcular métricas de satisfação e identificar padrões de sentimento em tempo real. Backend em Python (FastAPI) e interface moderna em Next.js.",
-        status: "Concluído",
-      },
-      en: {
-        title: "FoodReview Insights Agent",
-        shortDesc: "Autonomous AI Agent analyzing delivery reviews using RAG and LangChain.",
-        fullDesc: "Intelligent system allowing restaurant owners to 'chat' with their reviews. Uses RAG (Retrieval-Augmented Generation) architecture with LangChain and OpenAI to extract strategic insights, calculate satisfaction metrics, and identify sentiment patterns in real-time. Python (FastAPI) Backend and modern Next.js Frontend.",
-        status: "Completed",
-      },
-    },
-  },
-  {
     slug: "maranhao-livre-da-fome",
     tags: ["Laravel", "MySQL", "JavaScript"],
     categories: ["Full Stack"],
@@ -145,6 +121,30 @@ const PROJECTS: ProjectDef[] = [
         title: "Plandox",
         shortDesc: "Modernization from legacy to microservices with AI for quality control.",
         fullDesc: "Migration from monolithic architecture to microservices. Uses ML models for biodiesel quality prediction via Design of Experiments (DoE).",
+        status: "Completed",
+      },
+    },
+  },
+  {
+    slug: "food-review-agent",
+    tags: ["Python", "LangChain", "RAG", "LLM", "FastAPI"],
+    categories: ["Data Science / AI", "Full Stack"],
+    icon: Brain,
+    images: foodAgentImages,
+    links: [
+      { type: "github", url: "https://github.com/josevbrito/food-review-agent" },
+    ],
+    i18n: {
+      pt: {
+        title: "FoodReview Insights Agent",
+        shortDesc: "Agente Autônomo de IA que analisa reviews de delivery usando RAG e LangChain.",
+        fullDesc: "Sistema inteligente que permite a donos de restaurantes 'conversarem' com suas avaliações. Utiliza arquitetura RAG (Retrieval-Augmented Generation) com LangChain e OpenAI para extrair insights estratégicos, calcular métricas de satisfação e identificar padrões de sentimento em tempo real. Backend em Python (FastAPI) e interface moderna em Next.js.",
+        status: "Concluído",
+      },
+      en: {
+        title: "FoodReview Insights Agent",
+        shortDesc: "Autonomous AI Agent analyzing delivery reviews using RAG and LangChain.",
+        fullDesc: "Intelligent system allowing restaurant owners to 'chat' with their reviews. Uses RAG (Retrieval-Augmented Generation) architecture with LangChain and OpenAI to extract strategic insights, calculate satisfaction metrics, and identify sentiment patterns in real-time. Python (FastAPI) Backend and modern Next.js Frontend.",
         status: "Completed",
       },
     },
