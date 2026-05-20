@@ -4,7 +4,8 @@ import { Terminal, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useLanguage } from "../context/LanguageContext";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useRef } from "react";
 
 const languageOptions = {
   pt: { label: "PT-BR", flag: "🇧🇷" },
@@ -15,9 +16,23 @@ export function Navbar() {
   const t = useTranslations("nav");
   const { lang, toggleLanguage } = useLanguage();
   const pathname = usePathname();
+  const router = useRouter();
   const isHome = pathname === "/";
+  const hasHistory = useRef(false);
+
+  useEffect(() => {
+    hasHistory.current = window.history.length > 1;
+  }, []);
 
   const nextLang = lang === "pt" ? "en" : "pt";
+
+  function handleBack() {
+    if (hasHistory.current) {
+      router.back();
+    } else {
+      router.push("/");
+    }
+  }
 
   return (
     <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-black/50 backdrop-blur-md">
@@ -26,10 +41,10 @@ export function Navbar() {
         {/* Logo ou Botão Voltar */}
         <div className="flex items-center gap-4">
           {!isHome && (
-            <Link href="/" className="flex items-center gap-2 text-sm font-mono text-gray-400 hover:text-primary transition-colors mr-2">
+            <button onClick={handleBack} className="flex items-center gap-2 text-sm font-mono text-gray-400 hover:text-primary transition-colors mr-2">
               <ArrowLeft size={16} />
               {t("back")}
-            </Link>
+            </button>
           )}
 
           <Link href="/" className="flex items-center gap-2 font-mono text-primary text-glow font-bold text-lg cursor-pointer group">
