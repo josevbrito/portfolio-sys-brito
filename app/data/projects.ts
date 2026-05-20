@@ -22,20 +22,153 @@ const portfolioImagesEn: GalleryImage[] = [
   { src: "/sys-brito/josevbrito.com.projects.sys-brito.png",  caption: "Project Page" },
 ];
 
+const masemfomeImagesPt: GalleryImage[] = [
+  { src: "/masemfome/login.png", caption: "Página de Login" },
+];
+
+const masemfomeImagesEn: GalleryImage[] = [
+  { src: "/masemfome/login.png", caption: "Login Page" },
+];
+
+const monitoraImagesPt: GalleryImage[] = [
+  { src: "/monitora/home.png", caption: "Página Inicial" },
+  { src: "/monitora/grupos_de_indicadores.png", caption: "Grupos de Indicadores" },
+  { src: "/monitora/indicadores_da_vigilancia_epidemiologica_e_controle_de_doencas.png", caption: "Indicadores da Vigilância Epidemiológica e Controle de Doenças" },
+  { src: "/monitora/painel_de_monitoramento_da_dengue.png", caption: "Painel de Monitoramento da Dengue" },
+  { src: "/monitora/painel_de_monitoramento_das_notificacoes_de_trabalho.png", caption: "Painel de Monitoramento das Notificações por Acidente de Trabalho" },
+  { src: "/monitora/painel_de_cobertura_vacinal_em_criancas_menores_de_um_ano.png", caption: "Painel de Cobertura Vacinal em Crianças Menores de um Ano" },
+  { src: "/monitora/painel_indicador_8_do_pqavs.png", caption: "Painel do Indicador 8 do PQAVS (Levantamento Entomológico)" },
+];
+
+const monitoraImagesEn: GalleryImage[] = [
+  { src: "/monitora/home.png", caption: "Home Screen" },
+  { src: "/monitora/grupos_de_indicadores.png", caption: "Indicator Groups" },
+  { src: "/monitora/indicadores_da_vigilancia_epidemiologica_e_controle_de_doencas.png", caption: "Epidemiological Surveillance and Disease Control Indicators" },
+  { src: "/monitora/painel_de_monitoramento_da_dengue.png", caption: "Dengue Monitoring Dashboard" },
+  { src: "/monitora/painel_de_monitoramento_das_notificacoes_de_trabalho.png", caption: "Work Accident Notifications Monitoring Dashboard" },
+  { src: "/monitora/painel_de_cobertura_vacinal_em_criancas_menores_de_um_ano.png", caption: "Vaccination Coverage Dashboard for Children Under One Year" },
+  { src: "/monitora/painel_indicador_8_do_pqavs.png", caption: "Indicator 8 Dashboard for PQAVS (Entomological Survey)" },
+];
+
+const renavehImagesPt: GalleryImage[] = [
+  { src: "/renaveh/login.png", caption: "Página de Login" },
+];
+
+const renavehImagesEn: GalleryImage[] = [
+  { src: "/renaveh/login.png", caption: "Login Page" },
+];
+
+const foodReviewAgentImagesPt: GalleryImage[] = [
+  { src: "/food-agent/preview.png", caption: "Preview do FoodReview Insights Agent" },
+];
+
+const foodReviewAgentImagesEn: GalleryImage[] = [
+  { src: "/ food-agent/preview.png", caption: "Preview of the FoodReview Insights Agent" },
+];
+
+const plandoxImagesPt: GalleryImage[] = [
+  { src: "/plandox/logo.png", caption: "Plandox" },
+  { src: "/plandox/login.png", caption: "Página de Login" },
+  { src: "/plandox/cadastro.png", caption: "Página de Cadastro" },
+  { src: "/plandox/recuperar_senha.png", caption: "Recuperar Senha" },
+  { src: "/plandox/doe_exemplo.png", caption: "Exemplo de DOE" },
+];
+
+const plandoxImagesEn: GalleryImage[] = [
+  { src: "/plandox/logo.png", caption: "Plandox" },
+  { src: "/plandox/login.png", caption: "Login Page of Plandox" },
+  { src: "/plandox/cadastro.png", caption: "Registration Page of Plandox" },
+  { src: "/plandox/recuperar_senha.png", caption: "Password Recovery Page of Plandox" },
+  { src: "/plandox/doe_exemplo.png", caption: "Example of DOE in Plandox" },
+];
+
+const analiseRfmImagesPt: GalleryImage[] = [
+  { src: "/analise-rfm-ml/tela_principal.png", caption: "Análise de Clusters" },
+  { src: "/analise-rfm-ml/guia_segmentos_rfm_1.png", caption: "Segmentos de Clientes" },
+  { src: "/analise-rfm-ml/guia_segmentos_rfm_2.png", caption: "Segmentos de Clientes" },
+  { src: "/analise-rfm-ml/elbow_curve.png", caption: "Curva do Cotovelo para Clusters" },
+];
+
+const analiseRfmImagesEn: GalleryImage[] = [
+  { src: "/analise-rfm-ml/tela_principal.png", caption: "Cluster Analysis" },
+  { src: "/analise-rfm-ml/guia_segmentos_rfm_1.png", caption: "Customer Segments" },
+  { src: "/analise-rfm-ml/guia_segmentos_rfm_2.png", caption: "Customer Segments" },
+  { src: "/analise-rfm-ml/elbow_curve.png", caption: "Elbow Curve for Clusters" },
+];
+
+const californiaHousingImagesPt: GalleryImage[] = [
+  { src: "/california-housing/housing_prices_scatterplot.png", caption: "Preços de Imóveis - Gráfico de Dispersão" },
+  { src: "/california-housing/histogram_plots.png", caption: "Histogramas das Features" },
+];
+
+const californiaHousingImagesEn: GalleryImage[] = [
+  { src: "/california-housing/housing_prices_scatterplot.png", caption: "Housing Prices - Scatter Plot" },
+  { src: "/california-housing/histogram_plots.png", caption: "Histograms of Features" },
+];
+
+const hansPlusImagesPt: GalleryImage[] = [
+  { src: "/hans-plus/hans-mais.png", caption: "Hans+" },
+
+  { src: "/hans-plus/auth/login.jpeg", caption: "Tela de Login" },
+  { src: "/hans-plus/auth/register-1.jpeg", caption: "Primeira parte da Tela de Cadastro" },
+  { src: "/hans-plus/auth/register-2.jpeg", caption: "Segunda parte da Tela de Cadastro" },
+  { src: "/hans-plus/auth/splash.jpeg", caption: "Tela de Splash" },
+
+  { src: "/hans-plus/home/home.jpeg", caption: "Tela Inicial" },
+
+  { src: "/hans-plus/info/info-1.jpeg", caption: "Primeira parte da Tela de Informações sobre a Hanseníase" },
+  { src: "/hans-plus/info/info-2.jpeg", caption: "Segunda parte da Tela de Informações sobre a Hanseníase" },
+  { src: "/hans-plus/info/info-sinais-e-sintomas.jpeg", caption: "Tela de Informações sobre Sinais e Sintomas" },
+
+  { src: "/hans-plus/profile/perfil.jpeg", caption: "Tela de Perfil" },
+  { src: "/hans-plus/profile/perfil-editar-info-conta.jpeg", caption: "Tela de Edição de Informações da Conta"},
+  { src: "/hans-plus/profile/perfil-historico.jpeg", caption: "Tela de Histórico de Sintomas"},
+  { src: "/hans-plus/profile/saiba-mais.jpeg", caption: "Tela de Saiba Mais"},
+  { src: "/hans-plus/profile/sobre-nos-1.jpeg", caption: "Primeira parte da Tela de Sobre Nós"},
+  { src: "/hans-plus/profile/sobre-nos-2.jpeg", caption: "Segunda parte da Tela de Sobre Nós"},
+];
+
+const hansPlusImagesEn: GalleryImage[] = [
+  { src: "/hans-plus/hans-mais.png", caption: "Hans+" },
+
+  { src: "/hans-plus/auth/login.jpeg", caption: "Login Screen" },
+  { src: "/hans-plus/auth/register-1.jpeg", caption: "First Part of Registration Screen" },
+  { src: "/hans-plus/auth/register-2.jpeg", caption: "Second Part of Registration Screen" },
+  { src: "/hans-plus/auth/splash.jpeg", caption: "Splash Screen" },
+
+  { src: "/hans-plus/home/home.jpeg", caption: "Home Screen" },
+
+  { src: "/hans-plus/info/info-1.jpeg", caption: "First Part of Information about Leprosy Screen" },
+  { src: "/hans-plus/info/info-2.jpeg", caption: "Second Part of Information about Leprosy Screen" },
+  { src: "/hans-plus/info/info-sinais-e-sintomas.jpeg", caption: "Information about Signs and Symptoms Screen" },
+
+  { src: "/hans-plus/profile/perfil.jpeg", caption: "Profile Screen" },
+  { src: "/hans-plus/profile/perfil-editar-info-conta.jpeg", caption: "Edit Account Information Screen"},
+  { src: "/hans-plus/profile/perfil-historico.jpeg", caption: "Symptom History Screen"},
+  { src: "/hans-plus/profile/saiba-mais.jpeg", caption: "Learn More Screen"},
+  { src: "/hans-plus/profile/sobre-nos-1.jpeg", caption: "First Part of About Us Screen"},
+  { src: "/hans-plus/profile/sobre-nos-2.jpeg", caption: "Second Part of About Us Screen"},
+];
+
+
 const projectsPt: Project[] = [
   {
-    slug: "portfolio-sys-brito",
-    title: "Portfólio Pessoal",
-    shortDesc: "Portfólio moderno com tema dark, animações e suporte a múltiplos idiomas (PT/EN).",
-    fullDesc: "Portfolio pessoal desenvolvido com Next.js 15 e TypeScript, apresentando projetos, experiências profissionais e habilidades técnicas. Conta com tema dark inspirado em terminais, animações fluidas, internacionalização (PT/EN) via next-intl e design responsivo com Tailwind CSS.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "React", "next-intl"],
+    slug: "monitora-saude",
+    title: "Monitora Saúde",
+    shortDesc: "Plataforma de transparência com mais de 50 dashboards interativos em Power BI.",
+    fullDesc: "Portal de Transparência de Saúde do Maranhão. Ferramenta vital para gestores e população, permitindo monitoramento de indicadores de saúde e processos em tempo real para suporte à tomada de decisão.",
+    tags: ["Power BI", "Laravel", "PostgreSQL"],
     categories: ["Full Stack"],
     status: "Concluído",
-    icon: Layout,
-    images: portfolioImagesPt,
+    icon: BarChart,
+    images: monitoraImagesPt,
+    stats: [
+      { label: "Dashboards", value: "+50" },
+      { label: "Fonte de Dados", value: "Híbrida" }
+    ],
     links: [
-      { type: "live", url: "https://josevbrito.com" },
-      { type: "github", url: "https://github.com/josevbrito/portfolio-sys-brito" }
+      { type: "live", url: "https://monitora.saude.ma.gov.br/" },
+      { type: "lock", url: "#", label: "Código Confidencial" }
     ]
   },
   {
@@ -47,6 +180,7 @@ const projectsPt: Project[] = [
     categories: ["Data Science / AI", "Full Stack"],
     status: "Concluído",
     icon: Brain,
+    images: foodReviewAgentImagesPt,
     links: [
       { type: "github", url: "https://github.com/josevbrito/food-review-agent" }
     ]
@@ -60,6 +194,7 @@ const projectsPt: Project[] = [
     categories: ["Full Stack"],
     status: "Concluído",
     icon: Layout,
+    images: masemfomeImagesPt,
     stats: [
       { label: "Beneficiários", value: "400k" },
       { label: "Cidades", value: "217" },
@@ -77,8 +212,9 @@ const projectsPt: Project[] = [
     fullDesc: "Migração de arquitetura monolítica para microsserviços. Utiliza modelos de ML para predição de qualidade de biodiesel via Design of Experiments (DoE).",
     tags: ["React Native", "FastAPI", "Microservices", "Python"],
     categories: ["Mobile", "Full Stack", "Data Science / AI"],
-    status: "Em andamento",
+    status: "Concluído",
     icon: Code2,
+    images: plandoxImagesPt,
     links: [
       { type: "lock", url: "#", label: "Código Privado" }
     ]
@@ -92,6 +228,7 @@ const projectsPt: Project[] = [
     categories: ["Full Stack"],
     status: "Concluído",
     icon: Database,
+    images: renavehImagesPt,
     stats: [
       { label: "Registros", value: "+50k" },
       { label: "Hospitais", value: "98" },
@@ -100,7 +237,7 @@ const projectsPt: Project[] = [
     links: [
       { type: "live", url: "https://renaveh.saude.ma.gov.br/" },
       { type: "lock", url: "#", label: "Código Confidencial" }
-    ]
+    ],
   },
   {
     slug: "analise-rfm-ml",
@@ -111,6 +248,7 @@ const projectsPt: Project[] = [
     categories: ["Data Science / AI"],
     status: "Concluído",
     icon: Brain,
+    images: analiseRfmImagesPt,
     stats: [
       { label: "Precisão", value: "Alta" },
       { label: "Clusters", value: "5" },
@@ -121,31 +259,32 @@ const projectsPt: Project[] = [
     ]
   },
   {
-    slug: "monitora-saude",
-    title: "Monitora Saúde",
-    shortDesc: "Plataforma de transparência com mais de 50 dashboards interativos em Power BI.",
-    fullDesc: "Portal de Transparência de Saúde do Maranhão. Ferramenta vital para gestores e população, permitindo monitoramento de indicadores de saúde e processos em tempo real para suporte à tomada de decisão.",
-    tags: ["Power BI", "Laravel", "PostgreSQL"],
-    categories: ["Full Stack"],
-    status: "Concluído",
-    icon: BarChart,
-    stats: [
-      { label: "Dashboards", value: "+50" },
-      { label: "Fonte de Dados", value: "Híbrida" }
-    ],
-    links: []
-  },
-  {
     slug: "hans-plus",
     title: "Hans+",
-    shortDesc: "App mobile premiado (Nota 10) para auxílio no tratamento da hanseníase.",
+    shortDesc: "App mobile para auxílio no tratamento da hanseníase.",
     fullDesc: "Aplicação focada no paciente, permitindo cadastro de sintomas e controle de medicação diária. Desenvolvido com foco em UX e simplicidade de uso.",
     tags: ["Flutter", "Firebase", "NoSQL", "Mobile"],
     categories: ["Mobile"],
     status: "Concluído",
     icon: Smartphone,
+    images: hansPlusImagesPt,
     links: [
-      { type: "apk", url: "#", label: "APK Disponível" }
+      { type: "apk", url: "/hans-plus/hans+.apk", label: "APK Android" }
+    ]
+  }, 
+  {
+    slug: "portfolio-sys-brito",
+    title: "Portfólio Pessoal",
+    shortDesc: "Portfólio moderno com tema dark, animações e suporte a múltiplos idiomas (PT/EN).",
+    fullDesc: "Portfolio pessoal desenvolvido com Next.js 15 e TypeScript, apresentando projetos, experiências profissionais e habilidades técnicas. Conta com tema dark inspirado em terminais, animações fluidas, internacionalização (PT/EN) via next-intl e design responsivo com Tailwind CSS.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "React", "next-intl"],
+    categories: ["Full Stack"],
+    status: "Concluído",
+    icon: Layout,
+    images: portfolioImagesPt,
+    links: [
+      { type: "live", url: "https://josevbrito.com" },
+      { type: "github", url: "https://github.com/josevbrito/portfolio-sys-brito" }
     ]
   },
   {
@@ -157,6 +296,7 @@ const projectsPt: Project[] = [
     categories: ["Data Science / AI"],
     status: "Concluído",
     icon: Code2,
+    images: californiaHousingImagesPt,
     links: [
       { type: "github", url: "https://github.com/josevbrito/california-housing-ml-pipeline" }
     ]
@@ -165,18 +305,22 @@ const projectsPt: Project[] = [
 
 const projectsEn: Project[] = [
   {
-    slug: "portfolio-sys-brito",
-    title: "Personal Portfolio",
-    shortDesc: "Modern portfolio with dark theme, animations and multi-language support (PT/EN).",
-    fullDesc: "Personal portfolio built with Next.js 15 and TypeScript, showcasing projects, professional experience and technical skills. Features a dark terminal-inspired theme, fluid animations, internationalization (PT/EN) via next-intl and responsive design with Tailwind CSS.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "React", "next-intl"],
+    slug: "monitora-saude",
+    title: "Health Monitor",
+    shortDesc: "Transparency platform with over 50 interactive Power BI dashboards.",
+    fullDesc: "Maranhão Health Transparency Portal. A vital tool for managers and the population, allowing real-time monitoring of health indicators and processes to support decision-making.",
+    tags: ["Power BI", "Laravel", "PostgreSQL"],
     categories: ["Full Stack"],
     status: "Completed",
-    icon: Layout,
-    images: portfolioImagesEn,
+    icon: BarChart,
+    images: monitoraImagesEn,
+    stats: [
+      { label: "Dashboards", value: "+50" },
+      { label: "Data Source", value: "Hybrid" }
+    ],
     links: [
-      { type: "live", url: "https://josevbrito.com" },
-      { type: "github", url: "https://github.com/josevbrito/portfolio-sys-brito" }
+      { type: "live", url: "https://monitora.saude.ma.gov.br/" },
+      { type: "lock", url: "#", label: "Confidential Code" }
     ]
   },
   {
@@ -188,6 +332,7 @@ const projectsEn: Project[] = [
     categories: ["Data Science / AI", "Full Stack"],
     status: "Completed",
     icon: Brain,
+    images: foodReviewAgentImagesEn,
     links: [
       { type: "github", url: "https://github.com/josevbrito/food-review-agent" }
     ]
@@ -201,6 +346,7 @@ const projectsEn: Project[] = [
     categories: ["Full Stack"],
     status: "Completed",
     icon: Layout,
+    images: masemfomeImagesEn,
     stats: [
       { label: "Beneficiaries", value: "400k" },
       { label: "Cities", value: "217" },
@@ -218,8 +364,9 @@ const projectsEn: Project[] = [
     fullDesc: "Migration from monolithic architecture to microservices. Uses ML models for biodiesel quality prediction via Design of Experiments (DoE).",
     tags: ["React Native", "FastAPI", "Microservices", "Python"],
     categories: ["Mobile", "Full Stack", "Data Science / AI"],
-    status: "In Progress",
+    status: "Completed",
     icon: Code2,
+    images: plandoxImagesEn,
     links: [
       { type: "lock", url: "#", label: "Private Code" }
     ]
@@ -233,6 +380,7 @@ const projectsEn: Project[] = [
     categories: ["Full Stack"],
     status: "Completed",
     icon: Database,
+    images: renavehImagesEn,
     stats: [
       { label: "Records", value: "+50k" },
       { label: "Hospitals", value: "98" },
@@ -252,6 +400,7 @@ const projectsEn: Project[] = [
     categories: ["Data Science / AI"],
     status: "Completed",
     icon: Brain,
+    images: analiseRfmImagesEn,
     stats: [
       { label: "Precision", value: "High" },
       { label: "Clusters", value: "5" },
@@ -262,31 +411,32 @@ const projectsEn: Project[] = [
     ]
   },
   {
-    slug: "monitora-saude",
-    title: "Health Monitor",
-    shortDesc: "Transparency platform with over 50 interactive Power BI dashboards.",
-    fullDesc: "Maranhão Health Transparency Portal. A vital tool for managers and the population, allowing real-time monitoring of health indicators and processes to support decision-making.",
-    tags: ["Power BI", "Laravel", "PostgreSQL"],
-    categories: ["Full Stack"],
-    status: "Completed",
-    icon: BarChart,
-    stats: [
-      { label: "Dashboards", value: "+50" },
-      { label: "Data Source", value: "Hybrid" }
-    ],
-    links: []
-  },
-  {
     slug: "hans-plus",
     title: "Hans+",
-    shortDesc: "Award-winning mobile app (Grade 10) to assist in leprosy treatment.",
+    shortDesc: "Mobile app to assist in leprosy treatment.",
     fullDesc: "Patient-focused application allowing symptom registration and daily medication control. Developed with a focus on UX and simplicity of use.",
     tags: ["Flutter", "Firebase", "NoSQL", "Mobile"],
     categories: ["Mobile"],
     status: "Completed",
     icon: Smartphone,
+    images: hansPlusImagesEn,
     links: [
       { type: "apk", url: "#", label: "APK Available" }
+    ]
+  },
+  {
+    slug: "portfolio-sys-brito",
+    title: "Personal Portfolio",
+    shortDesc: "Modern portfolio with dark theme, animations and multi-language support (PT/EN).",
+    fullDesc: "Personal portfolio built with Next.js 15 and TypeScript, showcasing projects, professional experience and technical skills. Features a dark terminal-inspired theme, fluid animations, internationalization (PT/EN) via next-intl and responsive design with Tailwind CSS.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "React", "next-intl"],
+    categories: ["Full Stack"],
+    status: "Completed",
+    icon: Layout,
+    images: portfolioImagesEn,
+    links: [
+      { type: "live", url: "https://josevbrito.com" },
+      { type: "github", url: "https://github.com/josevbrito/portfolio-sys-brito" }
     ]
   },
   {
@@ -298,6 +448,7 @@ const projectsEn: Project[] = [
     categories: ["Data Science / AI"],
     status: "Completed",
     icon: Code2,
+    images: californiaHousingImagesEn,
     links: [
       { type: "github", url: "https://github.com/josevbrito/california-housing-ml-pipeline" }
     ]
