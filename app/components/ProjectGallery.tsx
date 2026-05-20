@@ -45,6 +45,11 @@ export function ProjectGallery({ images, projectTitle }: ProjectGalleryProps) {
 
   const [mainImg, ...thumbs] = images;
 
+  const MAX_THUMBS = 3;
+  const hasMore = thumbs.length > MAX_THUMBS;
+  const visibleThumbs = hasMore ? thumbs.slice(0, MAX_THUMBS) : thumbs;
+  const hiddenCount = hasMore ? thumbs.length - MAX_THUMBS : 0;
+
   return (
     <>
       {/* ── Grid ── */}
@@ -74,26 +79,37 @@ export function ProjectGallery({ images, projectTitle }: ProjectGalleryProps) {
         {/* Thumbnails */}
         {thumbs.length > 0 && (
           <div className="grid grid-cols-3 gap-3">
-            {thumbs.map((img, i) => (
-              <button
-                key={i}
-                onClick={() => open(i + 1)}
-                className="aspect-video relative rounded-lg overflow-hidden border border-white/10 group cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-primary/50"
-              >
-                <Image
-                  src={img.src}
-                  alt={img.caption}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="px-2 py-1.5 bg-black/75 backdrop-blur-sm text-white text-xs font-mono truncate">
-                    {img.caption}
-                  </p>
-                </div>
-              </button>
-            ))}
+            {visibleThumbs.map((img, i) => {
+              const isLastWithMore = hasMore && i === MAX_THUMBS - 1;
+              return (
+                <button
+                  key={i}
+                  onClick={() => open(i + 1)}
+                  className="aspect-video relative rounded-lg overflow-hidden border border-white/10 group cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-primary/50"
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.caption}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {isLastWithMore ? (
+                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                      <span className="text-white text-xl font-mono font-bold">+{hiddenCount}</span>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300" />
+                      <div className="absolute bottom-0 left-0 right-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <p className="px-2 py-1.5 bg-black/75 backdrop-blur-sm text-white text-xs font-mono truncate">
+                          {img.caption}
+                        </p>
+                      </div>
+                    </>
+                  )}
+                </button>
+              );
+            })}
           </div>
         )}
       </div>
