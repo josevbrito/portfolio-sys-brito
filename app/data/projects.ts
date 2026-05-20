@@ -3,151 +3,151 @@ import type { Project } from "../types";
 import type { GalleryImage } from "../types";
 
 const portfolioImagesPt: GalleryImage[] = [
-  { src: "/sys-brito/josevbrito.com.%23hero.png",                          caption: "Página inicial — Hero" },
-  { src: "/sys-brito/josevbrito.com.%23projects.png",                      caption: "Seção de Projetos" },
-  { src: "/sys-brito/josevbrito.com.projects.png",                         caption: "Lista de Projetos" },
-  { src: "/sys-brito/josevbrito.com.%23experience.png",                    caption: "Seção de Experiência" },
-  { src: "/sys-brito/josevbrito.com.experience.png",                       caption: "Detalhe da Experiência" },
-  { src: "/sys-brito/josevbrito.com.%23contact.png",                       caption: "Seção de Contato" },
-  { src: "/sys-brito/josevbrito.com.projects.sys-brito.png",  caption: "Página do Projeto" },
+  { src: "/projects/sys-brito/josevbrito.com.%23hero.png",                          caption: "Página inicial — Hero" },
+  { src: "/projects/sys-brito/josevbrito.com.%23projects.png",                      caption: "Seção de Projetos" },
+  { src: "/projects/sys-brito/josevbrito.com.projects.png",                         caption: "Lista de Projetos" },
+  { src: "/projects/sys-brito/josevbrito.com.%23experience.png",                    caption: "Seção de Experiência" },
+  { src: "/projects/sys-brito/josevbrito.com.experience.png",                       caption: "Detalhe da Experiência" },
+  { src: "/projects/sys-brito/josevbrito.com.%23contact.png",                       caption: "Seção de Contato" },
+  { src: "/projects/sys-brito/josevbrito.com.projects.sys-brito.png",  caption: "Página do Projeto" },
 ];
 
 const portfolioImagesEn: GalleryImage[] = [
-  { src: "/sys-brito/josevbrito.com.%23hero.png",                          caption: "Home — Hero Section" },
-  { src: "/sys-brito/josevbrito.com.%23projects.png",                      caption: "Projects Section" },
-  { src: "/sys-brito/josevbrito.com.projects.png",                         caption: "Projects List" },
-  { src: "/sys-brito/josevbrito.com.%23experience.png",                    caption: "Experience Section" },
-  { src: "/sys-brito/josevbrito.com.experience.png",                       caption: "Experience Detail" },
-  { src: "/sys-brito/josevbrito.com.%23contact.png",                       caption: "Contact Section" },
-  { src: "/sys-brito/josevbrito.com.projects.sys-brito.png",  caption: "Project Page" },
+  { src: "/projects/sys-brito/josevbrito.com.%23hero.png",                          caption: "Home — Hero Section" },
+  { src: "/projects/sys-brito/josevbrito.com.%23projects.png",                      caption: "Projects Section" },
+  { src: "/projects/sys-brito/josevbrito.com.projects.png",                         caption: "Projects List" },
+  { src: "/projects/sys-brito/josevbrito.com.%23experience.png",                    caption: "Experience Section" },
+  { src: "/projects/sys-brito/josevbrito.com.experience.png",                       caption: "Experience Detail" },
+  { src: "/projects/sys-brito/josevbrito.com.%23contact.png",                       caption: "Contact Section" },
+  { src: "/projects/sys-brito/josevbrito.com.projects.sys-brito.png",  caption: "Project Page" },
 ];
 
 const masemfomeImagesPt: GalleryImage[] = [
-  { src: "/masemfome/login.png", caption: "Página de Login" },
+  { src: "/projects/masemfome/login.png", caption: "Página de Login" },
 ];
 
 const masemfomeImagesEn: GalleryImage[] = [
-  { src: "/masemfome/login.png", caption: "Login Page" },
+  { src: "/projects/masemfome/login.png", caption: "Login Page" },
 ];
 
 const monitoraImagesPt: GalleryImage[] = [
-  { src: "/monitora/home.png", caption: "Página Inicial" },
-  { src: "/monitora/grupos_de_indicadores.png", caption: "Grupos de Indicadores" },
-  { src: "/monitora/indicadores_da_vigilancia_epidemiologica_e_controle_de_doencas.png", caption: "Indicadores da Vigilância Epidemiológica e Controle de Doenças" },
-  { src: "/monitora/painel_de_monitoramento_da_dengue.png", caption: "Painel de Monitoramento da Dengue" },
-  { src: "/monitora/painel_de_monitoramento_das_notificacoes_de_trabalho.png", caption: "Painel de Monitoramento das Notificações por Acidente de Trabalho" },
-  { src: "/monitora/painel_de_cobertura_vacinal_em_criancas_menores_de_um_ano.png", caption: "Painel de Cobertura Vacinal em Crianças Menores de um Ano" },
-  { src: "/monitora/painel_indicador_8_do_pqavs.png", caption: "Painel do Indicador 8 do PQAVS (Levantamento Entomológico)" },
+  { src: "/projects/monitora/home.png", caption: "Página Inicial" },
+  { src: "/projects/monitora/grupos_de_indicadores.png", caption: "Grupos de Indicadores" },
+  { src: "/projects/monitora/indicadores_da_vigilancia_epidemiologica_e_controle_de_doencas.png", caption: "Indicadores da Vigilância Epidemiológica e Controle de Doenças" },
+  { src: "/projects/monitora/painel_de_monitoramento_da_dengue.png", caption: "Painel de Monitoramento da Dengue" },
+  { src: "/projects/monitora/painel_de_monitoramento_das_notificacoes_de_trabalho.png", caption: "Painel de Monitoramento das Notificações por Acidente de Trabalho" },
+  { src: "/projects/monitora/painel_de_cobertura_vacinal_em_criancas_menores_de_um_ano.png", caption: "Painel de Cobertura Vacinal em Crianças Menores de um Ano" },
+  { src: "/projects/monitora/painel_indicador_8_do_pqavs.png", caption: "Painel do Indicador 8 do PQAVS (Levantamento Entomológico)" },
 ];
 
 const monitoraImagesEn: GalleryImage[] = [
-  { src: "/monitora/home.png", caption: "Home Screen" },
-  { src: "/monitora/grupos_de_indicadores.png", caption: "Indicator Groups" },
-  { src: "/monitora/indicadores_da_vigilancia_epidemiologica_e_controle_de_doencas.png", caption: "Epidemiological Surveillance and Disease Control Indicators" },
-  { src: "/monitora/painel_de_monitoramento_da_dengue.png", caption: "Dengue Monitoring Dashboard" },
-  { src: "/monitora/painel_de_monitoramento_das_notificacoes_de_trabalho.png", caption: "Work Accident Notifications Monitoring Dashboard" },
-  { src: "/monitora/painel_de_cobertura_vacinal_em_criancas_menores_de_um_ano.png", caption: "Vaccination Coverage Dashboard for Children Under One Year" },
-  { src: "/monitora/painel_indicador_8_do_pqavs.png", caption: "Indicator 8 Dashboard for PQAVS (Entomological Survey)" },
+  { src: "/projects/monitora/home.png", caption: "Home Screen" },
+  { src: "/projects/monitora/grupos_de_indicadores.png", caption: "Indicator Groups" },
+  { src: "/projects/monitora/indicadores_da_vigilancia_epidemiologica_e_controle_de_doencas.png", caption: "Epidemiological Surveillance and Disease Control Indicators" },
+  { src: "/projects/monitora/painel_de_monitoramento_da_dengue.png", caption: "Dengue Monitoring Dashboard" },
+  { src: "/projects/monitora/painel_de_monitoramento_das_notificacoes_de_trabalho.png", caption: "Work Accident Notifications Monitoring Dashboard" },
+  { src: "/projects/monitora/painel_de_cobertura_vacinal_em_criancas_menores_de_um_ano.png", caption: "Vaccination Coverage Dashboard for Children Under One Year" },
+  { src: "/projects/monitora/painel_indicador_8_do_pqavs.png", caption: "Indicator 8 Dashboard for PQAVS (Entomological Survey)" },
 ];
 
 const renavehImagesPt: GalleryImage[] = [
-  { src: "/renaveh/login.png", caption: "Página de Login" },
+  { src: "/projects/renaveh/login.png", caption: "Página de Login" },
 ];
 
 const renavehImagesEn: GalleryImage[] = [
-  { src: "/renaveh/login.png", caption: "Login Page" },
+  { src: "/projects/renaveh/login.png", caption: "Login Page" },
 ];
 
 const foodReviewAgentImagesPt: GalleryImage[] = [
-  { src: "/food-agent/preview.png", caption: "Preview do FoodReview Insights Agent" },
+  { src: "/projects/food-agent/preview.png", caption: "Preview do FoodReview Insights Agent" },
 ];
 
 const foodReviewAgentImagesEn: GalleryImage[] = [
-  { src: "/ food-agent/preview.png", caption: "Preview of the FoodReview Insights Agent" },
+  { src: "/projects/food-agent/preview.png", caption: "Preview of the FoodReview Insights Agent" },
 ];
 
 const plandoxImagesPt: GalleryImage[] = [
-  { src: "/plandox/logo.png", caption: "Plandox" },
-  { src: "/plandox/login.png", caption: "Página de Login" },
-  { src: "/plandox/cadastro.png", caption: "Página de Cadastro" },
-  { src: "/plandox/recuperar_senha.png", caption: "Recuperar Senha" },
-  { src: "/plandox/doe_exemplo.png", caption: "Exemplo de DOE" },
+  { src: "/projects/plandox/logo.png", caption: "Plandox" },
+  { src: "/projects/plandox/login.png", caption: "Página de Login" },
+  { src: "/projects/plandox/cadastro.png", caption: "Página de Cadastro" },
+  { src: "/projects/plandox/recuperar_senha.png", caption: "Recuperar Senha" },
+  { src: "/projects/plandox/doe_exemplo.png", caption: "Exemplo de DOE" },
 ];
 
 const plandoxImagesEn: GalleryImage[] = [
-  { src: "/plandox/logo.png", caption: "Plandox" },
-  { src: "/plandox/login.png", caption: "Login Page of Plandox" },
-  { src: "/plandox/cadastro.png", caption: "Registration Page of Plandox" },
-  { src: "/plandox/recuperar_senha.png", caption: "Password Recovery Page of Plandox" },
-  { src: "/plandox/doe_exemplo.png", caption: "Example of DOE in Plandox" },
+  { src: "/projects/plandox/logo.png", caption: "Plandox" },
+  { src: "/projects/plandox/login.png", caption: "Login Page of Plandox" },
+  { src: "/projects/plandox/cadastro.png", caption: "Registration Page of Plandox" },
+  { src: "/projects/plandox/recuperar_senha.png", caption: "Password Recovery Page of Plandox" },
+  { src: "/projects/plandox/doe_exemplo.png", caption: "Example of DOE in Plandox" },
 ];
 
 const analiseRfmImagesPt: GalleryImage[] = [
-  { src: "/analise-rfm-ml/tela_principal.png", caption: "Análise de Clusters" },
-  { src: "/analise-rfm-ml/guia_segmentos_rfm_1.png", caption: "Segmentos de Clientes" },
-  { src: "/analise-rfm-ml/guia_segmentos_rfm_2.png", caption: "Segmentos de Clientes" },
-  { src: "/analise-rfm-ml/elbow_curve.png", caption: "Curva do Cotovelo para Clusters" },
+  { src: "/projects/analise-rfm-ml/tela_principal.png", caption: "Análise de Clusters" },
+  { src: "/projects/analise-rfm-ml/guia_segmentos_rfm_1.png", caption: "Segmentos de Clientes" },
+  { src: "/projects/analise-rfm-ml/guia_segmentos_rfm_2.png", caption: "Segmentos de Clientes" },
+  { src: "/projects/analise-rfm-ml/elbow_curve.png", caption: "Curva do Cotovelo para Clusters" },
 ];
 
 const analiseRfmImagesEn: GalleryImage[] = [
-  { src: "/analise-rfm-ml/tela_principal.png", caption: "Cluster Analysis" },
-  { src: "/analise-rfm-ml/guia_segmentos_rfm_1.png", caption: "Customer Segments" },
-  { src: "/analise-rfm-ml/guia_segmentos_rfm_2.png", caption: "Customer Segments" },
-  { src: "/analise-rfm-ml/elbow_curve.png", caption: "Elbow Curve for Clusters" },
+  { src: "/projects/analise-rfm-ml/tela_principal.png", caption: "Cluster Analysis" },
+  { src: "/projects/analise-rfm-ml/guia_segmentos_rfm_1.png", caption: "Customer Segments" },
+  { src: "/projects/analise-rfm-ml/guia_segmentos_rfm_2.png", caption: "Customer Segments" },
+  { src: "/projects/analise-rfm-ml/elbow_curve.png", caption: "Elbow Curve for Clusters" },
 ];
 
 const californiaHousingImagesPt: GalleryImage[] = [
-  { src: "/california-housing/housing_prices_scatterplot.png", caption: "Preços de Imóveis - Gráfico de Dispersão" },
-  { src: "/california-housing/histogram_plots.png", caption: "Histogramas das Features" },
+  { src: "/projects/california-housing/housing_prices_scatterplot.png", caption: "Preços de Imóveis - Gráfico de Dispersão" },
+  { src: "/projects/california-housing/histogram_plots.png", caption: "Histogramas das Features" },
 ];
 
 const californiaHousingImagesEn: GalleryImage[] = [
-  { src: "/california-housing/housing_prices_scatterplot.png", caption: "Housing Prices - Scatter Plot" },
-  { src: "/california-housing/histogram_plots.png", caption: "Histograms of Features" },
+  { src: "/projects/california-housing/housing_prices_scatterplot.png", caption: "Housing Prices - Scatter Plot" },
+  { src: "/projects/california-housing/histogram_plots.png", caption: "Histograms of Features" },
 ];
 
 const hansPlusImagesPt: GalleryImage[] = [
-  { src: "/hans-plus/hans-mais.png", caption: "Hans+" },
+  { src: "/projects/hans-plus/hans-mais.png", caption: "Hans+" },
 
-  { src: "/hans-plus/auth/login.jpeg", caption: "Tela de Login" },
-  { src: "/hans-plus/auth/register-1.jpeg", caption: "Primeira parte da Tela de Cadastro" },
-  { src: "/hans-plus/auth/register-2.jpeg", caption: "Segunda parte da Tela de Cadastro" },
-  { src: "/hans-plus/auth/splash.jpeg", caption: "Tela de Splash" },
+  { src: "/projects/hans-plus/auth/login.jpeg", caption: "Tela de Login" },
+  { src: "/projects/hans-plus/auth/register-1.jpeg", caption: "Primeira parte da Tela de Cadastro" },
+  { src: "/projects/hans-plus/auth/register-2.jpeg", caption: "Segunda parte da Tela de Cadastro" },
+  { src: "/projects/hans-plus/auth/splash.jpeg", caption: "Tela de Splash" },
 
-  { src: "/hans-plus/home/home.jpeg", caption: "Tela Inicial" },
+  { src: "/projects/hans-plus/home/home.jpeg", caption: "Tela Inicial" },
 
-  { src: "/hans-plus/info/info-1.jpeg", caption: "Primeira parte da Tela de Informações sobre a Hanseníase" },
-  { src: "/hans-plus/info/info-2.jpeg", caption: "Segunda parte da Tela de Informações sobre a Hanseníase" },
-  { src: "/hans-plus/info/info-sinais-e-sintomas.jpeg", caption: "Tela de Informações sobre Sinais e Sintomas" },
+  { src: "/projects/hans-plus/info/info-1.jpeg", caption: "Primeira parte da Tela de Informações sobre a Hanseníase" },
+  { src: "/projects/hans-plus/info/info-2.jpeg", caption: "Segunda parte da Tela de Informações sobre a Hanseníase" },
+  { src: "/projects/hans-plus/info/info-sinais-e-sintomas.jpeg", caption: "Tela de Informações sobre Sinais e Sintomas" },
 
-  { src: "/hans-plus/profile/perfil.jpeg", caption: "Tela de Perfil" },
-  { src: "/hans-plus/profile/perfil-editar-info-conta.jpeg", caption: "Tela de Edição de Informações da Conta"},
-  { src: "/hans-plus/profile/perfil-historico.jpeg", caption: "Tela de Histórico de Sintomas"},
-  { src: "/hans-plus/profile/saiba-mais.jpeg", caption: "Tela de Saiba Mais"},
-  { src: "/hans-plus/profile/sobre-nos-1.jpeg", caption: "Primeira parte da Tela de Sobre Nós"},
-  { src: "/hans-plus/profile/sobre-nos-2.jpeg", caption: "Segunda parte da Tela de Sobre Nós"},
+  { src: "/projects/hans-plus/profile/perfil.jpeg", caption: "Tela de Perfil" },
+  { src: "/projects/hans-plus/profile/perfil-editar-info-conta.jpeg", caption: "Tela de Edição de Informações da Conta"},
+  { src: "/projects/hans-plus/profile/perfil-historico.jpeg", caption: "Tela de Histórico de Sintomas"},
+  { src: "/projects/hans-plus/profile/saiba-mais.jpeg", caption: "Tela de Saiba Mais"},
+  { src: "/projects/hans-plus/profile/sobre-nos-1.jpeg", caption: "Primeira parte da Tela de Sobre Nós"},
+  { src: "/projects/hans-plus/profile/sobre-nos-2.jpeg", caption: "Segunda parte da Tela de Sobre Nós"},
 ];
 
 const hansPlusImagesEn: GalleryImage[] = [
-  { src: "/hans-plus/hans-mais.png", caption: "Hans+" },
+  { src: "/projects/hans-plus/hans-mais.png", caption: "Hans+" },
 
-  { src: "/hans-plus/auth/login.jpeg", caption: "Login Screen" },
-  { src: "/hans-plus/auth/register-1.jpeg", caption: "First Part of Registration Screen" },
-  { src: "/hans-plus/auth/register-2.jpeg", caption: "Second Part of Registration Screen" },
-  { src: "/hans-plus/auth/splash.jpeg", caption: "Splash Screen" },
+  { src: "/projects/hans-plus/auth/login.jpeg", caption: "Login Screen" },
+  { src: "/projects/hans-plus/auth/register-1.jpeg", caption: "First Part of Registration Screen" },
+  { src: "/projects/hans-plus/auth/register-2.jpeg", caption: "Second Part of Registration Screen" },
+  { src: "/projects/hans-plus/auth/splash.jpeg", caption: "Splash Screen" },
 
-  { src: "/hans-plus/home/home.jpeg", caption: "Home Screen" },
+  { src: "/projects/hans-plus/home/home.jpeg", caption: "Home Screen" },
 
-  { src: "/hans-plus/info/info-1.jpeg", caption: "First Part of Information about Leprosy Screen" },
-  { src: "/hans-plus/info/info-2.jpeg", caption: "Second Part of Information about Leprosy Screen" },
-  { src: "/hans-plus/info/info-sinais-e-sintomas.jpeg", caption: "Information about Signs and Symptoms Screen" },
+  { src: "/projects/hans-plus/info/info-1.jpeg", caption: "First Part of Information about Leprosy Screen" },
+  { src: "/projects/hans-plus/info/info-2.jpeg", caption: "Second Part of Information about Leprosy Screen" },
+  { src: "/projects/hans-plus/info/info-sinais-e-sintomas.jpeg", caption: "Information about Signs and Symptoms Screen" },
 
-  { src: "/hans-plus/profile/perfil.jpeg", caption: "Profile Screen" },
-  { src: "/hans-plus/profile/perfil-editar-info-conta.jpeg", caption: "Edit Account Information Screen"},
-  { src: "/hans-plus/profile/perfil-historico.jpeg", caption: "Symptom History Screen"},
-  { src: "/hans-plus/profile/saiba-mais.jpeg", caption: "Learn More Screen"},
-  { src: "/hans-plus/profile/sobre-nos-1.jpeg", caption: "First Part of About Us Screen"},
-  { src: "/hans-plus/profile/sobre-nos-2.jpeg", caption: "Second Part of About Us Screen"},
+  { src: "/projects/hans-plus/profile/perfil.jpeg", caption: "Profile Screen" },
+  { src: "/projects/hans-plus/profile/perfil-editar-info-conta.jpeg", caption: "Edit Account Information Screen"},
+  { src: "/projects/hans-plus/profile/perfil-historico.jpeg", caption: "Symptom History Screen"},
+  { src: "/projects/hans-plus/profile/saiba-mais.jpeg", caption: "Learn More Screen"},
+  { src: "/projects/hans-plus/profile/sobre-nos-1.jpeg", caption: "First Part of About Us Screen"},
+  { src: "/projects/hans-plus/profile/sobre-nos-2.jpeg", caption: "Second Part of About Us Screen"},
 ];
 
 
@@ -269,7 +269,7 @@ const projectsPt: Project[] = [
     icon: Smartphone,
     images: hansPlusImagesPt,
     links: [
-      { type: "apk", url: "/hans-plus/hans+.apk", label: "APK Android" }
+      { type: "apk", url: "/downloads/hans-plus.apk", label: "APK Android" }
     ]
   }, 
   {
