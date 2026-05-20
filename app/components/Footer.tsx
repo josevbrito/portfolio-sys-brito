@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 
 export function Footer() {
   const t = useTranslations("footer");
+  const tContact = useTranslations("contact");
   const currentYear = new Date().getFullYear();
 
   return (
@@ -31,7 +32,7 @@ export function Footer() {
             <a href="https://linkedin.com/in/josevbrito/" target="_blank" className="text-gray-500 hover:text-primary transition-colors">
               <Linkedin size={18} />
             </a>
-            <a href="mailto:contact@josevbrito.com" className="text-gray-500 hover:text-primary transition-colors">
+            <a href={`mailto:${tContact("email")}`} className="text-gray-500 hover:text-primary transition-colors">
               <Mail size={18} />
             </a>
           </div>
