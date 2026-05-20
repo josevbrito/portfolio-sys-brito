@@ -58,6 +58,16 @@ const renavehImagesEn: GalleryImage[] = [
   { src: "/projects/renaveh/login.png", caption: "Login Page" },
 ];
 
+const sishansImagesPt: GalleryImage[] = [
+  { src: "/projects/sishans/login.png", caption: "Página de Login" },
+  { src: "/projects/sishans/materiais_de_apoio.png", caption: "Materiais de Apoio" },
+];
+
+const sishansImagesEn: GalleryImage[] = [
+  { src: "/projects/sishans/login.png", caption: "Login Page" },
+  { src: "/projects/sishans/materiais_de_apoio.png", caption: "Support Materials" },
+];
+
 const foodReviewAgentImagesPt: GalleryImage[] = [
   { src: "/projects/food-agent/preview.png", caption: "Preview do FoodReview Insights Agent" },
 ];
@@ -150,13 +160,20 @@ const hansPlusImagesEn: GalleryImage[] = [
   { src: "/projects/hans-plus/profile/sobre-nos-2.jpeg", caption: "Second Part of About Us Screen"},
 ];
 
+const relabImagesPt: GalleryImage[] = [
+  { src: "/projects/relab/login.png", caption: "Página de Login" },
+];
+
+const relabImagesEn: GalleryImage[] = [
+  { src: "/projects/relab/login.png", caption: "Login Page" },
+];
 
 const projectsPt: Project[] = [
   {
     slug: "monitora-saude",
     title: "Monitora Saúde",
-    shortDesc: "Plataforma de transparência com mais de 50 dashboards interativos em Power BI.",
-    fullDesc: "Portal de Transparência de Saúde do Maranhão. Ferramenta vital para gestores e população, permitindo monitoramento de indicadores de saúde e processos em tempo real para suporte à tomada de decisão.",
+    shortDesc: "Portal de transparência em saúde do Maranhão com cerca de 50 painéis públicos em Power BI.",
+    fullDesc: "Portal de Transparência de Saúde do Maranhão, desenvolvido para gestores e população. A coordenação é responsável pela plataforma e pelo fluxo de cadastro de indicadores — os gestores das áreas técnicas registram as informações descritivas e o link do painel Power BI correspondente, que passa a ser exibido automaticamente. Conta também com canal aberto de sugestões, acessível sem autenticação.",
     tags: ["Power BI", "Laravel", "PostgreSQL"],
     categories: ["Full Stack"],
     status: "Concluído",
@@ -188,17 +205,17 @@ const projectsPt: Project[] = [
   {
     slug: "maranhao-livre-da-fome",
     title: "Programa Maranhão Livre da Fome",
-    shortDesc: "Plataforma de acompanhamento de 400 mil beneficiários em 217 cidades.",
-    fullDesc: "Plataforma oficial para acompanhamento das consultas e benefícios do programa. O sistema gerencia uma base de dados massiva cobrindo todas as cidades do estado, garantindo integridade dos dados e acesso restrito a técnicos autorizados.",
+    shortDesc: "Sistema de cadastro de famílias vulneráveis com perspectiva de 400 mil beneficiários em 217 cidades.",
+    fullDesc: "Plataforma oficial do Programa Maranhão Livre da Fome, voltada ao cadastro e acompanhamento de famílias em situação de vulnerabilidade nutricional. Registra consultas, classifica famílias via triagem de risco (TRIA) e gera dados para políticas públicas de saúde e alimentação. Em produção desde novembro de 2025, com registros sendo inseridos gradualmente — a expectativa é alcançar 400 mil beneficiários em cerca de 90 mil famílias. Conta com 479 profissionais de saúde e cerca de 400 usuários entre coordenadores, digitadores e equipe da área técnica.",
     tags: ["Laravel", "MySQL", "JavaScript"],
     categories: ["Full Stack"],
     status: "Concluído",
     icon: Layout,
     images: masemfomeImagesPt,
     stats: [
-      { label: "Beneficiários", value: "400k" },
-      { label: "Cidades", value: "217" },
-      { label: "Escala", value: "Massiva" }
+      { label: "Beneficiários Cadastrados", value: "26.4k" },
+      { label: "Beneficiários Esperados", value: "400k" },
+      { label: "Cidades", value: "217" }
     ],
     links: [
       { type: "live", url: "https://maranhaolivredafome.saude.ma.gov.br/" },
@@ -222,20 +239,40 @@ const projectsPt: Project[] = [
   {
     slug: "renaveh-ma",
     title: "Sistema de Notificação Hospitalar (RENAVEH)",
-    shortDesc: "Sistema robusto em Laravel/MySQL com 2FA e RBAC. Processa 50k registros e atende 98 hospitais.",
-    fullDesc: "O RENAVEH-MA (Sistema de Informação da Rede Nacional de Vigilância Epidemiológica Hospitalar) foi implantado como subsistema estratégico. Ele não se limita a notificações compulsórias, mas objetiva a detecção e resposta imediata a Emergências de Saúde Pública (ESP). O sistema conta com controle de acesso rigoroso (RBAC) e autenticação de dois fatores (2FA).",
+    shortDesc: "Sistema com 2FA e RBAC para vigilância epidemiológica hospitalar. +72k casos notificados em 98 unidades.",
+    fullDesc: "O RENAVEH-MA (Rede Nacional de Vigilância Epidemiológica Hospitalar — Maranhão) permite às instituições de saúde registrar e acompanhar notificações de doenças e agravos. Vai além das notificações compulsórias, visando a detecção e resposta imediata a Emergências de Saúde Pública (ESP). Em produção desde fevereiro de 2024, o sistema conta com autenticação em dois fatores (2FA), controle granular de acesso por perfis (RBAC) e aproximadamente 270 usuários cadastrados.",
     tags: ["Laravel", "MySQL", "JavaScript"],
     categories: ["Full Stack"],
     status: "Concluído",
     icon: Database,
     images: renavehImagesPt,
     stats: [
-      { label: "Registros", value: "+50k" },
+      { label: "Casos Notificados", value: "+72k" },
       { label: "Hospitais", value: "98" },
-      { label: "Impacto", value: "Estadual" }
+      { label: "Usuários", value: "270" }
     ],
     links: [
       { type: "live", url: "https://renaveh.saude.ma.gov.br/" },
+      { type: "lock", url: "#", label: "Código Confidencial" }
+    ],
+  },
+  {
+    slug: "sishans",
+    title: "SISHANS - Sistema de Hanseníase",
+    shortDesc: "Sistema de registro e acompanhamento de casos de hanseníase com 5.6k pacientes em 50 municípios.",
+    fullDesc: "O SISHANS (Sistema de Hanseníase) permite às equipes de saúde registrar questionários diagnósticos e acompanhar casos suspeitos, facilitando a notificação precoce e a coleta de dados para ações de prevenção. Em produção desde janeiro de 2026, já aplicou 5.5k questionários em 50 municípios do Maranhão. Segue os padrões institucionais com 2FA e controle granular de acesso por perfis (RBAC).",
+    tags: ["Laravel", "PostgreSQL", "JavaScript"],
+    categories: ["Full Stack"],
+    status: "Concluído",
+    icon: Database,
+    images: sishansImagesPt,
+    stats: [
+      { label: "Pacientes", value: "5.6k" },
+      { label: "Questionários", value: "5.5k" },
+      { label: "Municípios", value: "50" }
+    ],
+    links: [
+      { type: "live", url: "https://sishans.saude.ma.gov.br/" },
       { type: "lock", url: "#", label: "Código Confidencial" }
     ],
   },
@@ -271,7 +308,22 @@ const projectsPt: Project[] = [
     links: [
       { type: "apk", url: "/downloads/hans-plus.apk", label: "APK Android" }
     ]
-  }, 
+  },
+  {
+    slug: "relab",
+    title: "RELAB — Rede Laboratorial",
+    shortDesc: "Plataforma de cadastro de laboratórios na rede do LACEN-MA com integração automática à API do CNES.",
+    fullDesc: "O RELAB permite o cadastro de laboratórios na Rede do Laboratório Central de Saúde Pública do Maranhão (LACEN-MA). A plataforma integra-se à API do CNES (Cadastro Nacional de Estabelecimentos de Saúde) para preenchimento automático dos dados durante o cadastro. O fluxo contempla: o gestor cadastra o laboratório e o responsável técnico; o responsável técnico informa os exames realizados e o quantitativo de funcionários por hora de funcionamento. Sistema atualmente em fase final de homologação.",
+    tags: ["Laravel", "PostgreSQL", "React"],
+    categories: ["Full Stack"],
+    status: "Concluído",
+    icon: Database,
+    images: relabImagesPt,
+    links: [
+      { type: "live", url: "https://relab-ioclacen.saude.ma.gov.br/" },
+      { type: "lock", url: "#", label: "Código Confidencial" }
+    ]
+  },
   {
     slug: "portfolio-sys-brito",
     title: "Portfólio Pessoal",
@@ -307,8 +359,8 @@ const projectsEn: Project[] = [
   {
     slug: "monitora-saude",
     title: "Health Monitor",
-    shortDesc: "Transparency platform with over 50 interactive Power BI dashboards.",
-    fullDesc: "Maranhão Health Transparency Portal. A vital tool for managers and the population, allowing real-time monitoring of health indicators and processes to support decision-making.",
+    shortDesc: "Maranhão health transparency portal with around 50 public Power BI dashboards.",
+    fullDesc: "Maranhão Health Transparency Portal, built for managers and the general public. The team is responsible for the platform and the indicator registration flow — technical area managers register descriptive information and the corresponding Power BI dashboard link, which is automatically displayed. Also features an open suggestion channel accessible without authentication.",
     tags: ["Power BI", "Laravel", "PostgreSQL"],
     categories: ["Full Stack"],
     status: "Completed",
@@ -340,17 +392,17 @@ const projectsEn: Project[] = [
   {
     slug: "maranhao-livre-da-fome",
     title: "Maranhão Hunger-Free Program",
-    shortDesc: "Monitoring platform for 400k beneficiaries across 217 cities.",
-    fullDesc: "Official platform for tracking consultations and benefits of the program. The system manages a massive database covering all cities in the state, ensuring data integrity and restricted access to authorized technicians.",
+    shortDesc: "Family registration platform with a target of 400k beneficiaries across 217 cities.",
+    fullDesc: "Official platform of the Maranhão Hunger-Free Program, focused on registering and monitoring families in nutritional vulnerability. Records consultations, classifies families through risk screening (TRIA), and generates data for public health and food policies. In production since November 2025, with records being added gradually — the target is 400k beneficiaries across around 90k families. It has 479 health professionals and around 400 users including coordinators, data entry personnel, and technical area staff.",
     tags: ["Laravel", "MySQL", "JavaScript"],
     categories: ["Full Stack"],
     status: "Completed",
     icon: Layout,
     images: masemfomeImagesEn,
     stats: [
-      { label: "Beneficiaries", value: "400k" },
-      { label: "Cities", value: "217" },
-      { label: "Scale", value: "Massive" }
+      { label: "Registered Beneficiaries", value: "26.4k" },
+      { label: "Expected Beneficiaries", value: "400k" },
+      { label: "Cities", value: "217" }
     ],
     links: [
       { type: "live", url: "https://maranhaolivredafome.saude.ma.gov.br/" },
@@ -374,20 +426,40 @@ const projectsEn: Project[] = [
   {
     slug: "renaveh-ma",
     title: "Hospital Notification System (RENAVEH)",
-    shortDesc: "Robust Laravel/MySQL system with 2FA and RBAC. Processes 50k records and serves 98 hospitals.",
-    fullDesc: "RENAVEH-MA (National Hospital Epidemiological Surveillance System Information - Maranhão) was implemented as a strategic subsystem. It is not limited to compulsory notifications but aims at the detection and immediate response to Public Health Emergencies (PHE). The system features strict access control (RBAC) and two-factor authentication (2FA).",
+    shortDesc: "System with 2FA and RBAC for hospital epidemiological surveillance. +72k cases notified in 98 units.",
+    fullDesc: "The RENAVEH-MA (National Hospital Epidemiological Surveillance Network — Maranhão) allows health institutions to register and monitor notifications of diseases and injuries. It goes beyond compulsory notifications, aiming for immediate detection and response to Public Health Emergencies (PHE). In production since February 2024, the system features two-factor authentication (2FA), granular role-based access control (RBAC), and approximately 270 registered users.",
     tags: ["Laravel", "MySQL", "JavaScript"],
     categories: ["Full Stack"],
     status: "Completed",
     icon: Database,
     images: renavehImagesEn,
     stats: [
-      { label: "Records", value: "+50k" },
+      { label: "Cases Notified", value: "+72k" },
       { label: "Hospitals", value: "98" },
-      { label: "Impact", value: "Statewide" }
+      { label: "Users", value: "270" }
     ],
     links: [
       { type: "live", url: "https://renaveh.saude.ma.gov.br/" },
+      { type: "lock", url: "#", label: "Confidential Code" }
+    ]
+  },
+  {
+    slug: "sishans",
+    title: "SISHANS - Leprosy Information System",
+    shortDesc: "System for recording and monitoring leprosy cases with 5.6k patients across 50 municipalities.",
+    fullDesc: "SISHANS (Leprosy Information System) enables health teams to register diagnostic questionnaires and monitor suspected cases, supporting early notification and data collection for prevention. Live since January 2026, it has processed 5.5k questionnaires across 50 municipalities in Maranhão. Follows institutional security standards with 2FA and granular role-based access control (RBAC).",
+    tags: ["Laravel", "PostgreSQL", "JavaScript"],
+    categories: ["Full Stack"],
+    status: "Completed",
+    icon: Database,
+    images: sishansImagesEn,
+    stats: [
+      { label: "Patients", value: "5.6k" },
+      { label: "Questionnaires", value: "5.5k" },
+      { label: "Municipalities", value: "50" }
+    ],
+    links: [
+      { type: "live", url: "https://sishans.saude.ma.gov.br/" },
       { type: "lock", url: "#", label: "Confidential Code" }
     ]
   },
@@ -421,7 +493,22 @@ const projectsEn: Project[] = [
     icon: Smartphone,
     images: hansPlusImagesEn,
     links: [
-      { type: "apk", url: "#", label: "APK Available" }
+      { type: "apk", url: "/downloads/hans-plus.apk", label: "APK Android" }
+    ]
+  },
+  {
+    slug: "relab",
+    title: "RELAB — Laboratory Network",
+    shortDesc: "Platform for registering laboratories in the LACEN-MA network with automatic CNES API integration.",
+    fullDesc: "RELAB enables the registration of laboratories in the LACEN-MA (Maranhão Central Public Health Laboratory) network. The platform integrates with the CNES API (National Health Establishment Registry) to automatically fill in unit data during registration. The workflow covers: the manager registers the laboratory and technical manager; the technical manager then registers the exams performed and staff count per shift. Currently in final homologation phase.",
+    tags: ["Laravel", "PostgreSQL", "React"],
+    categories: ["Full Stack"],
+    status: "Completed",
+    icon: Database,
+    images: relabImagesEn,
+    links: [
+      { type: "live", url: "https://relab-ioclacen.saude.ma.gov.br/" },
+      { type: "lock", url: "#", label: "Confidential Code" }
     ]
   },
   {
