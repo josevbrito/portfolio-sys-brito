@@ -6,6 +6,7 @@ import { Navbar } from "@/app/components/Navbar";
 import { Code2, ExternalLink, Github, Lock } from "lucide-react";
 import { useParams } from "next/navigation";
 import { getProjects } from "@/app/data/projects";
+import { getTechColor } from "@/app/utils/techColors";
 import { ProjectGallery } from "@/app/components/ProjectGallery";
 
 export default function ProjectDetails() {
@@ -83,7 +84,7 @@ export default function ProjectDetails() {
               </h3>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="px-3 py-1.5 bg-surface border border-white/10 rounded text-sm text-gray-300 font-mono">
+                  <span key={tag} className="px-3 py-1.5 rounded text-sm font-mono border" style={getTechColor(tag)}>
                     {tag}
                   </span>
                 ))}

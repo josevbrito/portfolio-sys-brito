@@ -5,7 +5,7 @@
 ![Next.js](https://img.shields.io/badge/Next.js-15-black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
 
-> A high-performance, cyberpunk-themed portfolio designed for a Software Engineer & Data Scientist. Built with the modern web stack.
+> A high-performance, cyberpunk-themed portfolio designed for a Software Developer & Data Scientist. Built with the modern web stack.
 
 ![Portfolio Cover](public/cover.png)
 
@@ -110,7 +110,7 @@ Current efforts are focused on improving **Total Blocking Time (TBT)** and **Lig
 
 ## 📬 Contact
 
-**José Brito** - Software Engineer & Data Scientist
+**José Brito** - Software Developer & Data Scientist
 
   * **Email:** contact@josevbrito.com
   * **LinkedIn:** [linkedin.com/in/josevbrito](https://linkedin.com/in/josevbrito/)

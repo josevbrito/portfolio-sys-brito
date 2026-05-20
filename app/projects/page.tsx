@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import { useLanguage } from "../context/LanguageContext";
 import { Navbar } from "../components/Navbar";
 import { getProjects } from "../data/projects";
+import { getTechColor } from "../utils/techColors";
 
 export default function ProjectsPage() {
   const t = useTranslations("projectsSection");
@@ -113,7 +114,7 @@ export default function ProjectsPage() {
 
               <div className="flex flex-wrap gap-2 relative z-10">
                 {project.tags.slice(0, 3).map((tag, i) => (
-                  <span key={i} className="text-[10px] font-mono px-2 py-1 rounded bg-white/5 text-gray-300 border border-white/5">
+                  <span key={i} className="text-[10px] font-mono px-2 py-1 rounded border" style={getTechColor(tag)}>
                     {tag}
                   </span>
                 ))}

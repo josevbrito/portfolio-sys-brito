@@ -5,6 +5,7 @@ import { ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useLanguage } from "../../context/LanguageContext";
 import { getProjects } from "../../data/projects";
+import { getTechColor } from "../../utils/techColors";
 import type { Project } from "../../types";
 
 export function ProjectsSection() {
@@ -66,7 +67,7 @@ export function ProjectsSection() {
               </p>
               <div className="relative z-10 flex flex-wrap gap-2 mt-auto">
                 {project.tags.slice(0, 3).map((tag: string, i: number) => (
-                  <span key={i} className="text-[10px] font-mono px-2 py-1 rounded bg-white/5 text-gray-300 border border-white/5">
+                  <span key={i} className="text-[10px] font-mono px-2 py-1 rounded border" style={getTechColor(tag)}>
                     {tag}
                   </span>
                 ))}
