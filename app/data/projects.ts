@@ -269,7 +269,7 @@ const projectsPt: Project[] = [
     icon: Smartphone,
     images: hansPlusImagesPt,
     links: [
-      { type: "apk", url: "#", label: "APK Disponível" }
+      { type: "apk", url: "/hans-plus/hans+.apk", label: "APK Android" }
     ]
   }, 
   {
