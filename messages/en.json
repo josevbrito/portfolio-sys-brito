@@ -49,7 +49,9 @@
       "sendButton": "Send Message",
       "sending": "Sending...",
       "successMessage": "Message sent successfully!",
-      "errorMessage": "Error sending. Please try again."
+      "errorMessage": "Error sending. Please try again.",
+      "cooldown": "Wait {time} before sending again.",
+      "limitReached": "Send limit reached. Please try again later."
     }
   },
   "footer": {

@@ -1,14 +1,70 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Check, Copy, Github, Linkedin, Mail, Send, Loader2, AlertCircle } from "lucide-react";
+import { Check, Copy, Github, Linkedin, Mail, Send, Loader2, AlertCircle, Clock, ShieldAlert } from "lucide-react";
 import { useTranslations } from "next-intl";
+
+// Rate-limit constants
+
+const RATE_KEY        = "contact_rate";
+const COOLDOWN_MS     = 5 * 60 * 1000; // 5 min cooldown between sends
+const MAX_PER_HOUR    = 3;
+const HOUR_MS         = 60 * 60 * 1000;
+
+interface RateData {
+  lastSent:    number;
+  count:       number;
+  windowStart: number;
+}
+
+function loadRate(): RateData {
+  try {
+    const raw = localStorage.getItem(RATE_KEY);
+    if (raw) return JSON.parse(raw) as RateData;
+  } catch { /* ignore parse errors */ }
+  return { lastSent: 0, count: 0, windowStart: 0 };
+}
+
+function saveRate(data: RateData) {
+  localStorage.setItem(RATE_KEY, JSON.stringify(data));
+}
+
+function formatCountdown(secs: number): string {
+  const m = Math.floor(secs / 60);
+  const s = secs % 60;
+  return m > 0 ? `${m}m ${s}s` : `${s}s`;
+}
+
+// Component
+
+type FormStatus = "idle" | "sending" | "success" | "error" | "limit_reached";
 
 export function ContactSection() {
   const t = useTranslations("contact");
-  const [copied, setCopied] = useState(false);
-  const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [copied, setCopied]         = useState(false);
+  const [formStatus, setFormStatus] = useState<FormStatus>("idle");
+  const [cooldown, setCooldown]     = useState(0); // seconds remaining
+  const honeypotRef = useRef<HTMLInputElement>(null);
+
+  // Initialise cooldown from localStorage on mount
+  useEffect(() => {
+    const data = loadRate();
+    const remaining = Math.ceil((data.lastSent + COOLDOWN_MS - Date.now()) / 1000);
+    if (remaining > 0) setCooldown(remaining);
+  }, []);
+
+  // Tick the countdown every second
+  useEffect(() => {
+    if (cooldown <= 0) return;
+    const id = setInterval(() => {
+      setCooldown((prev) => {
+        if (prev <= 1) { clearInterval(id); return 0; }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(id);
+  }, [cooldown]);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(t("email"));
@@ -16,39 +72,76 @@ export function ContactSection() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  async function handleSubmit(event: any) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    // Honeypot check: bots fill hidden fields, humans don't
+    if (honeypotRef.current?.value) {
+      // Silently pretend success without sending anything
+      setFormStatus("success");
+      (event.target as HTMLFormElement).reset();
+      setTimeout(() => setFormStatus("idle"), 5000);
+      return;
+    }
+
+    // Cooldown check
+    if (cooldown > 0) return;
+
+    const data = loadRate();
+    const remaining = Math.ceil((data.lastSent + COOLDOWN_MS - Date.now()) / 1000);
+    if (remaining > 0) {
+      setCooldown(remaining);
+      return;
+    }
+
+    // Hourly limit check
+    const inWindow = data.windowStart > 0 && Date.now() - data.windowStart < HOUR_MS;
+    if (inWindow && data.count >= MAX_PER_HOUR) {
+      setFormStatus("limit_reached");
+      return;
+    }
+
+    // Send
     setFormStatus("sending");
 
-    const formData = new FormData(event.target);
     const FORMSPREE_URL = process.env.NEXT_PUBLIC_FORMSPREE_URL;
-
     if (!FORMSPREE_URL) {
-      console.error("Formspree URL não configurada!");
       setFormStatus("error");
+      setTimeout(() => setFormStatus("idle"), 5000);
       return;
     }
 
     try {
+      const formData = new FormData(event.target as HTMLFormElement);
       const response = await fetch(FORMSPREE_URL, {
         method: "POST",
         body: formData,
-        headers: { "Accept": "application/json" }
+        headers: { Accept: "application/json" },
       });
 
       if (response.ok) {
+        // Record successful send
+        const newCount       = inWindow ? data.count + 1 : 1;
+        const newWindowStart = inWindow ? data.windowStart : Date.now();
+        saveRate({ lastSent: Date.now(), count: newCount, windowStart: newWindowStart });
+        setCooldown(Math.ceil(COOLDOWN_MS / 1000));
+
         setFormStatus("success");
-        event.target.reset();
+        (event.target as HTMLFormElement).reset();
         setTimeout(() => setFormStatus("idle"), 5000);
       } else {
         setFormStatus("error");
         setTimeout(() => setFormStatus("idle"), 5000);
       }
-    } catch (error) {
+    } catch {
       setFormStatus("error");
       setTimeout(() => setFormStatus("idle"), 5000);
     }
   }
+
+  const isCoolingDown  = cooldown > 0;
+  const isLimitReached = formStatus === "limit_reached";
+  const isBlocked      = isCoolingDown || isLimitReached;
 
   return (
     <section id="contact" className="py-24 px-6 relative overflow-hidden border-t border-white/5">
@@ -125,6 +218,17 @@ export function ContactSection() {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
+            {/* Honeypot — hidden from real users, bots fill it */}
+            <input
+              ref={honeypotRef}
+              name="_trap"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", opacity: 0 }}
+            />
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="space-y-2">
                 <label htmlFor="name" className="text-xs font-mono text-primary/80 uppercase tracking-wider">
@@ -169,18 +273,34 @@ export function ContactSection() {
               ></textarea>
             </div>
 
+            {/* Rate-limit feedback banners */}
+            {isCoolingDown && (
+              <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-xs font-mono">
+                <Clock size={14} className="shrink-0" />
+                {t("form.cooldown", { time: formatCountdown(cooldown) })}
+              </div>
+            )}
+            {isLimitReached && (
+              <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-mono">
+                <ShieldAlert size={14} className="shrink-0" />
+                {t("form.limitReached")}
+              </div>
+            )}
+
             <button
               type="submit"
-              disabled={formStatus === "sending" || formStatus === "success"}
+              disabled={formStatus === "sending" || formStatus === "success" || isBlocked}
               className={`w-full flex items-center justify-center gap-3 py-4 rounded-lg font-bold transition-all overflow-hidden relative group ${
                 formStatus === "success"
                   ? "bg-green-500/10 text-green-500 border border-green-500/50 cursor-default"
                   : formStatus === "error"
                   ? "bg-red-500/10 text-red-500 border border-red-500/50"
+                  : isBlocked
+                  ? "bg-white/5 text-gray-600 border border-white/5 cursor-not-allowed"
                   : "bg-primary text-black hover:bg-primary-glow hover:scale-[1.01] border border-transparent"
               }`}
             >
-              {formStatus === "idle" && (
+              {formStatus === "idle" && !isBlocked && (
                 <>
                   {t("form.sendButton")}
                   <Send size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -202,6 +322,18 @@ export function ContactSection() {
                 <>
                   <AlertCircle size={20} />
                   <span>{t("form.errorMessage")}</span>
+                </>
+              )}
+              {formStatus === "idle" && isCoolingDown && (
+                <>
+                  <Clock size={18} />
+                  <span>{formatCountdown(cooldown)}</span>
+                </>
+              )}
+              {isLimitReached && (
+                <>
+                  <ShieldAlert size={18} />
+                  <span>{t("form.limitReached")}</span>
                 </>
               )}
             </button>

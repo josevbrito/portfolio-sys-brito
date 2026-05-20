@@ -49,7 +49,9 @@
       "sendButton": "Enviar Mensagem",
       "sending": "Enviando...",
       "successMessage": "Mensagem enviada com sucesso!",
-      "errorMessage": "Erro ao enviar. Tente novamente."
+      "errorMessage": "Erro ao enviar. Tente novamente.",
+      "cooldown": "Aguarde {time} para enviar novamente.",
+      "limitReached": "Limite de envios atingido. Tente novamente mais tarde."
     }
   },
   "footer": {
