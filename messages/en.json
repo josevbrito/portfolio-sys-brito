@@ -11,7 +11,7 @@
     "status": "SYSTEM ONLINE",
     "greeting": "Hello, I am",
     "name": "José Brito",
-    "role": "Software Engineer & Data Scientist",
+    "role": "Software Developer & Data Scientist",
     "description": "Specialist in transforming complex data into robust applications. Focused on scalable architectures, Full Stack (Laravel/Next.js), and applied Artificial Intelligence.",
     "current_focus": "Current Focus",
     "focus_list": ["High Scale Systems", "AI Agents", "Data Science"],
