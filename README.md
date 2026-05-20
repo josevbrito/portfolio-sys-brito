@@ -2,12 +2,12 @@
 
 ![Project Status](https://img.shields.io/badge/status-active-success.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Next.js](https://img.shields.io/badge/Next.js-15-black)
+![Next.js](https://img.shields.io/badge/Next.js-16-black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
 
 > A high-performance, cyberpunk-themed portfolio designed for a Software Developer & Data Scientist. Built with the modern web stack.
 
-![Portfolio Cover](public/cover.png)
+![Portfolio Cover](https://raw.githubusercontent.com/josevbrito/portfolio-sys-brito/main/public/cover.png)
 
 ## 🚀 About The Project
 
@@ -29,7 +29,7 @@ This portfolio was engineered to be more than just a resume; it's a showcase of 
 ## 🛠️ Tech Stack
 
 ### Core
-* **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
+* **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
 * **Language:** [TypeScript](https://www.typescriptlang.org/)
 * **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 
