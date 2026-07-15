@@ -11,11 +11,11 @@
     "status": "SISTEMA ONLINE",
     "greeting": "Olá, eu sou",
     "name": "José Brito",
-    "role": "Desenvolvedor de Software & Cientista de Dados",
+    "role": "Engenheiro de Software & Cientista de Dados",
     "description": "Especialista em transformar dados complexos em aplicações robustas. Foco em arquiteturas escaláveis, Full Stack (Laravel/Next.js) e Inteligência Artificial aplicada.",
     "current_focus": "Foco atual",
     "focus_list": ["Sistemas de Alta Escala", "Agentes de IA", "Ciência de Dados"],
-    "terminal_desc": "Desenvolvedor Full Stack apaixonado por inovação no setor público e privado.",
+    "terminal_desc": "Engenheiro Full Stack apaixonado por inovação no setor público e privado.",
     "skills": ["Next.js", "Laravel", "Python (AI)", "PostgreSQL"]
   },
   "projectsSection": {

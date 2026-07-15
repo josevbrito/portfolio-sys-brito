@@ -65,7 +65,7 @@ export default function OgImage() {
 
         {/* Role */}
         <div style={{ color: "#9ca3af", fontSize: 26, marginTop: 16, marginBottom: 44, display: "flex" }}>
-          Software Developer & Data Scientist
+          Software Engineer & Data Scientist
         </div>
 
         {/* Separator */}

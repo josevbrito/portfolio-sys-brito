@@ -11,11 +11,11 @@
     "status": "SYSTEM ONLINE",
     "greeting": "Hello, I am",
     "name": "José Brito",
-    "role": "Software Developer & Data Scientist",
+    "role": "Software Engineer & Data Scientist",
     "description": "Specialist in transforming complex data into robust applications. Focused on scalable architectures, Full Stack (Laravel/Next.js), and applied Artificial Intelligence.",
     "current_focus": "Current Focus",
     "focus_list": ["High Scale Systems", "AI Agents", "Data Science"],
-    "terminal_desc": "Full Stack Developer passionate about innovation in public and private sectors.",
+    "terminal_desc": "Full Stack Engineer passionate about innovation in public and private sectors.",
     "skills": ["Next.js", "Laravel", "Python (AI)", "PostgreSQL"]
   },
   "projectsSection": {

@@ -14,13 +14,13 @@ const BASE_URL = "https://josevbrito.com";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default:  "José Brito - Developer & Data Scientist",
+    default:  "José Brito - Software Engineer & Data Scientist",
     template: "%s | José Brito",
   },
   description:
-    "Portfólio de José Victor Brito Costa - Desenvolvedor Full Stack e Cientista de Dados especializado em sistemas de alto impacto, IA aplicada e saúde pública.",
+    "Portfólio de José Victor Brito Costa - Engenheiro Full Stack e Cientista de Dados especializado em sistemas de alto impacto, IA aplicada e saúde pública.",
   keywords: [
-    "José Brito", "desenvolvedor full stack", "cientista de dados",
+    "José Brito", "engenheiro de software", "engenheiro full stack", "cientista de dados",
     "Next.js", "Laravel", "Python", "PostgreSQL", "Power BI",
     "portfólio", "Maranhão",
   ],
@@ -30,16 +30,16 @@ export const metadata: Metadata = {
     type:        "website",
     url:         BASE_URL,
     siteName:    "sys.brito",
-    title:       "José Brito - Developer & Data Scientist",
+    title:       "José Brito - Software Engineer & Data Scientist",
     description:
-      "Desenvolvedor Full Stack e Cientista de Dados. +10 projetos de alto impacto em saúde pública, IA, análise de dados, sistemas web e mobile.",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "José Brito - Developer & Data Scientist" }],
+      "Engenheiro Full Stack e Cientista de Dados. +10 projetos de alto impacto em saúde pública, IA, análise de dados, sistemas web e mobile.",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "José Brito - Software Engineer & Data Scientist" }],
     locale: "pt_BR",
   },
   twitter: {
     card:        "summary_large_image",
-    title:       "José Brito - Developer & Data Scientist",
-    description: "Desenvolvedor Full Stack e Cientista de Dados. +10 projetos de alto impacto.",
+    title:       "José Brito - Software Engineer & Data Scientist",
+    description: "Engenheiro Full Stack e Cientista de Dados. +10 projetos de alto impacto.",
     images:      ["/opengraph-image"],
   },
   alternates: {

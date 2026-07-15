@@ -1,11 +1,11 @@
-# sys.brito | Developer Portfolio
+# sys.brito | Software Engineer Portfolio
 
 ![Project Status](https://img.shields.io/badge/status-active-success.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Next.js](https://img.shields.io/badge/Next.js-16-black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
 
-> A high-performance, cyberpunk-themed portfolio designed for a Software Developer & Data Scientist. Built with the modern web stack.
+> A high-performance, cyberpunk-themed portfolio designed for a Software Engineer & Data Scientist. Built with the modern web stack.
 
 **Live Demo:** [josevbrito.com](https://josevbrito.com)
 
@@ -63,7 +63,7 @@ portfolio-sys-brito/
 
 ## 📬 Contact
 
-**José Brito** — Software Developer & Data Scientist
+**José Brito** — Software Engineer & Data Scientist
 
 * **Email:** contact@josevbrito.com
 * **LinkedIn:** [linkedin.com/in/josevbrito](https://linkedin.com/in/josevbrito/)

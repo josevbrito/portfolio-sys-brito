@@ -3,7 +3,7 @@ import type { TimelineItem } from "../types";
 const timelinePt: TimelineItem[] = [
   {
     date: "08/2025 - Atual",
-    title: "Desenvolvedor de Software",
+    title: "Engenheiro de Software",
     org: "Secretaria de Estado da Saúde do Maranhão",
     desc: "Desenvolvimento de sistemas públicos utilizando Laravel, React e PostgreSQL/MySQL. Auxílio técnico a estagiários.",
     type: "work"
@@ -17,7 +17,7 @@ const timelinePt: TimelineItem[] = [
   },
   {
     date: "06/2025 - 08/2025",
-    title: "Desenvolvedor de Software e IA",
+    title: "Engenheiro de Software e IA",
     org: "Lab. de Análise de Dados e Inteligência Artificial (UFMA)",
     desc: "Modernização do Plandox (Monolito p/ Microsserviços) usando Python/FastAPI e implementação de modelos de ML para biodiesel.",
     type: "work"
@@ -31,7 +31,7 @@ const timelinePt: TimelineItem[] = [
   },
   {
     date: "09/2023 - 06/2025",
-    title: "Desenvolvedor de Software Junior",
+    title: "Engenheiro de Software Junior",
     org: "Secretaria de Estado da Saúde do Maranhão",
     desc: "Desenvolvimento e manutenção de softwares de saúde pública usando Laravel, JavaScript, PostgreSQL/MySQL e Python para dados.",
     type: "work"
@@ -62,7 +62,7 @@ const timelinePt: TimelineItem[] = [
 const timelineEn: TimelineItem[] = [
   {
     date: "08/2025 - Current",
-    title: "Software Developer",
+    title: "Software Engineer",
     org: "State Health Secretariat (SES-MA)",
     desc: "Development of public systems using Laravel, React, and PostgreSQL/MySQL. Mentoring interns.",
     type: "work"
@@ -76,7 +76,7 @@ const timelineEn: TimelineItem[] = [
   },
   {
     date: "06/2025 - 08/2025",
-    title: "AI & Software Developer",
+    title: "AI & Software Engineer",
     org: "Data Analysis and Artificial Intelligence Lab (UFMA)",
     desc: "Modernizing Plandox (Monolith to Microservices) with Python/FastAPI and implementing ML models for biodiesel.",
     type: "work"
@@ -90,7 +90,7 @@ const timelineEn: TimelineItem[] = [
   },
   {
     date: "09/2023 - 06/2025",
-    title: "Junior Software Developer",
+    title: "Junior Software Engineer",
     org: "State Health Secretariat (SES-MA)",
     desc: "Development and maintenance of public health software using Laravel, JavaScript, PostgreSQL/MySQL, and Python for data.",
     type: "work"
