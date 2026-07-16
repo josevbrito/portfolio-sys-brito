@@ -5,7 +5,8 @@
     "experience": "Jornada",
     "contact": "Contato",
     "action": "INICIAR_IA",
-    "back": "Voltar"
+    "back": "Voltar",
+    "changeLanguage": "Mudar idioma para {lang}"
   },
   "hero": {
     "status": "SISTEMA ONLINE",

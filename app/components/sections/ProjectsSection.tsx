@@ -1,16 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Link } from "@/i18n/navigation";
 import { ChevronRight } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { useLanguage } from "../../context/LanguageContext";
+import { useTranslations, useLocale } from "next-intl";
+import type { Locale } from "@/i18n/routing";
 import { getProjects } from "../../data/projects";
 import { getTechColor } from "../../utils/techColors";
 import type { Project } from "../../types";
 
 export function ProjectsSection() {
   const t = useTranslations("projectsSection");
-  const { lang } = useLanguage();
+  const lang = useLocale() as Locale;
   const projects = getProjects(lang);
 
   return (
@@ -30,10 +31,10 @@ export function ProjectsSection() {
               {t("subtitle")}
             </p>
           </div>
-          <a href="/projects" className="hidden md:flex items-center gap-2 text-primary hover:text-white transition-colors font-mono text-sm group">
+          <Link href="/projects" className="hidden md:flex items-center gap-2 text-primary hover:text-white transition-colors font-mono text-sm group">
             {t("viewAll")}
             <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </a>
+          </Link>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -46,7 +47,7 @@ export function ProjectsSection() {
               transition={{ delay: index * 0.1 }}
               className="group relative bg-[#0a0a0a] border border-white/10 rounded-xl p-6 hover:border-primary/50 transition-colors overflow-hidden flex flex-col"
             >
-              <a href={`/projects/${project.slug}`} className="absolute inset-0 z-20"></a>
+              <Link href={`/projects/${project.slug}`} className="absolute inset-0 z-20"></Link>
               <div className="relative z-10 flex justify-between items-start mb-4 gap-4">
                 <div className="p-2 bg-white/5 rounded-lg text-primary group-hover:text-white group-hover:bg-primary transition-colors shrink-0">
                   <project.icon size={24} />
@@ -80,10 +81,10 @@ export function ProjectsSection() {
         </div>
 
         <div className="mt-8 md:hidden flex justify-center">
-          <a href="/projects" className="flex items-center gap-2 px-6 py-3 bg-surface border border-white/10 rounded hover:border-primary/50 text-white transition-all w-full justify-center">
+          <Link href="/projects" className="flex items-center gap-2 px-6 py-3 bg-surface border border-white/10 rounded hover:border-primary/50 text-white transition-all w-full justify-center">
             {t("viewAll")}
             <ChevronRight size={16} />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

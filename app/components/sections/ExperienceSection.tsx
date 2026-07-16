@@ -1,15 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Link } from "@/i18n/navigation";
 import { ChevronRight } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { useLanguage } from "../../context/LanguageContext";
+import { useTranslations, useLocale } from "next-intl";
+import type { Locale } from "@/i18n/routing";
 import { getTimeline } from "../../data/timeline";
 import type { TimelineItem } from "../../types";
 
 export function ExperienceSection() {
   const t = useTranslations("experienceSection");
-  const { lang } = useLanguage();
+  const lang = useLocale() as Locale;
   const timeline = getTimeline(lang);
 
   return (
@@ -34,10 +35,10 @@ export function ExperienceSection() {
             </p>
           </div>
 
-          <a href="/experience" className="hidden md:flex items-center gap-2 text-primary hover:text-white transition-colors font-mono text-sm group">
+          <Link href="/experience" className="hidden md:flex items-center gap-2 text-primary hover:text-white transition-colors font-mono text-sm group">
             {t("viewAll")}
             <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </a>
+          </Link>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -74,13 +75,13 @@ export function ExperienceSection() {
         </div>
 
         <div className="mt-8 md:hidden flex justify-center">
-          <a
+          <Link
             href="/experience"
             className="flex items-center gap-2 px-6 py-3 bg-surface border border-white/10 rounded hover:border-primary/50 text-white transition-all w-full justify-center"
           >
             {t("viewAll")}
             <ChevronRight size={16} />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

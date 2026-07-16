@@ -1,38 +1,41 @@
 import type { MetadataRoute } from "next";
 import { getProjects } from "@/app/data/projects";
+import { routing } from "@/i18n/routing";
 
 const BASE_URL = "https://josevbrito.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const projectSlugs = getProjects("pt").map((p) => p.slug);
+/** "" for the default locale (PT stays at the root), "/en" for the others. */
+function prefix(locale: string) {
+  return locale === routing.defaultLocale ? "" : `/${locale}`;
+}
 
-  const staticRoutes: MetadataRoute.Sitemap = [
-    {
-      url:              BASE_URL,
-      lastModified:     new Date(),
-      changeFrequency:  "monthly",
-      priority:         1,
-    },
-    {
-      url:              `${BASE_URL}/projects`,
-      lastModified:     new Date(),
-      changeFrequency:  "monthly",
-      priority:         0.8,
-    },
-    {
-      url:              `${BASE_URL}/experience`,
-      lastModified:     new Date(),
-      changeFrequency:  "monthly",
-      priority:         0.7,
-    },
+/** hreflang map pointing at every locale's copy of the same path. */
+function alternates(path: string) {
+  return {
+    languages: Object.fromEntries(
+      routing.locales.map((l) => [l, `${BASE_URL}${prefix(l)}${path}` || BASE_URL]),
+    ),
+  };
+}
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const projectSlugs = getProjects(routing.defaultLocale).map((p) => p.slug);
+  const lastModified = new Date();
+
+  const paths = [
+    { path: "",            priority: 1 },
+    { path: "/projects",   priority: 0.8 },
+    { path: "/experience", priority: 0.7 },
+    ...projectSlugs.map((slug) => ({ path: `/projects/${slug}`, priority: 0.6 })),
   ];
 
-  const projectRoutes: MetadataRoute.Sitemap = projectSlugs.map((slug) => ({
-    url:              `${BASE_URL}/projects/${slug}`,
-    lastModified:     new Date(),
-    changeFrequency:  "monthly" as const,
-    priority:         0.6,
-  }));
-
-  return [...staticRoutes, ...projectRoutes];
+  return routing.locales.flatMap((locale) =>
+    paths.map(({ path, priority }) => ({
+      url:             `${BASE_URL}${prefix(locale)}${path}` || BASE_URL,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority,
+      alternates:      alternates(path),
+    })),
+  );
 }
