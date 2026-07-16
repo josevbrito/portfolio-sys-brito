@@ -116,7 +116,7 @@ const PROJECTS: ProjectDef[] = [
   {
     slug: "plandox",
     tags: ["React Native", "FastAPI", "Microservices", "Python"],
-    categories: ["Mobile", "Full Stack", "Data Science / AI"],
+    categories: ["Mobile", "Data Science / AI"],
     icon: Code2,
     images: plandoxImages,
     links: [
