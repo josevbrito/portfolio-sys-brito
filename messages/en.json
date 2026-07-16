@@ -24,7 +24,7 @@
     "viewAll": "View all projects",
     "searchPlaceholder": "Search by tech or name...",
     "filterAll": "All",
-    "filters": ["All", "Full Stack", "Data Science / AI", "Mobile"]
+    "filters": ["All", "Full Stack", "Data Science / AI", "Mobile", "IoT / Distributed Systems"]
   },
   "experienceSection": {
     "title": "Professional Journey",

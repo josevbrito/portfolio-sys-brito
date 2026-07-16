@@ -30,16 +30,16 @@ This portfolio is more than a resume — it's a showcase of technical skills. Bu
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Framework | Next.js 16 (App Router) |
-| Language | TypeScript 5 |
-| Styling | Tailwind CSS 4 |
-| Animations | Framer Motion 12 |
-| Icons | Lucide React |
-| Font | Geist Sans & Geist Mono (`next/font`) |
-| Deployment | Vercel |
-| Forms | Formspree |
+| Layer      | Technology                              |
+| ---------- | --------------------------------------- |
+| Framework  | Next.js 16 (App Router)                 |
+| Language   | TypeScript 5                            |
+| Styling    | Tailwind CSS 4                          |
+| Animations | Framer Motion 12                        |
+| Icons      | Lucide React                            |
+| Font       | Geist Sans & Geist Mono (`next/font`) |
+| Deployment | Vercel                                  |
+| Forms      | Formspree                               |
 
 ---
 

@@ -51,6 +51,12 @@ const techColorMap: Record<string, TechColor> = {
   "Microservices": { color: "#64B5F6" },
   "AWS":           { color: "#FF9900" },
 
+  // IoT / Distributed Systems
+  "MQTT":          { color: "#660066" },
+  "ThingsBoard":   { color: "#2F8B57" },
+  "ESP32":         { color: "#E7352C" },
+  "IoT":           { color: "#00BCD4" },
+
   // Misc
   "next-intl":     { color: "#4F46E5" },
   "GraphQL":       { color: "#E10098" },

@@ -134,6 +134,33 @@ export const relabImages: LocalizedImages = {
   en: [{ src: "/projects/relab/login.png", caption: "Login Page" }],
 };
 
+export const fallDetectionImages: LocalizedImages = {
+  pt: [
+    { src: "/projects/fall-detection/dashboard/dashboard-desempenho-1.png", caption: "Dashboard — desempenho: 500 mil mensagens, p99 de 270 ms e 0% de erro" },
+    { src: "/projects/fall-detection/arquitetura.png", caption: "Arquitetura em camadas: borda (ESP32), comunicação (MQTT), nuvem (ThingsBoard) e alerta ao cuidador" },
+    { src: "/projects/fall-detection/edge/dispositivo-embarcado.png", caption: "Dispositivo de borda: ESP32 com acelerômetro MPU6050 em protoboard" },
+    { src: "/projects/fall-detection/thingsboard/thingsboard-cloud.png", caption: "Middleware ThingsBoard CE na AWS, com os dispositivos provisionados" },
+    { src: "/projects/fall-detection/dashboard/dashboard-overview-1.png", caption: "Dashboard — visão geral: devices monitorados, quedas e throughput do último teste" },
+    { src: "/projects/fall-detection/dashboard/dashboard-falls.jpeg", caption: "Dashboard — quedas: telemetria do device com o pico cruzando o limiar de queda" },
+    { src: "/projects/fall-detection/dashboard/dashboard-system-1.png", caption: "Dashboard — sistema: CPU e memória do host do middleware" },
+    { src: "/projects/fall-detection/terminal/load-test.png", caption: "Load test: 1.000 devices, 1 milhão de mensagens publicadas, 0 erros" },
+    { src: "/projects/fall-detection/grafana/throughput-por-no.png", caption: "Grafana: throughput por nó gerador de carga" },
+    { src: "/projects/fall-detection/grafana/latencia.png", caption: "Grafana: latência média e p99 durante o experimento" },
+  ],
+  en: [
+    { src: "/projects/fall-detection/dashboard/dashboard-desempenho-1.png", caption: "Dashboard — performance: 500k messages, 270 ms p99 and a 0% error rate" },
+    { src: "/projects/fall-detection/arquitetura.png", caption: "Layered architecture: edge (ESP32), communication (MQTT), cloud (ThingsBoard) and caregiver alerting" },
+    { src: "/projects/fall-detection/edge/dispositivo-embarcado.png", caption: "Edge device: ESP32 with an MPU6050 accelerometer on a breadboard" },
+    { src: "/projects/fall-detection/thingsboard/thingsboard-cloud.png", caption: "ThingsBoard CE middleware on AWS, with the provisioned devices" },
+    { src: "/projects/fall-detection/dashboard/dashboard-overview-1.png", caption: "Dashboard — overview: monitored devices, falls and throughput from the latest test" },
+    { src: "/projects/fall-detection/dashboard/dashboard-falls.jpeg", caption: "Dashboard — falls: device telemetry with the spike crossing the fall threshold" },
+    { src: "/projects/fall-detection/dashboard/dashboard-system-1.png", caption: "Dashboard — system: CPU and memory of the middleware host" },
+    { src: "/projects/fall-detection/terminal/load-test.png", caption: "Load test: 1,000 devices, 1 million messages published, 0 errors" },
+    { src: "/projects/fall-detection/grafana/throughput-por-no.png", caption: "Grafana: throughput per load-generating node" },
+    { src: "/projects/fall-detection/grafana/latencia.png", caption: "Grafana: average and p99 latency during the experiment" },
+  ],
+};
+
 export const portfolioImages: LocalizedImages = {
   pt: [
     { src: "/projects/sys-brito/josevbrito.com.%23hero.png", caption: "Página inicial — Hero" },

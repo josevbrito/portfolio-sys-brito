@@ -1,10 +1,10 @@
-import { Code2, Smartphone, Database, Brain, Layout, BarChart } from "lucide-react";
+import { Code2, Smartphone, Database, Brain, Layout, BarChart, Cpu } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { Project, LinkItem, StatItem, GalleryImage } from "../../types";
 import {
   monitoraImages, masemfomeImages, renavehImages, sishansImages,
   foodAgentImages, plandoxImages, analiseRfmImages, californiaImages,
-  hansPlusImages, relabImages, portfolioImages,
+  hansPlusImages, relabImages, portfolioImages, fallDetectionImages,
 } from "./images";
 
 // Internal types
@@ -23,6 +23,18 @@ type LocalizedStat = {
   labelEn?: string;
   value: string;
   valueEn?: string;
+};
+
+/**
+ * Every category, and its EN label. Categories double as the filter labels in
+ * messages/*.json, so both sides must stay in sync — a category with no match
+ * in `filters` is unreachable in the UI.
+ */
+const CATEGORY_EN: Record<string, string> = {
+  "Full Stack": "Full Stack",
+  "Data Science / AI": "Data Science / AI",
+  "Mobile": "Mobile",
+  "IoT / Sistemas Distribuídos": "IoT / Distributed Systems",
 };
 
 interface ProjectDef {
@@ -145,6 +157,35 @@ const PROJECTS: ProjectDef[] = [
         title: "FoodReview Insights Agent",
         shortDesc: "Autonomous AI Agent analyzing delivery reviews using RAG and LangChain.",
         fullDesc: "Intelligent system allowing restaurant owners to 'chat' with their reviews. Uses RAG (Retrieval-Augmented Generation) architecture with LangChain and OpenAI to extract strategic insights, calculate satisfaction metrics, and identify sentiment patterns in real-time. Python (FastAPI) Backend and modern Next.js Frontend.",
+        status: "Completed",
+      },
+    },
+  },
+  {
+    slug: "fall-detection-iot",
+    tags: ["Python", "MQTT", "AWS", "ThingsBoard", "Docker", "ESP32", "Next.js"],
+    categories: ["IoT / Sistemas Distribuídos"],
+    icon: Cpu,
+    images: fallDetectionImages,
+    stats: [
+      { label: "Dispositivos Simulados", labelEn: "Simulated Devices", value: "1.000", valueEn: "1,000" },
+      { label: "Throughput", value: "5k msg/s" },
+      { label: "Latência p99", labelEn: "p99 Latency", value: "147 ms" },
+    ],
+    links: [
+      { type: "github", url: "https://github.com/josevbrito/fall-detection-iot-complete" },
+    ],
+    i18n: {
+      pt: {
+        title: "Monitoramento de Quedas com IoT",
+        shortDesc: "Sistema distribuído para detecção de quedas em idosos, sustentando 1.000 dispositivos a 5k msg/s sem erros.",
+        fullDesc: "Sistema distribuído em três camadas para detecção automática de quedas em idosos. Na borda, um ESP32 com acelerômetro MPU6050 detecta o impacto e publica telemetria via MQTT; o middleware (ThingsBoard CE + PostgreSQL em Docker) persiste as séries temporais e dispara o alarme; um dashboard em Next.js exibe quedas e desempenho em tempo real. Para validar a escala sem hardware físico, desenvolvi um gerador de carga em Python (asyncio/aiomqtt) que simula milhares de sensores, com modo distribuído em containers. Com o middleware na AWS e a carga publicando de outras máquinas, o sistema sustentou 1.000 dispositivos a 5.069 msg/s com latência p99 de 147 ms e nenhum erro. Projeto acadêmico em equipe (Sistemas Distribuídos — Engenharia da Computação, UFMA).",
+        status: "Concluído",
+      },
+      en: {
+        title: "IoT Fall Detection Monitoring",
+        shortDesc: "Distributed system for elderly fall detection, sustaining 1,000 devices at 5k msg/s with zero errors.",
+        fullDesc: "Three-layer distributed system for automatic fall detection in elderly people. At the edge, an ESP32 with an MPU6050 accelerometer detects the impact and publishes telemetry over MQTT; the middleware (ThingsBoard CE + PostgreSQL on Docker) stores the time series and triggers the alarm; a Next.js dashboard displays falls and performance in real time. To validate scale without physical hardware, I built a Python load generator (asyncio/aiomqtt) that simulates thousands of sensors, with a distributed mode across containers. With the middleware on AWS and load published from separate machines, the system sustained 1,000 devices at 5,069 msg/s with a p99 latency of 147 ms and zero errors. Academic team project (Distributed Systems — Computer Engineering, UFMA).",
         status: "Completed",
       },
     },
@@ -349,7 +390,7 @@ function mapProject(def: ProjectDef, lang: Lang): Project {
     fullDesc: t.fullDesc,
     status: t.status,
     tags: def.tags,
-    categories: def.categories,
+    categories: lang === "en" ? def.categories.map((c) => CATEGORY_EN[c] ?? c) : def.categories,
     icon: def.icon,
     images: def.images[lang],
     stats: def.stats?.map((s) => ({
