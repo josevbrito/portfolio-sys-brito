@@ -5,7 +5,8 @@
     "experience": "Journey",
     "contact": "Contact",
     "action": "INITIATE_AI",
-    "back": "Back"
+    "back": "Back",
+    "changeLanguage": "Change language to {lang}"
   },
   "hero": {
     "status": "SYSTEM ONLINE",

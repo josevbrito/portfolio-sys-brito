@@ -1,7 +1,7 @@
 "use client";
 
-import { useTranslations } from "next-intl";
-import { useLanguage } from "@/app/context/LanguageContext";
+import { useTranslations, useLocale } from "next-intl";
+import type { Locale } from "@/i18n/routing";
 import { Navbar } from "@/app/components/Navbar";
 import { Code2, ExternalLink, Github, Lock } from "lucide-react";
 import { useParams } from "next/navigation";
@@ -12,7 +12,7 @@ import { ProjectGallery } from "@/app/components/ProjectGallery";
 export default function ProjectDetailsClient() {
   const params = useParams();
   const slug = params.slug as string;
-  const { lang } = useLanguage();
+  const lang = useLocale() as Locale;
   const t = useTranslations("common");
 
   const project = getProjects(lang).find((p) => p.slug === slug);

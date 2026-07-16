@@ -2,16 +2,17 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "@/i18n/navigation";
 import { Search } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { useLanguage } from "../context/LanguageContext";
-import { Navbar } from "../components/Navbar";
-import { getProjects } from "../data/projects";
-import { getTechColor } from "../utils/techColors";
+import { useTranslations, useLocale } from "next-intl";
+import type { Locale } from "@/i18n/routing";
+import { Navbar } from "@/app/components/Navbar";
+import { getProjects } from "@/app/data/projects";
+import { getTechColor } from "@/app/utils/techColors";
 
 export default function ProjectsPage() {
   const t = useTranslations("projectsSection");
-  const { lang } = useLanguage();
+  const lang = useLocale() as Locale;
   const [activeFilterIndex, setActiveFilterIndex] = useState(0);
   const [search, setSearch] = useState("");
 
@@ -83,7 +84,7 @@ export default function ProjectsPage() {
               animate={{ opacity: 1, scale: 1 }}
               className="group relative bg-[#0a0a0a] border border-white/10 rounded-xl p-6 hover:border-primary/50 transition-colors flex flex-col"
             >
-              <a href={`/projects/${project.slug}`} className="absolute inset-0 z-20"></a>
+              <Link href={`/projects/${project.slug}`} className="absolute inset-0 z-20"></Link>
 
               {/* Header do Card */}
               <div className="relative z-10 flex justify-between items-start mb-4 gap-4">

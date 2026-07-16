@@ -3,16 +3,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Briefcase, GraduationCap, Terminal } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { useLanguage } from "../context/LanguageContext";
-import { Navbar } from "../components/Navbar";
-import { getTimeline } from "../data/timeline";
-import type { TimelineItem } from "../types";
+import { useTranslations, useLocale } from "next-intl";
+import type { Locale } from "@/i18n/routing";
+import { Navbar } from "@/app/components/Navbar";
+import { getTimeline } from "@/app/data/timeline";
+import type { TimelineItem } from "@/app/types";
 
 export default function ExperiencePage() {
   const t = useTranslations("experienceSection");
   const tCommon = useTranslations("common");
-  const { lang } = useLanguage();
+  const lang = useLocale() as Locale;
   const [filter, setFilter] = useState<"all" | "work" | "education">("work");
 
   const timeline = getTimeline(lang);
