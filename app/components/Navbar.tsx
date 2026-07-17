@@ -13,27 +13,35 @@ const languageOptions = {
   en: { label: "EN", flag: "/flags/us.svg" },
 };
 
+/**
+ * Counts navigations since the document loaded. Module scope survives soft
+ * navigation and resets on a full load, which is exactly the question we need
+ * answered: did this visitor reach the current page from inside the site?
+ * `window.history.length` can't answer it (it counts the whole tab, including
+ * other sites) and `document.referrer` can't either (it never updates on soft
+ * navigation).
+ */
+let softNavCount = 0;
+
 export function Navbar() {
   const t = useTranslations("nav");
   const lang = useLocale() as Locale;
   const pathname = usePathname();
   const router = useRouter();
   const isHome = pathname === "/";
-  const hasHistory = useRef(false);
+  const cameFromSite = useRef(false);
 
   useEffect(() => {
-    hasHistory.current = window.history.length > 1;
-  }, []);
+    cameFromSite.current = softNavCount > 0;
+    softNavCount += 1;
+  }, [pathname]);
 
   const nextLang: Locale = lang === "pt" ? "en" : "pt";
 
-  function handleBack() {
-    if (hasHistory.current) {
-      router.back();
-    } else {
-      router.push("/");
-    }
-  }
+  // Fallback target for visitors who landed here straight from a search result.
+  // Only a guess: a project is reachable from both "/" and "/projects", so when
+  // real history exists we go back to it instead.
+  const parentPath = pathname.startsWith("/projects/") ? "/projects" : "/";
 
   return (
     <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-black/50 backdrop-blur-md">
@@ -42,10 +50,19 @@ export function Navbar() {
         {/* Logo ou Botão Voltar */}
         <div className="flex items-center gap-4">
           {!isHome && (
-            <button onClick={handleBack} className="flex items-center gap-2 text-sm font-mono text-gray-400 hover:text-primary transition-colors mr-2">
+            <Link
+              href={parentPath}
+              onClick={(e) => {
+                if (cameFromSite.current) {
+                  e.preventDefault();
+                  router.back();
+                }
+              }}
+              className="flex items-center gap-2 text-sm font-mono text-gray-400 hover:text-primary transition-colors mr-2"
+            >
               <ArrowLeft size={16} />
               {t("back")}
-            </button>
+            </Link>
           )}
 
           <Link href="/" className="flex items-center gap-2 font-mono text-primary text-glow font-bold text-lg cursor-pointer group">
@@ -76,6 +93,7 @@ export function Navbar() {
             href={pathname}
             locale={nextLang}
             hrefLang={nextLang}
+            replace
             className="flex items-center gap-2 text-xs font-mono border border-white/10 bg-white/5 px-3 py-1.5 rounded hover:border-primary/50 hover:text-primary transition-all"
             aria-label={t("changeLanguage", { lang: languageOptions[nextLang].label })}
           >
@@ -85,6 +103,7 @@ export function Navbar() {
               width={20}
               height={20}
               unoptimized
+              priority
               className="shrink-0"
             />
             <span>{languageOptions[nextLang].label}</span>
