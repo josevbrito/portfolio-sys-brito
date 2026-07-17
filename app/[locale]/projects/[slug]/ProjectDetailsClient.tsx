@@ -50,8 +50,8 @@ export default function ProjectDetailsClient() {
             )}
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">{project.title}</h1>
-          <p className="text-xl text-gray-400 leading-relaxed max-w-3xl">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">{project.title}</h1>
+          <p className="text-base text-gray-400 leading-relaxed text-justify">
             {project.fullDesc}
           </p>
         </div>
