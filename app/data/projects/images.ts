@@ -161,6 +161,38 @@ export const fallDetectionImages: LocalizedImages = {
   ],
 };
 
+export const obesidadeEspacotemporalImages: LocalizedImages = {
+  pt: [
+    { src: "/projects/obesidade-espacotemporal/tendencia-estadual.png", caption: "Tendência 2014–2023: as curvas de crianças e adolescentes se cruzam por volta de 2017 — os adolescentes puxam toda a alta" },
+    { src: "/projects/obesidade-espacotemporal/mapa-prevalencia-2023.png", caption: "Prevalência de excesso de peso por município em 2023" },
+    { src: "/projects/obesidade-espacotemporal/mapa-lisa-2023.png", caption: "Aglomerados LISA: 25 municípios Alto-Alto e 24 Baixo-Baixo (Moran I = 0,27)" },
+    { src: "/projects/obesidade-espacotemporal/mapa-lisa-2023-regionais.png", caption: "Os mesmos aglomerados sobre as regiões de saúde da SES-MA" },
+  ],
+  en: [
+    { src: "/projects/obesidade-espacotemporal/tendencia-estadual.png", caption: "2014–2023 trend: the children and adolescent curves cross around 2017 — adolescents drive the entire increase" },
+    { src: "/projects/obesidade-espacotemporal/mapa-prevalencia-2023.png", caption: "Excess weight prevalence by municipality, 2023" },
+    { src: "/projects/obesidade-espacotemporal/mapa-lisa-2023.png", caption: "LISA clusters: 25 High-High and 24 Low-Low municipalities (Moran's I = 0.27)" },
+    { src: "/projects/obesidade-espacotemporal/mapa-lisa-2023-regionais.png", caption: "The same clusters over the SES-MA health regions" },
+  ],
+};
+
+export const obesidadeProjecaoImages: LocalizedImages = {
+  pt: [
+    { src: "/projects/obesidade-projecao/projecao-total.png", caption: "Projeção estadual até 2026: 20,2% (2023) → 21,4% com IC 90%, erro de backtesting de 2,5%" },
+    { src: "/projects/obesidade-projecao/projecao-adolescente.png", caption: "Adolescentes: estabilizam em 21,6% — em patamar ruim, e a série de maior incerteza" },
+    { src: "/projects/obesidade-projecao/projecao-crianca.png", caption: "Crianças: leve alta projetada, de 18,6% para 19,3%" },
+    { src: "/projects/obesidade-projecao/projecao-chapadinha.png", caption: "Chapadinha: maior prevalência projetada do estado (23,9%) e maior crescimento (+2,2 p.p.)" },
+    { src: "/projects/obesidade-projecao/projecao-imperatriz.png", caption: "Imperatriz: entre os maiores crescimentos projetados (+2,2 p.p.)" },
+  ],
+  en: [
+    { src: "/projects/obesidade-projecao/projecao-total.png", caption: "Statewide forecast to 2026: 20.2% (2023) → 21.4% with a 90% CI, 2.5% backtesting error" },
+    { src: "/projects/obesidade-projecao/projecao-adolescente.png", caption: "Adolescents: plateau at 21.6% — at a bad level, and the least certain series" },
+    { src: "/projects/obesidade-projecao/projecao-crianca.png", caption: "Children: a slight projected rise, from 18.6% to 19.3%" },
+    { src: "/projects/obesidade-projecao/projecao-chapadinha.png", caption: "Chapadinha: the state's highest projected prevalence (23.9%) and largest increase (+2.2 pp)" },
+    { src: "/projects/obesidade-projecao/projecao-imperatriz.png", caption: "Imperatriz: among the largest projected increases (+2.2 pp)" },
+  ],
+};
+
 export const portfolioImages: LocalizedImages = {
   pt: [
     { src: "/projects/sys-brito/josevbrito.com.%23hero.png", caption: "Página inicial — Hero" },

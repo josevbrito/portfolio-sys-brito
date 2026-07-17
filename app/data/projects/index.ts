@@ -1,10 +1,11 @@
-import { Code2, Smartphone, Database, Brain, Layout, BarChart, Cpu } from "lucide-react";
+import { Code2, Smartphone, Database, Brain, Layout, BarChart, Cpu, Map, TrendingUp } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { Project, LinkItem, StatItem, GalleryImage } from "../../types";
 import {
   monitoraImages, masemfomeImages, renavehImages, sishansImages,
   foodAgentImages, plandoxImages, analiseRfmImages, californiaImages,
   hansPlusImages, relabImages, portfolioImages, fallDetectionImages,
+  obesidadeEspacotemporalImages, obesidadeProjecaoImages,
 } from "./images";
 
 // Internal types
@@ -186,6 +187,64 @@ const PROJECTS: ProjectDef[] = [
         title: "IoT Fall Detection Monitoring",
         shortDesc: "Distributed system for elderly fall detection, sustaining 1,000 devices at 5k msg/s with zero errors.",
         fullDesc: "Three-layer distributed system for automatic fall detection in elderly people. At the edge, an ESP32 with an MPU6050 accelerometer detects the impact and publishes telemetry over MQTT; the middleware (ThingsBoard CE + PostgreSQL on Docker) stores the time series and triggers the alarm; a Next.js dashboard displays falls and performance in real time. To validate scale without physical hardware, I built a Python load generator (asyncio/aiomqtt) that simulates thousands of sensors, with a distributed mode across containers. With the middleware on AWS and load published from separate machines, the system sustained 1,000 devices at 5,069 msg/s with a p99 latency of 147 ms and zero errors. Academic team project (Distributed Systems — Computer Engineering, UFMA).",
+        status: "Completed",
+      },
+    },
+  },
+  {
+    slug: "obesidade-infantil-ma-espacotemporal",
+    tags: ["Python", "GeoPandas", "Spatial Statistics", "Pandas", "SISVAN"],
+    categories: ["Data Science / AI"],
+    icon: Map,
+    images: obesidadeEspacotemporalImages,
+    stats: [
+      { label: "Acompanhamentos", labelEn: "Records", value: "9,6M", valueEn: "9.6M" },
+      { label: "Municípios", labelEn: "Municipalities", value: "217" },
+      { label: "Aglomerados Alto-Alto", labelEn: "High-High Clusters", value: "25" },
+    ],
+    links: [
+      { type: "github", url: "https://github.com/josevbrito/childhood-obesity-maranhao-spatiotemporal" },
+    ],
+    i18n: {
+      pt: {
+        title: "Excesso de Peso Infantojuvenil no MA — Análise Espaço-Temporal",
+        shortDesc: "Estudo ecológico sobre 9,6 milhões de registros do SISVAN: onde e em quem o excesso de peso se concentra.",
+        fullDesc: "Estudo ecológico de série temporal sobre todos os 9.609.650 acompanhamentos de crianças e adolescentes que o SISVAN registrou nos 217 municípios do Maranhão entre 2014 e 2023. A conclusão é que a média estadual (20,2%) esconde o que importa: os adolescentes puxaram toda a alta (+0,64 p.p./ano) e inverteram de posição — eram o grupo menos afetado em 2014 (18,0%) e passaram a ser o mais afetado em 2023 (22,6%) —, enquanto as crianças ficaram estáveis. A carga também não se espalha por igual: o Moran I de 0,27 confirma dependência espacial e o LISA identifica 25 municípios Alto-Alto em territórios contíguos, no entorno de Bacabal e Pedreiras e em Chapadinha. O achado técnico mais relevante foi de ingestão: os rótulos dos microdados do SISVAN estão deslocados em uma faixa em relação aos relatórios oficiais, e a leitura intuitiva colocaria os adolescentes em 7,0% em vez de 22,6% — o pipeline aplica a regra por faixa etária e valida contra os relatórios oficiais, abortando se divergir. Submetido ao II EANAPS 2026 (SES-MA / UFMA).",
+        status: "Concluído",
+      },
+      en: {
+        title: "Childhood Excess Weight in Maranhão — Spatiotemporal Analysis",
+        shortDesc: "Ecological study over 9.6 million SISVAN records: where and in whom excess weight concentrates.",
+        fullDesc: "Time-series ecological study covering all 9,609,650 child and adolescent records that SISVAN collected across Maranhão's 217 municipalities between 2014 and 2023. The finding is that the statewide average (20.2%) hides what matters: adolescents drove the entire increase (+0.64 pp/year) and flipped position — the least affected group in 2014 (18.0%), the most affected by 2023 (22.6%) — while children stayed flat. The burden is not evenly spread either: a Moran's I of 0.27 confirms spatial dependence, and LISA identifies 25 High-High municipalities in contiguous territories around Bacabal, Pedreiras and Chapadinha. The most consequential technical finding was in ingestion: SISVAN's microdata labels are shifted by one band relative to the official reports, and the intuitive reading would place adolescents at 7.0% instead of 22.6% — the pipeline applies the age-dependent rule and validates against the official reports, aborting on divergence. Submitted to II EANAPS 2026 (SES-MA / UFMA).",
+        status: "Completed",
+      },
+    },
+  },
+  {
+    slug: "obesidade-infantil-ma-projecao",
+    tags: ["Python", "ARIMA", "Prophet", "Time Series", "SISVAN"],
+    categories: ["Data Science / AI"],
+    icon: TrendingUp,
+    images: obesidadeProjecaoImages,
+    stats: [
+      { label: "Séries Projetadas", labelEn: "Forecast Series", value: "30" },
+      { label: "Erro (MAPE)", labelEn: "Error (MAPE)", value: "2,5%", valueEn: "2.5%" },
+      { label: "Regiões em Alta", labelEn: "Rising Regions", value: "11 de 18", valueEn: "11 of 18" },
+    ],
+    links: [
+      { type: "github", url: "https://github.com/josevbrito/childhood-obesity-maranhao-forecasting" },
+    ],
+    i18n: {
+      pt: {
+        title: "Projeção do Excesso de Peso Infantojuvenil no MA",
+        shortDesc: "Projeções ARIMA e Prophet até 2026 para 30 séries, do estado a cada região de saúde.",
+        fullDesc: "Metade prospectiva do estudo: usa a mesma década de registros do SISVAN para projetar a prevalência de excesso de peso até 2026 em 30 séries — o estado, as 3 macrorregiões e cada uma das 18 regiões de saúde. O estado sai de 20,2% (2023) para 21,4% (IC 90%: 20,4–22,6), mas o número que importa para o gestor é outro: 11 das 18 regiões de saúde estão em alta e 6 em queda, então a média estadual esconde as duas direções ao mesmo tempo. Chapadinha concentra o risco, com a maior prevalência projetada (23,9%) e o maior crescimento (+2,2 p.p.). Nenhum modelo foi escolhido no olho: cada série disputou uma competição de quatro vias (ARIMA × Prophet, cada um com 2020 mantido ou marcado como outlier) decidida só pelo erro fora da amostra, treinando até 2021 e testando contra 2022–2023. A bifurcação do 2020 fez diferença — tratar a pandemia como outlier derrubou o erro estadual de 4,65% para 2,52%. Submetido ao II EANAPS 2026 (SES-MA / UFMA).",
+        status: "Concluído",
+      },
+      en: {
+        title: "Childhood Excess Weight Forecasting in Maranhão",
+        shortDesc: "ARIMA and Prophet forecasts to 2026 across 30 series, from the state down to each health region.",
+        fullDesc: "The prospective half of the study: it uses the same decade of SISVAN records to forecast excess weight prevalence through 2026 across 30 series — the state, its 3 macro-regions and each of the 18 health regions. The state moves from 20.2% (2023) to 21.4% (90% CI: 20.4–22.6), but the number that matters to a health manager is a different one: 11 of the 18 health regions are rising and 6 are falling, so the statewide average hides both directions at once. Chapadinha concentrates the risk, with the highest projected prevalence (23.9%) and the largest increase (+2.2 pp). No model was picked by eye: every series ran a four-way competition (ARIMA × Prophet, each with 2020 kept or flagged as an outlier) decided purely on out-of-sample error, training through 2021 and testing against 2022–2023. The 2020 fork mattered — treating the pandemic as an outlier cut the statewide error from 4.65% to 2.52%. Submitted to II EANAPS 2026 (SES-MA / UFMA).",
         status: "Completed",
       },
     },

@@ -45,6 +45,12 @@ const techColorMap: Record<string, TechColor> = {
   "ML Pipeline":   { color: "#A78BFA" },
   "TensorFlow":    { color: "#FF6F00" },
   "PyTorch":       { color: "#EE4C2C" },
+  "GeoPandas":          { color: "#139C5A" },
+  "Spatial Statistics": { color: "#5EAAA8" },
+  "ARIMA":              { color: "#8E7CC3" },
+  "Prophet":            { color: "#4267B2" },
+  "Time Series":        { color: "#00B8D9" },
+  "SISVAN":             { color: "#005A9C" },
 
   // DevOps / Infra
   "Docker":        { color: "#2496ED" },
