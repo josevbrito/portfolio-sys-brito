@@ -16,7 +16,6 @@ export function ExperienceSection() {
   return (
     <section id="experience" className="py-24 px-6 relative overflow-hidden border-t border-white/5">
       <div className="absolute inset-0 bg-[#030303]"></div>
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.03]"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">

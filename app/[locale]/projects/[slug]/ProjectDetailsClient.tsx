@@ -67,7 +67,6 @@ export default function ProjectDetailsClient() {
               <ProjectGallery images={project.images} projectTitle={project.title} />
             ) : (
               <div className="aspect-video bg-surface border border-white/10 rounded-xl flex items-center justify-center relative overflow-hidden group">
-                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20"></div>
                 <div className="text-center p-6">
                   <project.icon size={48} className="mx-auto text-gray-600 mb-4 group-hover:text-primary transition-colors" />
                   <p className="text-gray-500 font-mono text-sm">{t("gallery")}</p>
