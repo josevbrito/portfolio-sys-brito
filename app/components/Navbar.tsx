@@ -7,21 +7,14 @@ import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { useEffect, useRef } from "react";
 
-/** Both flags are square SVGs with the same 4:3 artwork inset, so a single size keeps them aligned. */
 const languageOptions = {
   pt: { label: "PT-BR", flag: "/flags/br.svg" },
   en: { label: "EN", flag: "/flags/us.svg" },
 };
 
-/**
- * Counts navigations since the document loaded. Module scope survives soft
- * navigation and resets on a full load, which is exactly the question we need
- * answered: did this visitor reach the current page from inside the site?
- * `window.history.length` can't answer it (it counts the whole tab, including
- * other sites) and `document.referrer` can't either (it never updates on soft
- * navigation).
- */
 let softNavCount = 0;
+let lastLocale: string | null = null;
+let lastNavKey: string | null = null;
 
 export function Navbar() {
   const t = useTranslations("nav");
@@ -32,15 +25,18 @@ export function Navbar() {
   const cameFromSite = useRef(false);
 
   useEffect(() => {
-    cameFromSite.current = softNavCount > 0;
+
+    const navKey = `${lang}:${pathname}`;
+    if (navKey === lastNavKey) return;
+
+    const switchedLocale = lastLocale !== null && lastLocale !== lang;
+    cameFromSite.current = softNavCount > 0 && !switchedLocale;
     softNavCount += 1;
-  }, [pathname]);
+    lastLocale = lang;
+    lastNavKey = navKey;
+  }, [pathname, lang]);
 
   const nextLang: Locale = lang === "pt" ? "en" : "pt";
-
-  // Fallback target for visitors who landed here straight from a search result.
-  // Only a guess: a project is reachable from both "/" and "/projects", so when
-  // real history exists we go back to it instead.
   const parentPath = pathname.startsWith("/projects/") ? "/projects" : "/";
 
   return (
@@ -88,7 +84,6 @@ export function Navbar() {
           )}
 
           {/* TOGGLE DE IDIOMA */}
-          {/* A real link to the other locale's URL — crawlable, unlike the old onClick toggle. */}
           <Link
             href={pathname}
             locale={nextLang}
