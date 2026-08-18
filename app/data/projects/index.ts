@@ -1,4 +1,4 @@
-import { Code2, Smartphone, Database, Brain, Layout, BarChart, Cpu, Map, TrendingUp } from "lucide-react";
+import { Code2, Smartphone, Database, Brain, Layout, BarChart, Cpu, Map, TrendingUp, Dna } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { Project, LinkItem, StatItem, GalleryImage } from "../../types";
 import {
@@ -6,6 +6,7 @@ import {
   foodAgentImages, plandoxImages, analiseRfmImages, californiaImages,
   hansPlusImages, relabImages, portfolioImages, fallDetectionImages,
   obesidadeEspacotemporalImages, obesidadeProjecaoImages,
+  compEvolucionariaImages,
 } from "./images";
 
 // Internal types
@@ -28,7 +29,7 @@ type LocalizedStat = {
 
 /**
  * Every category, and its EN label. Categories double as the filter labels in
- * messages/*.json, so both sides must stay in sync — a category with no match
+ * messages/*.json, so both sides must stay in sync - a category with no match
  * in `filters` is unreachable in the UI.
  */
 const CATEGORY_EN: Record<string, string> = {
@@ -36,6 +37,7 @@ const CATEGORY_EN: Record<string, string> = {
   "Data Science / AI": "Data Science / AI",
   "Mobile": "Mobile",
   "IoT / Sistemas Distribuídos": "IoT / Distributed Systems",
+  "Otimização / Pesquisa Operacional": "Optimization / Operations Research",
 };
 
 interface ProjectDef {
@@ -73,13 +75,13 @@ const PROJECTS: ProjectDef[] = [
       pt: {
         title: "Monitora Saúde",
         shortDesc: "Portal de transparência em saúde do Maranhão com cerca de 50 painéis públicos em Power BI.",
-        fullDesc: "Portal de Transparência de Saúde do Maranhão, desenvolvido para gestores e população. A coordenação é responsável pela plataforma e pelo fluxo de cadastro de indicadores — os gestores das áreas técnicas registram as informações descritivas e o link do painel Power BI correspondente, que passa a ser exibido automaticamente. Conta também com canal aberto de sugestões, acessível sem autenticação.",
+        fullDesc: "Portal de Transparência de Saúde do Maranhão, desenvolvido para gestores e população. A coordenação é responsável pela plataforma e pelo fluxo de cadastro de indicadores - os gestores das áreas técnicas registram as informações descritivas e o link do painel Power BI correspondente, que passa a ser exibido automaticamente. Conta também com canal aberto de sugestões, acessível sem autenticação.",
         status: "Concluído",
       },
       en: {
         title: "Health Monitor",
         shortDesc: "Maranhão health transparency portal with around 50 public Power BI dashboards.",
-        fullDesc: "Maranhão Health Transparency Portal, built for managers and the general public. The team is responsible for the platform and the indicator registration flow — technical area managers register descriptive information and the corresponding Power BI dashboard link, which is automatically displayed. Also features an open suggestion channel accessible without authentication.",
+        fullDesc: "Maranhão Health Transparency Portal, built for managers and the general public. The team is responsible for the platform and the indicator registration flow - technical area managers register descriptive information and the corresponding Power BI dashboard link, which is automatically displayed. Also features an open suggestion channel accessible without authentication.",
         status: "Completed",
       },
     },
@@ -103,13 +105,13 @@ const PROJECTS: ProjectDef[] = [
       pt: {
         title: "Programa Maranhão Livre da Fome",
         shortDesc: "Sistema de cadastro de famílias vulneráveis com perspectiva de 400 mil beneficiários em 217 cidades.",
-        fullDesc: "Plataforma oficial do Programa Maranhão Livre da Fome, voltada ao cadastro e acompanhamento de famílias em situação de vulnerabilidade nutricional. Registra consultas, classifica famílias via triagem de risco (TRIA) e gera dados para políticas públicas de saúde e alimentação. Em produção desde novembro de 2025, com registros sendo inseridos gradualmente — a expectativa é alcançar 400 mil beneficiários em cerca de 90 mil famílias. Conta com 479 profissionais de saúde e cerca de 400 usuários entre coordenadores, digitadores e equipe da área técnica.",
+        fullDesc: "Plataforma oficial do Programa Maranhão Livre da Fome, voltada ao cadastro e acompanhamento de famílias em situação de vulnerabilidade nutricional. Registra consultas, classifica famílias via triagem de risco (TRIA) e gera dados para políticas públicas de saúde e alimentação. Em produção desde novembro de 2025, com registros sendo inseridos gradualmente - a expectativa é alcançar 400 mil beneficiários em cerca de 90 mil famílias. Conta com 479 profissionais de saúde e cerca de 400 usuários entre coordenadores, digitadores e equipe da área técnica.",
         status: "Concluído",
       },
       en: {
         title: "Maranhão Hunger-Free Program",
         shortDesc: "Family registration platform with a target of 400k beneficiaries across 217 cities.",
-        fullDesc: "Official platform of the Maranhão Hunger-Free Program, focused on registering and monitoring families in nutritional vulnerability. Records consultations, classifies families through risk screening (TRIA), and generates data for public health and food policies. In production since November 2025, with records being added gradually — the target is 400k beneficiaries across around 90k families. It has 479 health professionals and around 400 users including coordinators, data entry personnel, and technical area staff.",
+        fullDesc: "Official platform of the Maranhão Hunger-Free Program, focused on registering and monitoring families in nutritional vulnerability. Records consultations, classifies families through risk screening (TRIA), and generates data for public health and food policies. In production since November 2025, with records being added gradually - the target is 400k beneficiaries across around 90k families. It has 479 health professionals and around 400 users including coordinators, data entry personnel, and technical area staff.",
         status: "Completed",
       },
     },
@@ -180,13 +182,43 @@ const PROJECTS: ProjectDef[] = [
       pt: {
         title: "Monitoramento de Quedas com IoT",
         shortDesc: "Sistema distribuído para detecção de quedas em idosos, sustentando 1.000 dispositivos a 5k msg/s sem erros.",
-        fullDesc: "Sistema distribuído em três camadas para detecção automática de quedas em idosos. Na borda, um ESP32 com acelerômetro MPU6050 detecta o impacto e publica telemetria via MQTT; o middleware (ThingsBoard CE + PostgreSQL em Docker) persiste as séries temporais e dispara o alarme; um dashboard em Next.js exibe quedas e desempenho em tempo real. Para validar a escala sem hardware físico, desenvolvi um gerador de carga em Python (asyncio/aiomqtt) que simula milhares de sensores, com modo distribuído em containers. Com o middleware na AWS e a carga publicando de outras máquinas, o sistema sustentou 1.000 dispositivos a 5.069 msg/s com latência p99 de 147 ms e nenhum erro. Projeto acadêmico em equipe (Sistemas Distribuídos — Engenharia da Computação, UFMA).",
+        fullDesc: "Sistema distribuído em três camadas para detecção automática de quedas em idosos. Na borda, um ESP32 com acelerômetro MPU6050 detecta o impacto e publica telemetria via MQTT; o middleware (ThingsBoard CE + PostgreSQL em Docker) persiste as séries temporais e dispara o alarme; um dashboard em Next.js exibe quedas e desempenho em tempo real. Para validar a escala sem hardware físico, desenvolvi um gerador de carga em Python (asyncio/aiomqtt) que simula milhares de sensores, com modo distribuído em containers. Com o middleware na AWS e a carga publicando de outras máquinas, o sistema sustentou 1.000 dispositivos a 5.069 msg/s com latência p99 de 147 ms e nenhum erro. Projeto acadêmico em equipe (Sistemas Distribuídos - Engenharia da Computação, UFMA).",
         status: "Concluído",
       },
       en: {
         title: "IoT Fall Detection Monitoring",
         shortDesc: "Distributed system for elderly fall detection, sustaining 1,000 devices at 5k msg/s with zero errors.",
-        fullDesc: "Three-layer distributed system for automatic fall detection in elderly people. At the edge, an ESP32 with an MPU6050 accelerometer detects the impact and publishes telemetry over MQTT; the middleware (ThingsBoard CE + PostgreSQL on Docker) stores the time series and triggers the alarm; a Next.js dashboard displays falls and performance in real time. To validate scale without physical hardware, I built a Python load generator (asyncio/aiomqtt) that simulates thousands of sensors, with a distributed mode across containers. With the middleware on AWS and load published from separate machines, the system sustained 1,000 devices at 5,069 msg/s with a p99 latency of 147 ms and zero errors. Academic team project (Distributed Systems — Computer Engineering, UFMA).",
+        fullDesc: "Three-layer distributed system for automatic fall detection in elderly people. At the edge, an ESP32 with an MPU6050 accelerometer detects the impact and publishes telemetry over MQTT; the middleware (ThingsBoard CE + PostgreSQL on Docker) stores the time series and triggers the alarm; a Next.js dashboard displays falls and performance in real time. To validate scale without physical hardware, I built a Python load generator (asyncio/aiomqtt) that simulates thousands of sensors, with a distributed mode across containers. With the middleware on AWS and load published from separate machines, the system sustained 1,000 devices at 5,069 msg/s with a p99 latency of 147 ms and zero errors. Academic team project (Distributed Systems - Computer Engineering, UFMA).",
+        status: "Completed",
+      },
+    },
+  },
+  {
+    slug: "ga-clusterizacao-diversidade",
+    tags: ["R", "Algoritmos Genéticos", "PSO", "DBSCAN", "ANOVA", "Metaheurísticas"],
+    categories: ["Otimização / Pesquisa Operacional", "Data Science / AI"],
+    icon: Dna,
+    images: compEvolucionariaImages,
+    stats: [
+      { label: "Redução vs AG padrão", labelEn: "Reduction vs standard GA", value: "-43%" },
+      { label: "Execuções", labelEn: "Runs", value: "1.680", valueEn: "1,680" },
+      { label: "Algoritmos comparados", labelEn: "Algorithms compared", value: "8" },
+    ],
+    links: [
+      { type: "github", url: "https://github.com/josevbrito/Genetic-Algorithm-with-Clustering-for-Diversity-Preservation" },
+      { type: "github", url: "https://github.com/josevbrito/HybridConstrainedEvo", label: "Algoritmo híbrido + restrições", labelEn: "Hybrid algorithm + constraints" },
+    ],
+    i18n: {
+      pt: {
+        title: "Diversidade Populacional em Algoritmos Genéticos via Clusterização",
+        shortDesc: "Clusterização para evitar convergência prematura em AGs, com hibridização BAT-PSO e tratamento de restrições.",
+        fullDesc: "Pesquisa de mestrado (Computação Evolucionária Aplicada, PPGCC/UFMA) sobre como manter diversidade populacional em Algoritmos Genéticos. A ideia é aplicar clusterização periodicamente sobre a população, tomar o melhor indivíduo de cada cluster e usá-los para substituir os piores - forçando representantes de regiões distintas do espaço de busca a sobreviverem. Três variantes foram comparadas contra o AG padrão (K-Means, hierárquico com ligação de Ward e DBSCAN), em 30 execuções independentes por combinação. Na função multimodal Schwefel a clusterização derruba o fitness médio de 237,2 para 134,8 (-43%), e o teste de Tukey confirma que as três variantes superam o AG padrão com significância - mas são estatisticamente indistinguíveis entre si, ou seja, o ganho vem da clusterização em si, não de um método específico. O trabalho evolui depois para um híbrido BAT-PSO com alternância probabilística de operadores e para tratamento de restrições por penalidade dinâmica, onde o resultado é categórico: num problema quadrático com restrições de igualdade, os 7 algoritmos sem tratamento explícito não encontram uma única solução viável, enquanto o GA Penalizado converge para 49,3.",
+        status: "Concluído",
+      },
+      en: {
+        title: "Population Diversity in Genetic Algorithms via Clustering",
+        shortDesc: "Clustering to prevent premature convergence in GAs, with BAT-PSO hybridization and constraint handling.",
+        fullDesc: "Master's research (Applied Evolutionary Computation, PPGCC/UFMA) on maintaining population diversity in Genetic Algorithms. The idea is to periodically cluster the population, take the fittest individual from each cluster, and use them to replace the worst ones - forcing representatives of distinct search-space regions to survive. Three variants were compared against a standard GA (K-Means, hierarchical with Ward linkage, and DBSCAN), across 30 independent runs per combination. On the multimodal Schwefel function, clustering cuts mean fitness from 237.2 to 134.8 (-43%), and Tukey's test confirms all three variants significantly outperform the standard GA - yet are statistically indistinguishable from each other, meaning the gain comes from clustering itself rather than any specific method. The work then evolves into a BAT-PSO hybrid with probabilistic operator alternation and into constraint handling via dynamic penalty, where the result is categorical: on a quadratic problem with equality constraints, the 7 algorithms without explicit handling find no feasible solution at all, while the Penalized GA converges to 49.3.",
         status: "Completed",
       },
     },
@@ -209,13 +241,13 @@ const PROJECTS: ProjectDef[] = [
       pt: {
         title: "Análise Espaço-Temporal do Excesso de Peso Infantojuvenil no MA",
         shortDesc: "Estudo ecológico sobre 9,6 milhões de registros do SISVAN: onde e em quem o excesso de peso se concentra.",
-        fullDesc: "Estudo ecológico de série temporal sobre todos os 9.609.650 acompanhamentos de crianças e adolescentes que o SISVAN registrou nos 217 municípios do Maranhão entre 2014 e 2023. A conclusão é que a média estadual (20,2%) esconde o que importa: os adolescentes puxaram toda a alta (+0,64 p.p./ano) e inverteram de posição, eram o grupo menos afetado em 2014 (18,0%) e passaram a ser o mais afetado em 2023 (22,6%), enquanto as crianças ficaram estáveis. A carga também não se espalha por igual: o Moran I de 0,27 confirma dependência espacial e o LISA identifica 25 municípios Alto-Alto em territórios contíguos, no entorno de Bacabal e Pedreiras e em Chapadinha. O achado técnico mais relevante foi de ingestão: os rótulos dos microdados do SISVAN estão deslocados em uma faixa em relação aos relatórios oficiais, e a leitura intuitiva colocaria os adolescentes em 7,0% em vez de 22,6% — o pipeline aplica a regra por faixa etária e valida contra os relatórios oficiais, abortando se divergir. Submetido ao II EANAPS 2026 (SES-MA / UFMA).",
+        fullDesc: "Estudo ecológico de série temporal sobre todos os 9.609.650 acompanhamentos de crianças e adolescentes que o SISVAN registrou nos 217 municípios do Maranhão entre 2014 e 2023. A conclusão é que a média estadual (20,2%) esconde o que importa: os adolescentes puxaram toda a alta (+0,64 p.p./ano) e inverteram de posição, eram o grupo menos afetado em 2014 (18,0%) e passaram a ser o mais afetado em 2023 (22,6%), enquanto as crianças ficaram estáveis. A carga também não se espalha por igual: o Moran I de 0,27 confirma dependência espacial e o LISA identifica 25 municípios Alto-Alto em territórios contíguos, no entorno de Bacabal e Pedreiras e em Chapadinha. O achado técnico mais relevante foi de ingestão: os rótulos dos microdados do SISVAN estão deslocados em uma faixa em relação aos relatórios oficiais, e a leitura intuitiva colocaria os adolescentes em 7,0% em vez de 22,6% - o pipeline aplica a regra por faixa etária e valida contra os relatórios oficiais, abortando se divergir. Submetido ao II EANAPS 2026 (SES-MA / UFMA).",
         status: "Concluído",
       },
       en: {
         title: "Spatiotemporal Analysis of Childhood Excess Weight in Maranhão",
         shortDesc: "Ecological study over 9.6 million SISVAN records: where and in whom excess weight concentrates.",
-        fullDesc: "Time-series ecological study covering all 9,609,650 child and adolescent records that SISVAN collected across Maranhão's 217 municipalities between 2014 and 2023. The finding is that the statewide average (20.2%) hides what matters: adolescents drove the entire increase (+0.64 pp/year) and flipped position, the least affected group in 2014 (18.0%), the most affected by 2023 (22.6%), while children stayed flat. The burden is not evenly spread either: a Moran's I of 0.27 confirms spatial dependence, and LISA identifies 25 High-High municipalities in contiguous territories around Bacabal, Pedreiras and Chapadinha. The most consequential technical finding was in ingestion: SISVAN's microdata labels are shifted by one band relative to the official reports, and the intuitive reading would place adolescents at 7.0% instead of 22.6% — the pipeline applies the age-dependent rule and validates against the official reports, aborting on divergence. Submitted to II EANAPS 2026 (SES-MA / UFMA).",
+        fullDesc: "Time-series ecological study covering all 9,609,650 child and adolescent records that SISVAN collected across Maranhão's 217 municipalities between 2014 and 2023. The finding is that the statewide average (20.2%) hides what matters: adolescents drove the entire increase (+0.64 pp/year) and flipped position, the least affected group in 2014 (18.0%), the most affected by 2023 (22.6%), while children stayed flat. The burden is not evenly spread either: a Moran's I of 0.27 confirms spatial dependence, and LISA identifies 25 High-High municipalities in contiguous territories around Bacabal, Pedreiras and Chapadinha. The most consequential technical finding was in ingestion: SISVAN's microdata labels are shifted by one band relative to the official reports, and the intuitive reading would place adolescents at 7.0% instead of 22.6% - the pipeline applies the age-dependent rule and validates against the official reports, aborting on divergence. Submitted to II EANAPS 2026 (SES-MA / UFMA).",
         status: "Completed",
       },
     },
@@ -238,13 +270,13 @@ const PROJECTS: ProjectDef[] = [
       pt: {
         title: "Predição do Excesso de Peso Infantojuvenil no MA",
         shortDesc: "Projeções ARIMA e Prophet até 2026 para 30 séries, do estado a cada região de saúde.",
-        fullDesc: "Metade prospectiva do estudo: usa a mesma década de registros do SISVAN para projetar a prevalência de excesso de peso até 2026 em 30 séries — o estado, as 3 macrorregiões e cada uma das 18 regiões de saúde. O estado sai de 20,2% (2023) para 21,4% (IC 90%: 20,4–22,6), mas o número que importa para o gestor é outro: 11 das 18 regiões de saúde estão em alta e 6 em queda, então a média estadual esconde as duas direções ao mesmo tempo. Chapadinha concentra o risco, com a maior prevalência projetada (23,9%) e o maior crescimento (+2,2 p.p.). Nenhum modelo foi escolhido no olho: cada série disputou uma competição de quatro vias (ARIMA × Prophet, cada um com 2020 mantido ou marcado como outlier) decidida só pelo erro fora da amostra, treinando até 2021 e testando contra 2022–2023. A bifurcação do 2020 fez diferença — tratar a pandemia como outlier derrubou o erro estadual de 4,65% para 2,52%. Submetido ao II EANAPS 2026 (SES-MA / UFMA).",
+        fullDesc: "Metade prospectiva do estudo: usa a mesma década de registros do SISVAN para projetar a prevalência de excesso de peso até 2026 em 30 séries - o estado, as 3 macrorregiões e cada uma das 18 regiões de saúde. O estado sai de 20,2% (2023) para 21,4% (IC 90%: 20,4-22,6), mas o número que importa para o gestor é outro: 11 das 18 regiões de saúde estão em alta e 6 em queda, então a média estadual esconde as duas direções ao mesmo tempo. Chapadinha concentra o risco, com a maior prevalência projetada (23,9%) e o maior crescimento (+2,2 p.p.). Nenhum modelo foi escolhido no olho: cada série disputou uma competição de quatro vias (ARIMA x Prophet, cada um com 2020 mantido ou marcado como outlier) decidida só pelo erro fora da amostra, treinando até 2021 e testando contra 2022-2023. A bifurcação do 2020 fez diferença - tratar a pandemia como outlier derrubou o erro estadual de 4,65% para 2,52%. Submetido ao II EANAPS 2026 (SES-MA / UFMA).",
         status: "Concluído",
       },
       en: {
         title: "Childhood Excess Weight Prediction in Maranhão",
         shortDesc: "ARIMA and Prophet forecasts to 2026 across 30 series, from the state down to each health region.",
-        fullDesc: "The prospective half of the study: it uses the same decade of SISVAN records to forecast excess weight prevalence through 2026 across 30 series — the state, its 3 macro-regions and each of the 18 health regions. The state moves from 20.2% (2023) to 21.4% (90% CI: 20.4–22.6), but the number that matters to a health manager is a different one: 11 of the 18 health regions are rising and 6 are falling, so the statewide average hides both directions at once. Chapadinha concentrates the risk, with the highest projected prevalence (23.9%) and the largest increase (+2.2 pp). No model was picked by eye: every series ran a four-way competition (ARIMA × Prophet, each with 2020 kept or flagged as an outlier) decided purely on out-of-sample error, training through 2021 and testing against 2022–2023. The 2020 fork mattered — treating the pandemic as an outlier cut the statewide error from 4.65% to 2.52%. Submitted to II EANAPS 2026 (SES-MA / UFMA).",
+        fullDesc: "The prospective half of the study: it uses the same decade of SISVAN records to forecast excess weight prevalence through 2026 across 30 series - the state, its 3 macro-regions and each of the 18 health regions. The state moves from 20.2% (2023) to 21.4% (90% CI: 20.4-22.6), but the number that matters to a health manager is a different one: 11 of the 18 health regions are rising and 6 are falling, so the statewide average hides both directions at once. Chapadinha concentrates the risk, with the highest projected prevalence (23.9%) and the largest increase (+2.2 pp). No model was picked by eye: every series ran a four-way competition (ARIMA x Prophet, each with 2020 kept or flagged as an outlier) decided purely on out-of-sample error, training through 2021 and testing against 2022-2023. The 2020 fork mattered - treating the pandemic as an outlier cut the statewide error from 4.65% to 2.52%. Submitted to II EANAPS 2026 (SES-MA / UFMA).",
         status: "Completed",
       },
     },
@@ -268,13 +300,13 @@ const PROJECTS: ProjectDef[] = [
       pt: {
         title: "Sistema de Notificação Hospitalar (RENAVEH)",
         shortDesc: "Sistema com 2FA e RBAC para vigilância epidemiológica hospitalar. +72k casos notificados em 98 unidades.",
-        fullDesc: "O RENAVEH-MA (Rede Nacional de Vigilância Epidemiológica Hospitalar — Maranhão) permite às instituições de saúde registrar e acompanhar notificações de doenças e agravos. Vai além das notificações compulsórias, visando a detecção e resposta imediata a Emergências de Saúde Pública (ESP). Em produção desde fevereiro de 2024, o sistema conta com autenticação em dois fatores (2FA), controle granular de acesso por perfis (RBAC) e aproximadamente 270 usuários cadastrados.",
+        fullDesc: "O RENAVEH-MA (Rede Nacional de Vigilância Epidemiológica Hospitalar - Maranhão) permite às instituições de saúde registrar e acompanhar notificações de doenças e agravos. Vai além das notificações compulsórias, visando a detecção e resposta imediata a Emergências de Saúde Pública (ESP). Em produção desde fevereiro de 2024, o sistema conta com autenticação em dois fatores (2FA), controle granular de acesso por perfis (RBAC) e aproximadamente 270 usuários cadastrados.",
         status: "Concluído",
       },
       en: {
         title: "Hospital Notification System (RENAVEH)",
         shortDesc: "System with 2FA and RBAC for hospital epidemiological surveillance. +72k cases notified in 98 units.",
-        fullDesc: "The RENAVEH-MA (National Hospital Epidemiological Surveillance Network — Maranhão) allows health institutions to register and monitor notifications of diseases and injuries. It goes beyond compulsory notifications, aiming for immediate detection and response to Public Health Emergencies (PHE). In production since February 2024, the system features two-factor authentication (2FA), granular role-based access control (RBAC), and approximately 270 registered users.",
+        fullDesc: "The RENAVEH-MA (National Hospital Epidemiological Surveillance Network - Maranhão) allows health institutions to register and monitor notifications of diseases and injuries. It goes beyond compulsory notifications, aiming for immediate detection and response to Public Health Emergencies (PHE). In production since February 2024, the system features two-factor authentication (2FA), granular role-based access control (RBAC), and approximately 270 registered users.",
         status: "Completed",
       },
     },

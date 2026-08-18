@@ -213,3 +213,20 @@ export const portfolioImages: LocalizedImages = {
     { src: "/projects/sys-brito/josevbrito.com.projects.sys-brito.png", caption: "Project Page" },
   ],
 };
+
+export const compEvolucionariaImages: LocalizedImages = {
+  pt: [
+    { src: "/projects/computacao-evolucionaria/convergencia_clusterizacao.png", caption: "Convergência das variantes de AG com clusterização (média de 30 execuções)" },
+    { src: "/projects/computacao-evolucionaria/convergencia_restrito.png", caption: "Convergência no problema restrito: só o GA Penalizado encontra soluções viáveis" },
+    { src: "/projects/computacao-evolucionaria/boxplot_restrito.png", caption: "Distribuição dos resultados no problema restrito" },
+    { src: "/projects/computacao-evolucionaria/convergencia_schwefel.png", caption: "Convergência na função Schwefel (multimodal), 8 algoritmos" },
+    { src: "/projects/computacao-evolucionaria/boxplot_schwefel.png", caption: "Distribuição das 30 execuções na função Schwefel" },
+  ],
+  en: [
+    { src: "/projects/computacao-evolucionaria/convergencia_clusterizacao.png", caption: "Convergence of clustering-based GA variants (mean of 30 runs)" },
+    { src: "/projects/computacao-evolucionaria/convergencia_restrito.png", caption: "Convergence on the constrained problem: only the Penalized GA finds feasible solutions" },
+    { src: "/projects/computacao-evolucionaria/boxplot_restrito.png", caption: "Result distribution on the constrained problem" },
+    { src: "/projects/computacao-evolucionaria/convergencia_schwefel.png", caption: "Convergence on the Schwefel (multimodal) function, 8 algorithms" },
+    { src: "/projects/computacao-evolucionaria/boxplot_schwefel.png", caption: "Distribution of the 30 runs on the Schwefel function" },
+  ],
+};

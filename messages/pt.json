@@ -25,7 +25,7 @@
     "viewAll": "Ver todos os projetos",
     "searchPlaceholder": "Buscar por tecnologia ou nome...",
     "filterAll": "Todos",
-    "filters": ["Todos", "Full Stack", "Data Science / AI", "Mobile", "IoT / Sistemas Distribuídos"]
+    "filters": ["Todos", "Full Stack", "Data Science / AI", "Mobile", "IoT / Sistemas Distribuídos", "Otimização / Pesquisa Operacional"]
   },
   "experienceSection": {
     "title": "Jornada Profissional",
