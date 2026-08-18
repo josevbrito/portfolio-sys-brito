@@ -32,7 +32,7 @@ export default function ProjectDetailsClient() {
 
       <Navbar />
 
-      <main className="pt-32 pb-20 px-6 max-w-5xl mx-auto">
+      <main className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
 
         {/* Header do Projeto */}
         <div className="mb-12">
@@ -96,11 +96,11 @@ export default function ProjectDetailsClient() {
           <div className="space-y-8">
 
             {/* Card de Links */}
-            <div className="bg-surface border border-white/10 rounded-xl p-6">
-              <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Links</h3>
-              <div className="space-y-3">
-                {project.links && project.links.length > 0 ? (
-                  project.links.map((link, i) => (
+            {project.links && project.links.length > 0 && (
+              <div className="bg-surface border border-white/10 rounded-xl p-6">
+                <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Links</h3>
+                <div className="space-y-3">
+                  {project.links.map((link, i) => (
                     <a
                       key={i}
                       href={link.url}
@@ -121,14 +121,10 @@ export default function ProjectDetailsClient() {
                       </span>
                       {link.type !== "lock" && <ExternalLink size={14} />}
                     </a>
-                  ))
-                ) : (
-                  <div className="text-sm text-gray-500 italic">
-                    {t("noPublicLinks")}
-                  </div>
-                )}
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Estatísticas */}
             {project.stats && (
