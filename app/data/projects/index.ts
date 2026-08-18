@@ -1,4 +1,4 @@
-import { Code2, Smartphone, Database, Brain, Layout, BarChart, Cpu, Map, TrendingUp, Dna } from "lucide-react";
+import { Code2, Smartphone, Database, Brain, Layout, BarChart, Cpu, Map, TrendingUp, Dna, Factory } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { Project, LinkItem, StatItem, GalleryImage } from "../../types";
 import {
@@ -6,7 +6,7 @@ import {
   foodAgentImages, plandoxImages, analiseRfmImages, californiaImages,
   hansPlusImages, relabImages, portfolioImages, fallDetectionImages,
   obesidadeEspacotemporalImages, obesidadeProjecaoImages,
-  compEvolucionariaImages,
+  compEvolucionariaImages, automacaoIndustrialImages,
 } from "./images";
 
 // Internal types
@@ -38,6 +38,7 @@ const CATEGORY_EN: Record<string, string> = {
   "Mobile": "Mobile",
   "IoT / Sistemas Distribuídos": "IoT / Distributed Systems",
   "Otimização / Pesquisa Operacional": "Optimization / Operations Research",
+  "Automação / Sistemas Embarcados": "Automation / Embedded Systems",
 };
 
 interface ProjectDef {
@@ -219,6 +220,32 @@ const PROJECTS: ProjectDef[] = [
         title: "Population Diversity in Genetic Algorithms via Clustering",
         shortDesc: "Clustering to prevent premature convergence in GAs, with BAT-PSO hybridization and constraint handling.",
         fullDesc: "Master's research (Applied Evolutionary Computation, PPGCC/UFMA) on maintaining population diversity in Genetic Algorithms. The idea is to periodically cluster the population, take the fittest individual from each cluster, and use them to replace the worst ones - forcing representatives of distinct search-space regions to survive. Three variants were compared against a standard GA (K-Means, hierarchical with Ward linkage, and DBSCAN), across 30 independent runs per combination. On the multimodal Schwefel function, clustering cuts mean fitness from 237.2 to 134.8 (-43%), and Tukey's test confirms all three variants significantly outperform the standard GA - yet are statistically indistinguishable from each other, meaning the gain comes from clustering itself rather than any specific method. The work then evolves into a BAT-PSO hybrid with probabilistic operator alternation and into constraint handling via dynamic penalty, where the result is categorical: on a quadratic problem with equality constraints, the 7 algorithms without explicit handling find no feasible solution at all, while the Penalized GA converges to 49.3.",
+        status: "Completed",
+      },
+    },
+  },
+  {
+    slug: "controle-nivel-clp",
+    tags: ["TIA Portal", "Ladder", "CLP Siemens S7-1200", "Factory I/O", "PLCSIM"],
+    categories: ["Automação / Sistemas Embarcados"],
+    icon: Factory,
+    images: automacaoIndustrialImages,
+    stats: [
+      { label: "Faixa de controle", labelEn: "Control band", value: "20% – 80%" },
+      { label: "Sinais mapeados", labelEn: "Mapped signals", value: "13" },
+      { label: "Controlador", labelEn: "Controller", value: "S7-1200" },
+    ],
+    i18n: {
+      pt: {
+        title: "Controle Automático de Nível de Reservatório com CLP",
+        shortDesc: "Malha de controle de nível em CLP Siemens, integrada a uma planta industrial 3D simulada.",
+        fullDesc: "Sistema de controle automático de nível de líquido em um reservatório industrial, implementado em Controlador Lógico Programável Siemens S7-1200 e validado contra uma planta virtual tridimensional. A arquitetura integra três ambientes: o TIA Portal para a engenharia e programação em linguagem Ladder, o S7-PLCSIM para emulação do controlador, e o Factory I/O como planta 3D que fornece a física do processo - tanque, sensor de nível analógico, sensor de vazão e válvulas proporcionais de carga e descarga. O tratamento dos sinais analógicos é feito com os blocos NORM_X e SCALE_X, convertendo a faixa bruta de 0 a 10 V do cartão de entrada em unidades de engenharia de 0 a 100%, o que permite que a lógica de controle raciocine em percentual de enchimento e não em tensão. O controle é On-Off com histerese: abaixo de 20% a válvula de carga abre integralmente, acima de 80% ela fecha, e a banda morta entre os dois limites é o que impede o chaveamento intermitente dos atuadores - o mesmo princípio que, em planta real, preserva a vida útil mecânica das válvulas. Uma válvula de descarga com acionamento manual simula o consumo do processo, permitindo verificar que o sistema retoma o ciclo de abastecimento automaticamente ao cruzar o limite inferior. A integração exigiu configuração de hardware não trivial: deslocamento dos endereços de I/O para evitar colisão com o simulador, liberação de acesso PUT/GET no controlador e importação da biblioteca de sincronismo no bloco OB1.",
+        status: "Concluído",
+      },
+      en: {
+        title: "Automatic Tank Level Control with PLC",
+        shortDesc: "Level control loop on a Siemens PLC, integrated with a simulated 3D industrial plant.",
+        fullDesc: "Automatic liquid level control system for an industrial tank, implemented on a Siemens S7-1200 Programmable Logic Controller and validated against a three-dimensional virtual plant. The architecture integrates three environments: TIA Portal for engineering and Ladder programming, S7-PLCSIM for controller emulation, and Factory I/O as the 3D plant providing process physics - tank, analog level sensor, flow sensor, and proportional inlet and outlet valves. Analog signal handling uses NORM_X and SCALE_X blocks, converting the raw 0-10 V range from the input card into 0-100% engineering units, letting the control logic reason in fill percentage rather than voltage. Control is On-Off with hysteresis: below 20% the inlet valve opens fully, above 80% it closes, and the dead band between the two limits is what prevents actuator chattering - the same principle that preserves mechanical valve life in a real plant. A manually actuated outlet valve simulates process consumption, making it possible to verify that the system automatically resumes the filling cycle once the lower limit is crossed. Integration required non-trivial hardware configuration: offsetting I/O addresses to avoid collision with the simulator, enabling PUT/GET access on the controller, and importing the synchronization library into the OB1 block.",
         status: "Completed",
       },
     },

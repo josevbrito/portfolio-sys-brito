@@ -230,3 +230,18 @@ export const compEvolucionariaImages: LocalizedImages = {
     { src: "/projects/computacao-evolucionaria/boxplot_schwefel.png", caption: "Distribution of the 30 runs on the Schwefel function" },
   ],
 };
+
+export const automacaoIndustrialImages: LocalizedImages = {
+  pt: [
+    { src: "/projects/automacao-industrial/factory_io_enchimento.jpg", caption: "Fase de enchimento: nível abaixo de 20%, válvula de carga aberta em 100%" },
+    { src: "/projects/automacao-industrial/logica_ladder.jpg", caption: "Lógica Ladder do controle On-Off com histerese (20% / 80%)" },
+    { src: "/projects/automacao-industrial/factory_io_descarga.jpg", caption: "Fase de consumo: válvula de descarga acionada, nível caindo até disparar novo ciclo" },
+    { src: "/projects/automacao-industrial/plcsim_sim_table.jpg", caption: "Tabela de simulação no S7-PLCSIM com o mapeamento de tags do CLP" },
+  ],
+  en: [
+    { src: "/projects/automacao-industrial/factory_io_enchimento.jpg", caption: "Filling phase: level below 20%, inlet valve fully open at 100%" },
+    { src: "/projects/automacao-industrial/logica_ladder.jpg", caption: "Ladder logic for On-Off control with hysteresis (20% / 80%)" },
+    { src: "/projects/automacao-industrial/factory_io_descarga.jpg", caption: "Consumption phase: outlet valve open, level dropping until a new cycle triggers" },
+    { src: "/projects/automacao-industrial/plcsim_sim_table.jpg", caption: "S7-PLCSIM simulation table with the PLC tag mapping" },
+  ],
+};

@@ -25,7 +25,7 @@
     "viewAll": "View all projects",
     "searchPlaceholder": "Search by tech or name...",
     "filterAll": "All",
-    "filters": ["All", "Full Stack", "Data Science / AI", "Mobile", "IoT / Distributed Systems", "Optimization / Operations Research"]
+    "filters": ["All", "Full Stack", "Data Science / AI", "Mobile", "IoT / Distributed Systems", "Optimization / Operations Research", "Automation / Embedded Systems"]
   },
   "experienceSection": {
     "title": "Professional Journey",
