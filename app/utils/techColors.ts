@@ -63,6 +63,21 @@ const techColorMap: Record<string, TechColor> = {
   "ESP32":         { color: "#E7352C" },
   "IoT":           { color: "#00BCD4" },
 
+  // Metaheurísticas / Estatística
+  "R":                    { color: "#276DC3" },
+  "Algoritmos Genéticos": { color: "#7CB342" },
+  "Metaheurísticas":      { color: "#A3E635" },
+  "PSO":                  { color: "#0EA5E9" },
+  "DBSCAN":               { color: "#F472B6" },
+  "ANOVA":                { color: "#94A3B8" },
+
+  // Automação Industrial
+  "TIA Portal":           { color: "#009999" },
+  "Siemens S7-1200":      { color: "#14B8A6" },
+  "PLCSIM":               { color: "#2DD4BF" },
+  "Ladder":               { color: "#F59E0B" },
+  "Factory I/O":          { color: "#F97316" },
+
   // Misc
   "next-intl":     { color: "#4F46E5" },
   "GraphQL":       { color: "#E10098" },

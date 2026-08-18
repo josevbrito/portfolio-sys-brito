@@ -37,8 +37,8 @@ const CATEGORY_EN: Record<string, string> = {
   "Data Science / AI": "Data Science / AI",
   "Mobile": "Mobile",
   "IoT / Sistemas Distribuídos": "IoT / Distributed Systems",
-  "Otimização / Pesquisa Operacional": "Optimization / Operations Research",
-  "Automação / Sistemas Embarcados": "Automation / Embedded Systems",
+  "Otimização": "Optimization",
+  "Automação": "Automation",
 };
 
 interface ProjectDef {
@@ -197,7 +197,7 @@ const PROJECTS: ProjectDef[] = [
   {
     slug: "ga-clusterizacao-diversidade",
     tags: ["R", "Algoritmos Genéticos", "PSO", "DBSCAN", "ANOVA", "Metaheurísticas"],
-    categories: ["Otimização / Pesquisa Operacional", "Data Science / AI"],
+    categories: ["Otimização", "Data Science / AI"],
     icon: Dna,
     images: compEvolucionariaImages,
     stats: [
@@ -226,8 +226,8 @@ const PROJECTS: ProjectDef[] = [
   },
   {
     slug: "controle-nivel-clp",
-    tags: ["TIA Portal", "Ladder", "CLP Siemens S7-1200", "Factory I/O", "PLCSIM"],
-    categories: ["Automação / Sistemas Embarcados"],
+    tags: ["TIA Portal", "Ladder", "Siemens S7-1200", "Factory I/O", "PLCSIM"],
+    categories: ["Automação"],
     icon: Factory,
     images: automacaoIndustrialImages,
     stats: [

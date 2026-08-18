@@ -58,7 +58,7 @@ export default function ProjectsPage() {
           </div>
 
           {/* Filtros Dinâmicos */}
-          <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0">
+          <div className="flex flex-wrap gap-2">
             {filters.map((cat, index) => (
               <button
                 key={index}
