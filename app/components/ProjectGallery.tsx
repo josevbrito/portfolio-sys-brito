@@ -145,7 +145,7 @@ export function ProjectGallery({ images, projectTitle }: ProjectGalleryProps) {
 
           {/* Imagem + legenda */}
           <div
-            className="relative flex flex-col items-center w-full max-w-5xl px-16 md:px-24"
+            className="relative flex flex-col items-center w-full max-w-5xl px-4 sm:px-16 md:px-24"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative w-full" style={{ aspectRatio: "16/9" }}>

@@ -35,7 +35,7 @@ export default function ProjectsPage() {
 
       <Navbar />
 
-      <main className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+      <main className="pt-24 md:pt-32 pb-20 px-6 max-w-7xl mx-auto">
 
         {/* Header da Página */}
         <div className="mb-12">
