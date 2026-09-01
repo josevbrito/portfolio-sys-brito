@@ -25,7 +25,7 @@
     "viewAll": "Ver todos os projetos",
     "searchPlaceholder": "Buscar por tecnologia ou nome...",
     "filterAll": "Todos",
-    "filters": ["Todos", "Full Stack", "Data Science / AI", "Mobile", "IoT / Sistemas Distribuídos", "Otimização", "Automação"]
+    "filters": ["Todos", "Web", "Data Science / AI", "Mobile", "IoT / Sistemas Distribuídos", "Otimização", "Automação"]
   },
   "experienceSection": {
     "title": "Jornada Profissional",
@@ -66,7 +66,6 @@
     "comingSoon": "Em breve",
     "techStack": "Stack Tecnológico",
     "impactStats": "Impacto & Dados",
-    "noPublicLinks": "Sem links públicos disponíveis",
     "repository": "Repositório",
     "accessProject": "Acessar Projeto",
     "filterWork": "Profissional",

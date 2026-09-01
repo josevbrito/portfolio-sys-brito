@@ -25,7 +25,7 @@
     "viewAll": "View all projects",
     "searchPlaceholder": "Search by tech or name...",
     "filterAll": "All",
-    "filters": ["All", "Full Stack", "Data Science / AI", "Mobile", "IoT / Distributed Systems", "Optimization", "Automation"]
+    "filters": ["All", "Web", "Data Science / AI", "Mobile", "IoT / Distributed Systems", "Optimization", "Automation"]
   },
   "experienceSection": {
     "title": "Professional Journey",
@@ -66,7 +66,6 @@
     "comingSoon": "Coming soon",
     "techStack": "Tech Stack",
     "impactStats": "Impact & Stats",
-    "noPublicLinks": "No public links available",
     "repository": "Repository",
     "accessProject": "Access Project",
     "filterWork": "Work",
