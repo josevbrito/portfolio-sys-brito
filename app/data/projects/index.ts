@@ -1,4 +1,4 @@
-import { Code2, Smartphone, Database, Brain, Layout, BarChart, Cpu, Map, TrendingUp, Dna, Factory } from "lucide-react";
+import { Code2, Smartphone, Database, Brain, Layout, BarChart, Cpu, Map, TrendingUp, Dna, Factory, BookOpen } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { Project, LinkItem, StatItem, GalleryImage } from "../../types";
 import {
@@ -6,7 +6,7 @@ import {
   foodAgentImages, plandoxImages, analiseRfmImages, californiaImages,
   hansPlusImages, relabImages, portfolioImages, fallDetectionImages,
   obesidadeEspacotemporalImages, obesidadeProjecaoImages,
-  compEvolucionariaImages, automacaoIndustrialImages,
+  compEvolucionariaImages, automacaoIndustrialImages, rndsGuiaImages,
 } from "./images";
 
 // Internal types
@@ -191,6 +191,36 @@ const PROJECTS: ProjectDef[] = [
         shortDesc: "Distributed system for elderly fall detection, sustaining 1,000 devices at 5k msg/s with zero errors.",
         fullDesc: "Three-layer distributed system for automatic fall detection in elderly people. At the edge, an ESP32 with an MPU6050 accelerometer detects the impact and publishes telemetry over MQTT; the middleware (ThingsBoard CE + PostgreSQL on Docker) stores the time series and triggers the alarm; a Next.js dashboard displays falls and performance in real time. To validate scale without physical hardware, I built a Python load generator (asyncio/aiomqtt) that simulates thousands of sensors, with a distributed mode across containers. With the middleware on AWS and load published from separate machines, the system sustained 1,000 devices at 5,069 msg/s with a p99 latency of 147 ms and zero errors. Academic team project (Distributed Systems - Computer Engineering, UFMA).",
         status: "Completed",
+      },
+    },
+  },
+  {
+    slug: "rnds-guia",
+    tags: ["Astro", "Starlight", "TypeScript", "Zod", "YAML", "Vercel"],
+    categories: ["Full Stack"],
+    icon: BookOpen,
+    images: rndsGuiaImages,
+    stats: [
+      { label: "Modelos catalogados", labelEn: "Information models", value: "11" },
+      { label: "Normas mapeadas", labelEn: "Regulations mapped", value: "15" },
+      { label: "Endpoints públicos", labelEn: "Public endpoints", value: "6" },
+    ],
+    links: [
+      { type: "live", url: "https://rnds.josevbrito.com" },
+      { type: "github", url: "https://github.com/josevbrito/rnds" },
+    ],
+    i18n: {
+      pt: {
+        title: "Guia RNDS para Desenvolvedores",
+        shortDesc: "Guia aberto de integração com a Rede Nacional de Dados em Saúde, com dataset público em JSON.",
+        fullDesc: "Guia independente para quem precisa integrar sistemas de saúde à Rede Nacional de Dados em Saúde (RNDS). Reúne num só lugar o que hoje está espalhado entre gov.br, Guia de Implementação FHIR, Simplifier e Portal de Serviços do DATASUS, com a fonte linkada e a data de verificação em cada afirmação. Documenta os 11 modelos de informação (o material em circulação ainda fala em sete), os 8 serviços web do barramento e a linha do tempo completa das 15 portarias, incluindo duas normas vigentes que a página oficial de legislação não lista e que levam quem confia só nela a implementar o modelo errado. A arquitetura mantém fato estruturado em YAML validado por Zod no build, nenhuma tabela é escrita à mão, e cada registro exige fontes e data de verificação ou o build falha. O mesmo dataset é publicado como 6 endpoints JSON com CORS liberado, sob CC BY 4.0.",
+        status: "Em andamento",
+      },
+      en: {
+        title: "RNDS Guide for Developers",
+        shortDesc: "Open integration guide for Brazil's National Health Data Network, with a public JSON dataset.",
+        fullDesc: "Independent guide for developers integrating health systems with Brazil's National Health Data Network (RNDS). It consolidates what is currently scattered across gov.br, the FHIR Implementation Guide, Simplifier and the DATASUS service portal - with a linked source and a verification date on every claim. It documents the 11 information models (circulating material still refers to seven), the 8 bus web services and the full timeline of 15 regulations, including two active ones missing from the official legislation page, which lead anyone relying on it alone to implement the wrong model. The architecture keeps every structured fact in YAML validated by Zod at build time - no table is hand-written, and each record requires sources and a verification date or the build fails. The same dataset is published as 6 CORS-enabled JSON endpoints under CC BY 4.0.",
+        status: "In Progress",
       },
     },
   },

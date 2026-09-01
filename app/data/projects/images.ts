@@ -245,3 +245,18 @@ export const automacaoIndustrialImages: LocalizedImages = {
     { src: "/projects/automacao-industrial/plcsim_sim_table.jpg", caption: "S7-PLCSIM simulation table with the PLC tag mapping" },
   ],
 };
+
+export const rndsGuiaImages: LocalizedImages = {
+  pt: [
+    { src: "/projects/rnds-guia/inicio.png", caption: "Página Inicial" },
+    { src: "/projects/rnds-guia/comecar-visao-geral.png", caption: "Visão Geral do Caminho de Integração" },
+    { src: "/projects/rnds-guia/modelos-de-info.png", caption: "Catálogo dos Modelos de Informação" },
+    { src: "/projects/rnds-guia/legislacao.png", caption: "Linha do Tempo da Legislação" },
+  ],
+  en: [
+    { src: "/projects/rnds-guia/inicio.png", caption: "Home Page" },
+    { src: "/projects/rnds-guia/comecar-visao-geral.png", caption: "Integration Path Overview" },
+    { src: "/projects/rnds-guia/modelos-de-info.png", caption: "Information Models Catalogue" },
+    { src: "/projects/rnds-guia/legislacao.png", caption: "Legislation Timeline" },
+  ],
+};
