@@ -59,6 +59,35 @@ interface ProjectDef {
 
 const PROJECTS: ProjectDef[] = [
   {
+    slug: "bracis-2026-benchmark-circuitos-geneticos",
+    tags: ["Machine Learning", "Bayesian Optimization", "Reinforcement Learning", "Genetic Programming", "Synthetic Biology", "Gillespie SSA"],
+    categories: ["Data Science / AI"],
+    icon: Dna,
+    images: { pt: [], en: [] },
+    stats: [
+      { label: "Métodos comparados", labelEn: "Methods compared", value: "4" },
+      { label: "Portas lógicas", labelEn: "Logic gates", value: "5" },
+      { label: "Execuções pareadas", labelEn: "Paired runs", value: "30" },
+    ],
+    links: [
+      { type: "paper", url: "https://doi.org/10.1007/978-3-032-39895-6_32", label: "Artigo (DOI)", labelEn: "Paper (DOI)" },
+    ],
+    i18n: {
+      pt: {
+        title: "Framework Unificado para Benchmarking de Machine Learning em Circuitos Genéticos",
+        shortDesc: "Artigo na Springer (BRACIS 2026): benchmark de 4 métodos de aprendizado e evolutivos para projetar circuitos genéticos sob ruído molecular.",
+        fullDesc: "Artigo completo apresentado no BRACIS 2026 (36ª Brazilian Conference on Intelligent Systems, Cuiabá) e publicado pela Springer em Lecture Notes in Computer Science (pp. 475-490). O problema é projetar circuitos genéticos que implementem lógica booleana apesar do ruído molecular intrínseco, um desafio central da biologia sintética. O artigo propõe um benchmark unificado e compara quatro métodos de busca de topologia - Programação Genética Cartesiana (CGP) como baseline evolutivo, Policy Gradient (REINFORCE), Otimização Bayesiana com surrogate de processo gaussiano e um Surrogate Neural com Monte Carlo Dropout -, todos avaliados pelo mesmo oráculo estocástico baseado no algoritmo de simulação de Gillespie (SSA), com a relação sinal-ruído (SNR) como fitness. Em 30 execuções pareadas sobre cinco portas lógicas (NOT, AND, NAND, NOR e XOR), com orçamento igualado pelo número de chamadas ao SSA, os três métodos baseados em aprendizado superam a CGP com significância estatística (Friedman com post-hoc de Wilcoxon corrigido por Holm). A Otimização Bayesiana alcança a maior SNR média em três das cinco portas e o Surrogate Neural na NAND, formando um grupo de topo estatisticamente equivalente. O achado mais importante é metodológico: o ranking depende da justiça do orçamento - a aparente dominância do Policy Gradient, de alto throughput, desaparece assim que todos os métodos recebem um orçamento de simulação comparável. A XOR segue intratável para todos (SNR máxima ≈ 1,04), o que sugere um limite fundamental de complexidade de circuito. Parte da minha pesquisa de mestrado (UFMA); sou o primeiro autor, num trabalho de oito autores com meus orientadores e colaboradores da área de biologia sintética.",
+        status: "Concluído",
+      },
+      en: {
+        title: "A Unified Framework for Benchmarking Machine Learning Methods in Genetic Circuit Design",
+        shortDesc: "Springer paper (BRACIS 2026): a benchmark of 4 learning-based and evolutionary methods for designing genetic circuits under molecular noise.",
+        fullDesc: "Full paper presented at BRACIS 2026 (36th Brazilian Conference on Intelligent Systems, Cuiabá) and published by Springer in Lecture Notes in Computer Science (pp. 475-490). The problem is designing genetic circuits that implement Boolean logic despite intrinsic molecular noise, a central challenge in synthetic biology. The paper presents a unified benchmark and compares four topology-search methods - Cartesian Genetic Programming (CGP) as an evolutionary baseline, Policy Gradient (REINFORCE), Bayesian Optimization with a Gaussian-process surrogate, and a Neural Surrogate with Monte Carlo Dropout - all evaluated through the same stochastic fitness oracle based on Gillespie's Stochastic Simulation Algorithm (SSA), with the Signal-to-Noise Ratio (SNR) as fitness. Across 30 paired runs on five logic gates (NOT, AND, NAND, NOR and XOR), under a budget equalized by the number of SSA calls, all three learning-based methods significantly outperform CGP (Friedman omnibus with Holm-corrected Wilcoxon post-hoc). Bayesian Optimization attains the highest mean SNR on three of five gates and the Neural Surrogate on NAND, forming a statistically equivalent top tier. The key finding is methodological: the ranking is sensitive to budget fairness - the apparent dominance of the high-throughput Policy Gradient vanishes once every method receives a comparable simulation budget. XOR remains intractable for all methods (max SNR ≈ 1.04), suggesting a fundamental circuit-complexity boundary. Part of my M.Sc. research (UFMA); I am the first author, in an eight-author work with my advisors and collaborators from the synthetic biology field.",
+        status: "Completed",
+      },
+    },
+  },
+  {
     slug: "monitora-saude",
     tags: ["Power BI", "Laravel", "PostgreSQL"],
     categories: ["Full Stack"],
@@ -292,19 +321,20 @@ const PROJECTS: ProjectDef[] = [
       { label: "Aglomerados Alto-Alto", labelEn: "High-High Clusters", value: "25" },
     ],
     links: [
+      { type: "paper", url: "https://www.even3.com.br/anais/ii-encontro-de-alimentacao-e-nutricao-da-atencao-primaria-em-saude-eanaps-726703/1613886-analise-espaco-temporal-do-excesso-de-peso-em-criancas-e-adolescentes-nos-municipios-do-maranhao-2014-2023/", label: "Resumo nos Anais (EANAPS)", labelEn: "Abstract in Proceedings (EANAPS)" },
       { type: "github", url: "https://github.com/josevbrito/childhood-obesity-maranhao-spatiotemporal" },
     ],
     i18n: {
       pt: {
         title: "Análise Espaço-Temporal do Excesso de Peso Infantojuvenil no MA",
         shortDesc: "Estudo ecológico sobre 9,6 milhões de registros do SISVAN: onde e em quem o excesso de peso se concentra.",
-        fullDesc: "Estudo ecológico de série temporal sobre todos os 9.609.650 acompanhamentos de crianças e adolescentes que o SISVAN registrou nos 217 municípios do Maranhão entre 2014 e 2023. A conclusão é que a média estadual (20,2%) esconde o que importa: os adolescentes puxaram toda a alta (+0,64 p.p./ano) e inverteram de posição, eram o grupo menos afetado em 2014 (18,0%) e passaram a ser o mais afetado em 2023 (22,6%), enquanto as crianças ficaram estáveis. A carga também não se espalha por igual: o Moran I de 0,27 confirma dependência espacial e o LISA identifica 25 municípios Alto-Alto em territórios contíguos, no entorno de Bacabal e Pedreiras e em Chapadinha. O achado técnico mais relevante foi de ingestão: os rótulos dos microdados do SISVAN estão deslocados em uma faixa em relação aos relatórios oficiais, e a leitura intuitiva colocaria os adolescentes em 7,0% em vez de 22,6% - o pipeline aplica a regra por faixa etária e valida contra os relatórios oficiais, abortando se divergir. Submetido ao II EANAPS 2026 (SES-MA / UFMA).",
+        fullDesc: "Estudo ecológico de série temporal sobre todos os 9.609.650 acompanhamentos de crianças e adolescentes que o SISVAN registrou nos 217 municípios do Maranhão entre 2014 e 2023. A conclusão é que a média estadual (20,2%) esconde o que importa: os adolescentes puxaram toda a alta (+0,64 p.p./ano) e inverteram de posição, eram o grupo menos afetado em 2014 (18,0%) e passaram a ser o mais afetado em 2023 (22,6%), enquanto as crianças ficaram estáveis. A carga também não se espalha por igual: o Moran I de 0,27 confirma dependência espacial e o LISA identifica 25 municípios Alto-Alto em territórios contíguos, no entorno de Bacabal e Pedreiras e em Chapadinha. O achado técnico mais relevante foi de ingestão: os rótulos dos microdados do SISVAN estão deslocados em uma faixa em relação aos relatórios oficiais, e a leitura intuitiva colocaria os adolescentes em 7,0% em vez de 22,6% - o pipeline aplica a regra por faixa etária e valida contra os relatórios oficiais, abortando se divergir. Apresentado e publicado nos anais do II EANAPS 2026 (SES-MA / UFMA, ISBN 978-65-272-2609-3).",
         status: "Concluído",
       },
       en: {
         title: "Spatiotemporal Analysis of Childhood Excess Weight in Maranhão",
         shortDesc: "Ecological study over 9.6 million SISVAN records: where and in whom excess weight concentrates.",
-        fullDesc: "Time-series ecological study covering all 9,609,650 child and adolescent records that SISVAN collected across Maranhão's 217 municipalities between 2014 and 2023. The finding is that the statewide average (20.2%) hides what matters: adolescents drove the entire increase (+0.64 pp/year) and flipped position, the least affected group in 2014 (18.0%), the most affected by 2023 (22.6%), while children stayed flat. The burden is not evenly spread either: a Moran's I of 0.27 confirms spatial dependence, and LISA identifies 25 High-High municipalities in contiguous territories around Bacabal, Pedreiras and Chapadinha. The most consequential technical finding was in ingestion: SISVAN's microdata labels are shifted by one band relative to the official reports, and the intuitive reading would place adolescents at 7.0% instead of 22.6% - the pipeline applies the age-dependent rule and validates against the official reports, aborting on divergence. Submitted to II EANAPS 2026 (SES-MA / UFMA).",
+        fullDesc: "Time-series ecological study covering all 9,609,650 child and adolescent records that SISVAN collected across Maranhão's 217 municipalities between 2014 and 2023. The finding is that the statewide average (20.2%) hides what matters: adolescents drove the entire increase (+0.64 pp/year) and flipped position, the least affected group in 2014 (18.0%), the most affected by 2023 (22.6%), while children stayed flat. The burden is not evenly spread either: a Moran's I of 0.27 confirms spatial dependence, and LISA identifies 25 High-High municipalities in contiguous territories around Bacabal, Pedreiras and Chapadinha. The most consequential technical finding was in ingestion: SISVAN's microdata labels are shifted by one band relative to the official reports, and the intuitive reading would place adolescents at 7.0% instead of 22.6% - the pipeline applies the age-dependent rule and validates against the official reports, aborting on divergence. Presented and published in the proceedings of II EANAPS 2026 (SES-MA / UFMA, ISBN 978-65-272-2609-3).",
         status: "Completed",
       },
     },
@@ -321,19 +351,20 @@ const PROJECTS: ProjectDef[] = [
       { label: "Regiões em Alta", labelEn: "Rising Regions", value: "11 de 18", valueEn: "11 of 18" },
     ],
     links: [
+      { type: "paper", url: "https://www.even3.com.br/anais/ii-encontro-de-alimentacao-e-nutricao-da-atencao-primaria-em-saude-eanaps-726703/1614631-previsao-da-prevalencia-de-excesso-de-peso-em-criancas-e-adolescentes-no-maranhao--uma-analise-de-series-tempora/", label: "Resumo nos Anais (EANAPS)", labelEn: "Abstract in Proceedings (EANAPS)" },
       { type: "github", url: "https://github.com/josevbrito/childhood-obesity-maranhao-forecasting" },
     ],
     i18n: {
       pt: {
         title: "Predição do Excesso de Peso Infantojuvenil no MA",
         shortDesc: "Projeções ARIMA e Prophet até 2026 para 30 séries, do estado a cada região de saúde.",
-        fullDesc: "Metade prospectiva do estudo: usa a mesma década de registros do SISVAN para projetar a prevalência de excesso de peso até 2026 em 30 séries - o estado, as 3 macrorregiões e cada uma das 18 regiões de saúde. O estado sai de 20,2% (2023) para 21,4% (IC 90%: 20,4-22,6), mas o número que importa para o gestor é outro: 11 das 18 regiões de saúde estão em alta e 6 em queda, então a média estadual esconde as duas direções ao mesmo tempo. Chapadinha concentra o risco, com a maior prevalência projetada (23,9%) e o maior crescimento (+2,2 p.p.). Nenhum modelo foi escolhido no olho: cada série disputou uma competição de quatro vias (ARIMA x Prophet, cada um com 2020 mantido ou marcado como outlier) decidida só pelo erro fora da amostra, treinando até 2021 e testando contra 2022-2023. A bifurcação do 2020 fez diferença - tratar a pandemia como outlier derrubou o erro estadual de 4,65% para 2,52%. Submetido ao II EANAPS 2026 (SES-MA / UFMA).",
+        fullDesc: "Metade prospectiva do estudo: usa a mesma década de registros do SISVAN para projetar a prevalência de excesso de peso até 2026 em 30 séries - o estado, as 3 macrorregiões e cada uma das 18 regiões de saúde. O estado sai de 20,2% (2023) para 21,4% (IC 90%: 20,4-22,6), mas o número que importa para o gestor é outro: 11 das 18 regiões de saúde estão em alta e 6 em queda, então a média estadual esconde as duas direções ao mesmo tempo. Chapadinha concentra o risco, com a maior prevalência projetada (23,9%) e o maior crescimento (+2,2 p.p.). Nenhum modelo foi escolhido no olho: cada série disputou uma competição de quatro vias (ARIMA x Prophet, cada um com 2020 mantido ou marcado como outlier) decidida só pelo erro fora da amostra, treinando até 2021 e testando contra 2022-2023. A bifurcação do 2020 fez diferença - tratar a pandemia como outlier derrubou o erro estadual de 4,65% para 2,52%. Apresentado e publicado nos anais do II EANAPS 2026 (SES-MA / UFMA, ISBN 978-65-272-2609-3).",
         status: "Concluído",
       },
       en: {
         title: "Childhood Excess Weight Prediction in Maranhão",
         shortDesc: "ARIMA and Prophet forecasts to 2026 across 30 series, from the state down to each health region.",
-        fullDesc: "The prospective half of the study: it uses the same decade of SISVAN records to forecast excess weight prevalence through 2026 across 30 series - the state, its 3 macro-regions and each of the 18 health regions. The state moves from 20.2% (2023) to 21.4% (90% CI: 20.4-22.6), but the number that matters to a health manager is a different one: 11 of the 18 health regions are rising and 6 are falling, so the statewide average hides both directions at once. Chapadinha concentrates the risk, with the highest projected prevalence (23.9%) and the largest increase (+2.2 pp). No model was picked by eye: every series ran a four-way competition (ARIMA x Prophet, each with 2020 kept or flagged as an outlier) decided purely on out-of-sample error, training through 2021 and testing against 2022-2023. The 2020 fork mattered - treating the pandemic as an outlier cut the statewide error from 4.65% to 2.52%. Submitted to II EANAPS 2026 (SES-MA / UFMA).",
+        fullDesc: "The prospective half of the study: it uses the same decade of SISVAN records to forecast excess weight prevalence through 2026 across 30 series - the state, its 3 macro-regions and each of the 18 health regions. The state moves from 20.2% (2023) to 21.4% (90% CI: 20.4-22.6), but the number that matters to a health manager is a different one: 11 of the 18 health regions are rising and 6 are falling, so the statewide average hides both directions at once. Chapadinha concentrates the risk, with the highest projected prevalence (23.9%) and the largest increase (+2.2 pp). No model was picked by eye: every series ran a four-way competition (ARIMA x Prophet, each with 2020 kept or flagged as an outlier) decided purely on out-of-sample error, training through 2021 and testing against 2022-2023. The 2020 fork mattered - treating the pandemic as an outlier cut the statewide error from 4.65% to 2.52%. Presented and published in the proceedings of II EANAPS 2026 (SES-MA / UFMA, ISBN 978-65-272-2609-3).",
         status: "Completed",
       },
     },

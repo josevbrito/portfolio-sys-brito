@@ -1,7 +1,7 @@
 import { LucideIcon } from "lucide-react";
 
 export interface LinkItem {
-  type: "github" | "live" | "apk" | "lock";
+  type: "github" | "live" | "apk" | "lock" | "paper";
   url: string;
   label?: string;
 }

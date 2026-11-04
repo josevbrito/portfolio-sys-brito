@@ -51,6 +51,11 @@ const techColorMap: Record<string, TechColor> = {
   "Prophet":            { color: "#4267B2" },
   "Time Series":        { color: "#00B8D9" },
   "SISVAN":             { color: "#005A9C" },
+  "Bayesian Optimization":  { color: "#F59E0B" },
+  "Reinforcement Learning": { color: "#EC4899" },
+  "Genetic Programming":    { color: "#7CB342" },
+  "Synthetic Biology":      { color: "#34D399" },
+  "Gillespie SSA":          { color: "#38BDF8" },
 
   // DevOps / Infra
   "Docker":        { color: "#2496ED" },

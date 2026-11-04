@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from "next-intl";
 import type { Locale } from "@/i18n/routing";
 import { Navbar } from "@/app/components/Navbar";
-import { Code2, ExternalLink, Github, Lock } from "lucide-react";
+import { Code2, ExternalLink, FileText, Github, Lock } from "lucide-react";
 import { useParams } from "next/navigation";
 import { getProjects } from "@/app/data/projects";
 import { getTechColor } from "@/app/utils/techColors";
@@ -115,6 +115,7 @@ export default function ProjectDetailsClient() {
                       <span className="text-sm font-medium flex items-center gap-2">
                         {link.type === "github" && <Github size={16} />}
                         {link.type === "lock" && <Lock size={16} />}
+                        {link.type === "paper" && <FileText size={16} />}
                         {link.label || (
                           link.type === "github" ? t("repository") : t("accessProject")
                         )}
