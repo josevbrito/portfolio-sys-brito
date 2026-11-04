@@ -12,12 +12,12 @@
     "status": "SYSTEM ONLINE",
     "greeting": "Hello, I am",
     "name": "José Brito",
-    "role": "Software Engineer & Data Scientist",
-    "description": "Specialist in transforming complex data into robust applications. Focused on scalable architectures, Full Stack (Laravel/Next.js), and applied Artificial Intelligence.",
+    "role": "Data & Machine Learning Engineer",
+    "description": "I work at the intersection of Software Engineering, Data and Artificial Intelligence, from data modeling and processing to applications in production. Focused on applied Machine Learning, data quality and scalable systems with Python, SQL and Laravel.",
     "current_focus": "Current Focus",
-    "focus_list": ["High Scale Systems", "AI Agents", "Data Science"],
-    "terminal_desc": "Full Stack Engineer passionate about innovation in public and private sectors.",
-    "skills": ["Next.js", "Laravel", "Python (AI)", "PostgreSQL"]
+    "focus_list": ["High Scale Systems", "Machine Learning", "Data Engineering"],
+    "terminal_desc": "Engineer passionate about innovation in the public and private sectors.",
+    "skills": ["AI", "Laravel", "Python", "PostgreSQL"]
   },
   "projectsSection": {
     "title": "Featured Projects",

@@ -7,8 +7,8 @@ export const contentType = "image/png";
 const tagColors: Record<string, string> = {
   "Laravel":          "#FF2D20",
   "Python":           "#3776AB",
-  "Next.js":          "#FFFFFF",
-  "Flutter":          "#54C5F8",
+  "SQL":              "#336791",
+  "FastAPI":          "#009688",
   "Machine Learning": "#C084FC",
 };
 
@@ -26,7 +26,7 @@ function tagStyle(tag: string) {
 }
 
 export default function OgImage() {
-  const tags = ["Laravel", "Python", "Next.js", "Flutter", "Machine Learning"];
+  const tags = ["Python", "SQL", "Machine Learning", "FastAPI", "Laravel"];
 
   return new ImageResponse(
     (
@@ -65,7 +65,7 @@ export default function OgImage() {
 
         {/* Role */}
         <div style={{ color: "#9ca3af", fontSize: 26, marginTop: 16, marginBottom: 44, display: "flex" }}>
-          Software Engineer & Data Scientist
+          Data & Machine Learning Engineer
         </div>
 
         {/* Separator */}

@@ -14,31 +14,31 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 const BASE_URL = "https://josevbrito.com";
 
-const TITLE = "José Brito - Software Engineer & Data Scientist";
+const TITLE = "José Brito - Data & Machine Learning Engineer";
 
 const META = {
   pt: {
     description:
-      "Portfólio de José Victor Brito Costa - Engenheiro Full Stack e Cientista de Dados especializado em sistemas de alto impacto, IA aplicada e saúde pública.",
+      "Portfólio de José Victor Brito Costa - Engenheiro de Dados e de Machine Learning, com base em Engenharia de Software. Sistemas de saúde pública em produção, análise de dados e IA aplicada.",
     ogDescription:
-      "Engenheiro Full Stack e Cientista de Dados. +10 projetos de alto impacto em saúde pública, IA, análise de dados, sistemas web e mobile.",
-    twitterDescription: "Engenheiro Full Stack e Cientista de Dados. +10 projetos de alto impacto.",
+      "Engenheiro de Dados e de Machine Learning. Sistemas de saúde pública em produção, análise de dados em larga escala e pesquisa em ML publicada no BRACIS 2026.",
+    twitterDescription: "Engenheiro de Dados e de Machine Learning. Software, dados e IA aplicada.",
     keywords: [
-      "José Brito", "engenheiro de software", "engenheiro full stack", "cientista de dados",
-      "Next.js", "Laravel", "Python", "PostgreSQL", "Power BI",
+      "José Brito", "engenheiro de dados", "engenheiro de machine learning", "engenheiro de software",
+      "ciência de dados", "Python", "SQL", "FastAPI", "Laravel", "PostgreSQL",
       "portfólio", "Maranhão",
     ],
     ogLocale: "pt_BR",
   },
   en: {
     description:
-      "Portfolio of José Victor Brito Costa - Software Engineer and Data Scientist specialized in high-impact systems, applied AI and public health.",
+      "Portfolio of José Victor Brito Costa - Data and Machine Learning Engineer with a Software Engineering foundation. Public health systems in production, data analysis and applied AI.",
     ogDescription:
-      "Software Engineer and Data Scientist. 10+ high-impact projects across public health, AI, data analysis, web and mobile systems.",
-    twitterDescription: "Software Engineer and Data Scientist. 10+ high-impact projects.",
+      "Data and Machine Learning Engineer. Public health systems in production, large-scale data analysis and ML research published at BRACIS 2026.",
+    twitterDescription: "Data and Machine Learning Engineer. Software, data and applied AI.",
     keywords: [
-      "José Brito", "software engineer", "full stack engineer", "data scientist",
-      "Next.js", "Laravel", "Python", "PostgreSQL", "Power BI",
+      "José Brito", "data engineer", "machine learning engineer", "software engineer",
+      "data science", "Python", "SQL", "FastAPI", "Laravel", "PostgreSQL",
       "portfolio", "Maranhão", "Brazil",
     ],
     ogLocale: "en_US",

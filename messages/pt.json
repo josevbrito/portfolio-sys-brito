@@ -12,12 +12,12 @@
     "status": "SISTEMA ONLINE",
     "greeting": "Olá, eu sou",
     "name": "José Brito",
-    "role": "Engenheiro de Software & Cientista de Dados",
-    "description": "Especialista em transformar dados complexos em aplicações robustas. Foco em arquiteturas escaláveis, Full Stack (Laravel/Next.js) e Inteligência Artificial aplicada.",
+    "role": "Engenheiro de Dados & de Machine Learning",
+    "description": "Atuo na interseção entre Engenharia de Software, Dados e Inteligência Artificial, da modelagem e do processamento dos dados até aplicações em produção. Foco em Machine Learning aplicado, qualidade de dados e sistemas escaláveis com Python, SQL e Laravel.",
     "current_focus": "Foco atual",
-    "focus_list": ["Sistemas de Alta Escala", "Agentes de IA", "Ciência de Dados"],
-    "terminal_desc": "Engenheiro Full Stack apaixonado por inovação no setor público e privado.",
-    "skills": ["Next.js", "Laravel", "Python (AI)", "PostgreSQL"]
+    "focus_list": ["Sistemas de Alta Escala", "Machine Learning", "Engenharia de Dados"],
+    "terminal_desc": "Engenheiro apaixonado por inovação no setor público e privado.",
+    "skills": ["AI", "Laravel", "Python", "PostgreSQL"]
   },
   "projectsSection": {
     "title": "Projetos em Destaque",
@@ -35,7 +35,7 @@
   "contact": {
     "title": "Entre em Contato",
     "subtitle": "Quer discutir uma ideia, colaborar em um projeto ou só trocar conhecimentos sobre tecnologia? Fique à vontade para enviar sua mensagem.",
-    "email": "contato@josevbrito.com",
+    "email": "contact@josevbrito.com",
     "emailLabel": "Envie uma mensagem direta",
     "copyEmail": "Copiar E-mail",
     "copied": "Copiado!",
