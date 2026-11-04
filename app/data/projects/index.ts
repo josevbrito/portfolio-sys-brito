@@ -61,7 +61,7 @@ const PROJECTS: ProjectDef[] = [
   {
     slug: "bracis-2026-benchmark-circuitos-geneticos",
     tags: ["Machine Learning", "Bayesian Optimization", "Reinforcement Learning", "Genetic Programming", "Synthetic Biology", "Gillespie SSA"],
-    categories: ["Data Science / AI"],
+    categories: ["Data Science / AI", "Otimização"],
     icon: Dna,
     images: bracisImages,
     stats: [
@@ -75,14 +75,14 @@ const PROJECTS: ProjectDef[] = [
     i18n: {
       pt: {
         title: "Framework Unificado para Benchmarking de Machine Learning em Circuitos Genéticos",
-        shortDesc: "Artigo na Springer (BRACIS 2026): benchmark de 4 métodos de aprendizado e evolutivos para projetar circuitos genéticos sob ruído molecular.",
-        fullDesc: "Artigo completo apresentado no BRACIS 2026 (36ª Brazilian Conference on Intelligent Systems, Cuiabá) e publicado pela Springer em Lecture Notes in Computer Science (pp. 475-490). O problema é projetar circuitos genéticos que implementem lógica booleana apesar do ruído molecular intrínseco, um desafio central da biologia sintética. O artigo propõe um benchmark unificado e compara quatro métodos de busca de topologia - Programação Genética Cartesiana (CGP) como baseline evolutivo, Policy Gradient (REINFORCE), Otimização Bayesiana com surrogate de processo gaussiano e um Surrogate Neural com Monte Carlo Dropout -, todos avaliados pelo mesmo oráculo estocástico baseado no algoritmo de simulação de Gillespie (SSA), com a relação sinal-ruído (SNR) como fitness. Em 30 execuções pareadas sobre cinco portas lógicas (NOT, AND, NAND, NOR e XOR), com orçamento igualado pelo número de chamadas ao SSA, os três métodos baseados em aprendizado superam a CGP com significância estatística (Friedman com post-hoc de Wilcoxon corrigido por Holm). A Otimização Bayesiana alcança a maior SNR média em três das cinco portas e o Surrogate Neural na NAND, formando um grupo de topo estatisticamente equivalente. O achado mais importante é metodológico: o ranking depende da justiça do orçamento - a aparente dominância do Policy Gradient, de alto throughput, desaparece assim que todos os métodos recebem um orçamento de simulação comparável. A XOR segue intratável para todos (SNR máxima ≈ 1,04), o que sugere um limite fundamental de complexidade de circuito. Parte da minha pesquisa de mestrado (UFMA); sou o primeiro autor, num trabalho de oito autores com meus orientadores e colaboradores da área de biologia sintética.",
+        shortDesc: "Artigo publicado pela Springer (Brazilian Conference on Intelligent Systems).",
+        fullDesc: "Artigo apresentado no BRACIS 2026 e publicado pela Springer (Lecture Notes in Computer Science), do qual sou o primeiro autor. Propõe um benchmark unificado para o design de circuitos genéticos sob ruído molecular e compara quatro métodos de busca - Programação Genética Cartesiana, Policy Gradient, Otimização Bayesiana e Surrogate Neural - no mesmo oráculo de simulação estocástica (Gillespie SSA), com orçamento igualado. Os três métodos de aprendizado superam a baseline evolutiva, e a Otimização Bayesiana lidera em três das cinco portas lógicas. O achado principal é metodológico: a aparente vantagem do Policy Gradient desaparece quando todos recebem o mesmo orçamento de simulação.",
         status: "Concluído",
       },
       en: {
         title: "A Unified Framework for Benchmarking Machine Learning Methods in Genetic Circuit Design",
-        shortDesc: "Springer paper (BRACIS 2026): a benchmark of 4 learning-based and evolutionary methods for designing genetic circuits under molecular noise.",
-        fullDesc: "Full paper presented at BRACIS 2026 (36th Brazilian Conference on Intelligent Systems, Cuiabá) and published by Springer in Lecture Notes in Computer Science (pp. 475-490). The problem is designing genetic circuits that implement Boolean logic despite intrinsic molecular noise, a central challenge in synthetic biology. The paper presents a unified benchmark and compares four topology-search methods - Cartesian Genetic Programming (CGP) as an evolutionary baseline, Policy Gradient (REINFORCE), Bayesian Optimization with a Gaussian-process surrogate, and a Neural Surrogate with Monte Carlo Dropout - all evaluated through the same stochastic fitness oracle based on Gillespie's Stochastic Simulation Algorithm (SSA), with the Signal-to-Noise Ratio (SNR) as fitness. Across 30 paired runs on five logic gates (NOT, AND, NAND, NOR and XOR), under a budget equalized by the number of SSA calls, all three learning-based methods significantly outperform CGP (Friedman omnibus with Holm-corrected Wilcoxon post-hoc). Bayesian Optimization attains the highest mean SNR on three of five gates and the Neural Surrogate on NAND, forming a statistically equivalent top tier. The key finding is methodological: the ranking is sensitive to budget fairness - the apparent dominance of the high-throughput Policy Gradient vanishes once every method receives a comparable simulation budget. XOR remains intractable for all methods (max SNR ≈ 1.04), suggesting a fundamental circuit-complexity boundary. Part of my M.Sc. research (UFMA); I am the first author, in an eight-author work with my advisors and collaborators from the synthetic biology field.",
+        shortDesc: "Springer paper (Brazilian Conference on Intelligent Systems).",
+        fullDesc: "Paper presented at BRACIS 2026 and published by Springer (Lecture Notes in Computer Science), where I am the first author. It proposes a unified benchmark for designing genetic circuits under molecular noise and compares four search methods - Cartesian Genetic Programming, Policy Gradient, Bayesian Optimization and a Neural Surrogate - on the same stochastic simulation oracle (Gillespie SSA), under an equalized budget. All three learning methods outperform the evolutionary baseline, and Bayesian Optimization leads on three of the five logic gates. The key finding is methodological: Policy Gradient's apparent advantage vanishes once every method receives the same simulation budget.",
         status: "Completed",
       },
     },
@@ -225,14 +225,14 @@ const PROJECTS: ProjectDef[] = [
   },
   {
     slug: "rnds-guia",
-    tags: ["Astro", "Starlight", "TypeScript", "Zod", "YAML", "Vercel"],
+    tags: ["HL7 FHIR", "Astro", "Starlight", "TypeScript", "Zod", "YAML", "Vercel"],
     categories: ["Full Stack"],
     icon: BookOpen,
     images: rndsGuiaImages,
     stats: [
-      { label: "Modelos catalogados", labelEn: "Information models", value: "11" },
-      { label: "Normas mapeadas", labelEn: "Regulations mapped", value: "15" },
-      { label: "Endpoints públicos", labelEn: "Public endpoints", value: "6" },
+      { label: "Modelos catalogados", labelEn: "Information models", value: "14" },
+      { label: "Normas mapeadas", labelEn: "Regulations mapped", value: "23" },
+      { label: "Endpoints públicos", labelEn: "Public endpoints", value: "7" },
     ],
     links: [
       { type: "live", url: "https://rnds.josevbrito.com" },
@@ -242,13 +242,13 @@ const PROJECTS: ProjectDef[] = [
       pt: {
         title: "Guia RNDS para Desenvolvedores",
         shortDesc: "Guia aberto de integração com a Rede Nacional de Dados em Saúde, com dataset público em JSON.",
-        fullDesc: "Guia independente para quem precisa integrar sistemas de saúde à Rede Nacional de Dados em Saúde (RNDS). Reúne num só lugar o que hoje está espalhado entre gov.br, Guia de Implementação FHIR, Simplifier e Portal de Serviços do DATASUS, com a fonte linkada e a data de verificação em cada afirmação. Documenta os 11 modelos de informação (o material em circulação ainda fala em sete), os 8 serviços web do barramento e a linha do tempo completa das 15 portarias, incluindo duas normas vigentes que a página oficial de legislação não lista e que levam quem confia só nela a implementar o modelo errado. A arquitetura mantém fato estruturado em YAML validado por Zod no build, nenhuma tabela é escrita à mão, e cada registro exige fontes e data de verificação ou o build falha. O mesmo dataset é publicado como 6 endpoints JSON com CORS liberado, sob CC BY 4.0.",
+        fullDesc: "Guia independente para quem precisa integrar sistemas de saúde à Rede Nacional de Dados em Saúde (RNDS). Reúne num só lugar o que hoje está espalhado entre gov.br, Guia de Implementação FHIR, Guia de Integração, Simplifier e Portal de Serviços do DATASUS, com a fonte linkada e a data de verificação em cada afirmação. Cataloga 14 modelos de informação (o material em circulação ainda fala em sete), 13 serviços web e a linha do tempo de 23 normas, 11 delas ausentes da página oficial de legislação - quem confia só nela implementa o modelo errado. Todo fato estruturado vive em YAML validado por Zod no build: nenhuma tabela é escrita à mão, e registro sem fonte ou data de verificação quebra o build. O mesmo dataset é publicado em 7 endpoints JSON com CORS liberado e num feed RSS de novidades, sob CC BY 4.0.",
         status: "Em andamento",
       },
       en: {
         title: "RNDS Guide for Developers",
         shortDesc: "Open integration guide for Brazil's National Health Data Network, with a public JSON dataset.",
-        fullDesc: "Independent guide for developers integrating health systems with Brazil's National Health Data Network (RNDS). It consolidates what is currently scattered across gov.br, the FHIR Implementation Guide, Simplifier and the DATASUS service portal - with a linked source and a verification date on every claim. It documents the 11 information models (circulating material still refers to seven), the 8 bus web services and the full timeline of 15 regulations, including two active ones missing from the official legislation page, which lead anyone relying on it alone to implement the wrong model. The architecture keeps every structured fact in YAML validated by Zod at build time - no table is hand-written, and each record requires sources and a verification date or the build fails. The same dataset is published as 6 CORS-enabled JSON endpoints under CC BY 4.0.",
+        fullDesc: "Independent guide for developers integrating health systems with Brazil's National Health Data Network (RNDS). It consolidates what is currently scattered across gov.br, the FHIR Implementation Guide, the Integration Guide, Simplifier and the DATASUS service portal - with a linked source and a verification date on every claim. It catalogues 14 information models (circulating material still refers to seven), 13 web services and a timeline of 23 regulations, 11 of them missing from the official legislation page - anyone relying on it alone implements the wrong model. Every structured fact lives in YAML validated by Zod at build time: no table is hand-written, and a record without sources or a verification date breaks the build. The same dataset is published as 7 CORS-enabled JSON endpoints plus an RSS changelog feed, under CC BY 4.0.",
         status: "In Progress",
       },
     },

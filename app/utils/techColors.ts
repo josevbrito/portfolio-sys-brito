@@ -51,6 +51,7 @@ const techColorMap: Record<string, TechColor> = {
   "Prophet":            { color: "#4267B2" },
   "Time Series":        { color: "#00B8D9" },
   "SISVAN":             { color: "#005A9C" },
+  "HL7 FHIR":           { color: "#E8562A" },
   "Bayesian Optimization":  { color: "#F59E0B" },
   "Reinforcement Learning": { color: "#EC4899" },
   "Genetic Programming":    { color: "#7CB342" },
