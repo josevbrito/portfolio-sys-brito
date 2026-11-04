@@ -260,3 +260,18 @@ export const rndsGuiaImages: LocalizedImages = {
     { src: "/projects/rnds-guia/legislacao.png", caption: "Legislation Timeline" },
   ],
 };
+
+export const bracisImages: LocalizedImages = {
+  pt: [
+    { src: "/projects/bracis-2026/framework_overview.png", caption: "Framework unificado: os quatro métodos compartilham a interface BaseOptimizer e consultam o mesmo oráculo de fitness (SSA de Gillespie → SNR), sob orçamento igualado" },
+    { src: "/projects/bracis-2026/budget_curves.png", caption: "Convergência por porta lógica em função das chamadas ao SSA: com orçamento igualado, os métodos de aprendizado ficam acima da CGP, e na XOR nenhum método se destaca" },
+    { src: "/projects/bracis-2026/nor_topology.png", caption: "Melhor circuito do benchmark: topologia campeã da NOR (Surrogate Neural, SNR 3,29). As duas entradas reprimem genes reguladores e o YFP só é expresso quando ambas estão ausentes" },
+    { src: "/projects/bracis-2026/not_abundance.png", caption: "Campeão da NOT (Otimização Bayesiana, SNR 3,16): separação bimodal nítida entre as saídas 0 e 1, a marca de um inversor robusto ao ruído" },
+  ],
+  en: [
+    { src: "/projects/bracis-2026/framework_overview.png", caption: "Unified framework: all four methods share the BaseOptimizer interface and query the same fitness oracle (Gillespie SSA → SNR) under an equalized budget" },
+    { src: "/projects/bracis-2026/budget_curves.png", caption: "Convergence per logic gate versus cumulative SSA calls: under an equalized budget, the learning methods stay above CGP, while on XOR no method stands out" },
+    { src: "/projects/bracis-2026/nor_topology.png", caption: "The benchmark's best circuit: NOR champion topology (Neural Surrogate, SNR 3.29). Both inputs converge on repressor genes, and YFP is de-repressed only when both are absent" },
+    { src: "/projects/bracis-2026/not_abundance.png", caption: "NOT champion (Bayesian Optimization, SNR 3.16): clean bimodal separation between logical 0 and 1, the hallmark of a noise-robust inverter" },
+  ],
+};

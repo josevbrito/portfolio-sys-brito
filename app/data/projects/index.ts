@@ -6,7 +6,7 @@ import {
   foodAgentImages, plandoxImages, analiseRfmImages, californiaImages,
   hansPlusImages, relabImages, portfolioImages, fallDetectionImages,
   obesidadeEspacotemporalImages, obesidadeProjecaoImages,
-  compEvolucionariaImages, automacaoIndustrialImages, rndsGuiaImages,
+  compEvolucionariaImages, automacaoIndustrialImages, rndsGuiaImages, bracisImages,
 } from "./images";
 
 // Internal types
@@ -63,7 +63,7 @@ const PROJECTS: ProjectDef[] = [
     tags: ["Machine Learning", "Bayesian Optimization", "Reinforcement Learning", "Genetic Programming", "Synthetic Biology", "Gillespie SSA"],
     categories: ["Data Science / AI"],
     icon: Dna,
-    images: { pt: [], en: [] },
+    images: bracisImages,
     stats: [
       { label: "Métodos comparados", labelEn: "Methods compared", value: "4" },
       { label: "Portas lógicas", labelEn: "Logic gates", value: "5" },
